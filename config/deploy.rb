@@ -3,6 +3,7 @@ lock '3.4.0'
 
 set :application, 'rails4_snappaajat'
 set :repo_url, 'git@github.com:vjandrei/rails4_snappaajat.git'
+set :branch,      fetch(:branch, 'PagesController')
 
 set :passenger_restart_with_touch, true
 
