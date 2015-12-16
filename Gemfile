@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -35,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
@@ -50,3 +49,13 @@ group :development do
   gem 'capistrano-passenger'
   gem 'sqlite3'
 end
+
+gem 'bootstrap', '~> 4.0.0.alpha1'
+gem 'devise', '~> 3.5', '>= 3.5.2'
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'papercrop'
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'will_paginate', '~> 3.0', '>= 3.0.7'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'maj-text-counter-rails'
+gem 'acts-as-taggable-on'
