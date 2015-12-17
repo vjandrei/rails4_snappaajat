@@ -1,9 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= render "layouts/header" %>
+<section id="showProfile" class="pageContent">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-xs-12 col-sm-8 text-center">			
+			<h1><%= @profile.name %></h1>
+			<h3>Alla näet profiilisi tiedot, voit lisää muokkaa profiilia.</h3>			 
+			<%= image_tag @profile.image.url(:medium), :class => "image-responsive" %>	
+			<p><%=  @profile.description %></p>		
+			<% @profile.tags.any? %>
+			<% @profile.tags.each do |tag| %>
+				<span class="tags">
+				#<%= link_to tag.name, tag_path(tag.name) %>
+				</span>  
+			<% end %>
+			<%= link_to 'Muokkaa', edit_profile_path(@profile) %> 
+			<%= link_to 'Takaisin', root_path %>	
+			</div>
+			<div class="col-xs-12 col-sm-2"></div>
+			</div>			
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3  text-center">
+			</div>
+		</div>
+	</div>
+</section>

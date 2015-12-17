@@ -1,0 +1,34 @@
+<header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-5 text-center" id="pageBrandNavLinks">
+			<div class="headerContent">
+				<a href="/"><div id="snappi-suomi-logo"></div></a>
+				<% if user_signed_in? %>
+				<%= link_to "Kirjaudu ulos", destroy_user_session_path, method: :delete, :class => "linkbutton" %>
+				<% else %>
+				<%= link_to "Kirjaudu", new_user_session_path, :class => "linkbutton"  %>
+				<% end %> 
+				<div class="col-xs-12">
+					<% if user_signed_in? %>
+					<%= link_to "Muokkaa käyttäjätunnustasi", edit_user_registration_path, :class => "" %>
+					<% else %>
+					<% end %> 
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-7" id="resentProfiles">
+			<div class="headerContent">
+				<div id="brandHeading">
+					<a href="/"><h1>Snappaajat.fi</h1></a>
+					<h2>Löydä mielenkiintoisia Snapchat käyttäjiä.</h2>
+					<% if user_signed_in? %>
+					<% else %>
+					<%= link_to "Rekisteröidy", new_user_registration_path, :class => "linkbutton" %>
+					<% end %> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>

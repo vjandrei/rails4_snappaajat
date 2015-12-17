@@ -1,21 +1,79 @@
-<%= form_for(@profile) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
-      <ul>
-      <% @profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @profile, html: { multipart: true }  do |f| %>
+	<% if @profile.errors.any? %>
+		<div id="error_explanation">
+			<h2>Virhe on tapahtunnut</h2>
+			<ul>
+				<% @profile.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="field">
+    <%= f.label :image, 'Kuva itsestäsi' %><br>
+    <%= f.file_field :image %>
+    <% if @profile.image.exists? %>
+    
+    <% end %>
+    <div id="profile_image_exists">
+	    <% if @profile.image.exists? %>
+		<%= image_tag @profile.image.url %>
+		<% end %>
+	</div>
+    
+    <div id="profile_image_target"></div>
+    <div class="text-center">
+    	<p><small>Vaiheessa 2/2 voit rajaa kuvaa</small></p>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    </div>
+    
+    <div class="field">
+    <%= f.label :snapcode, 'Snapcode' %><br>
+    <%= f.file_field :snapcode %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :name, 'Nimesi' %><br>
+	<%= f.text_field :name %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :nickname, 'Snapchat käyttäjänimesi' %><br>
+	<%= f.text_field :nickname %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :tags, "Aihetunnisteet ( erottele pilkulla )" %>
+	<%= f.text_field(:tag_list, value: @profile.tag_list.join(","))%>
+	</div>
+	
+	<div class="field">
+	<%= f.label :description, 'Kirjoita itsestäni lyhyt esittely ( 160 merkkiä )' %>
+	<%= f.text_area :description %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :facebook, 'Facebook url' %><br>
+	<%= f.text_field :facebook %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :twitter, 'Twitter käyttäjänimi' %><br>
+	<%= f.text_field :twitter %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :instagram, 'Instagram käyttäjänimi' %><br>
+	<%= f.text_field :instagram %>
+	</div>
+	
+	<div class="field">
+	<%= f.label :linkedin, 'LinkedIn url' %><br>
+	<%= f.text_field :linkedin %>
+	</div>
+	
+	<div class="actions">
+	 <button class="linkbutton"> <%= f.submit 'Tallenna ja jatka' %></button>
+	</div>
 <% end %>

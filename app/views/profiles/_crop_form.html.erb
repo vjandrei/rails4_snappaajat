@@ -1,0 +1,22 @@
+<%= form_for @profile, html: { multipart: true }  do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2>Virhe on tapahtunnut</h2>
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+	<% if @profile.image.exists? %>
+	<%= f.cropbox :image, :width => 355 %>
+	<% end %>
+	</div>
+
+  <div class="actions">
+    <button class="linkbutton"><%= f.submit "Hyväksy" %></button>
+  </div>
+<% end %>

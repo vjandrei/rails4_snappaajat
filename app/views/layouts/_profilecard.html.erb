@@ -1,0 +1,59 @@
+<% @profiles.each_slice(4).each do |group| %>
+<div class="row">
+	<% group.each do |profile| %>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+		<div class="profilesContainer">
+			<div class="profilesHeader">
+				<div class="profilesImage">
+					<%= image_tag profile.image.url(:medium), :class => "img-bg" %>	
+				</div>
+			</div>
+			<div class="profilesContent">
+				<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url(:medium) %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
+				
+				<div class="profilesNickName">
+					@<%= profile.nickname %>
+				</div>
+				<div class="profilesRealName">
+					<%= profile.name %>
+				</div>
+				
+				<div class="profilesDescription">
+					<p class="profileAbout"><%= profile.description %></p>
+				</div>
+				
+				<% profile.tags.any? %>
+				<div class="profilesTags">
+				<% profile.tags.each do |tag| %>
+					<span class="tags">
+						#<%= link_to tag.name, tag_path(tag.name) %>
+					</span>  
+				<% end %>
+				</div>
+				
+				<div class="profilesSnapCodeScan text-center">
+					<img src="/images/icons/camera-icon.png" alt="camera-icon" width="32" height="32" /><br/>
+					skannaa snapkoodi
+				</div>
+				
+				<% if profile.user == current_user %>
+					<div class="userProfiles">
+						<%= link_to 'Muokkaa', edit_profile_path(profile) %>
+						<%= link_to 'Poista', profile, method: :delete, data: { confirm: 'Oletko varma' } %>
+					</div>
+				<% end %>
+				
+			</div>
+			<div class="profilesFooter">
+				<div class="profileSome">
+					<a href=""><div class="linksToSome"><img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" /></div></a>
+					<a href=""><div class="linksToSome"><img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" /></div></a>
+					<a href=""><div class="linksToSome"><img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" /></div></a>
+					<a href=""><div class="linksToSome"><img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" /></div></a>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+<% end %>

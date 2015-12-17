@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "layouts/header" %>
+
+<%= render "layouts/filters" %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<% flash.each do |name, msg| %>
+		    	<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+
+<section id="profilesGrid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<%= render "layouts/profilecard" %>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!--, renderer: BootstrapPagination::Rails-->
+<%= will_paginate @profiles ,previous_label: 'Uusimmat', next_label: 'Vanhimmat', inner_window: 1, outer_window: 0 %>

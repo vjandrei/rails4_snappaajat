@@ -1,0 +1,62 @@
+<%= render "layouts/header" %>
+
+<%= render "layouts/filters" %>
+
+<% if user_signed_in? %>
+<section id="ownProfiles">
+  <div class="bg-inverse p-a">
+    <div class="row">
+		<div class="col-xs-12 col-sm-12">
+			<div id="noProfileAdded">
+				<h1>Omat snapchat profiilit</h1>
+				<h2>Lisää oma snapchat tunnuksesi</h2>
+				<%= link_to 'Lisää profiili', new_profile_path, :class => "linkbutton" %>
+				<h3>Voi lisää useampia profiileita.</h3>
+			</div>
+		</div>
+	</div>
+  </div>
+</section>
+<% end %>
+
+<section id="profiles">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<% @profiles.each do |group| %>
+				<div class="row">
+					<% group.each do |profile| %>
+					<div class="col-xs-12 col-sm-3">
+						<div class="snapchatProfileContentImage">
+						    <%= image_tag profile.image.url(:medium), :class => "img-bg" %>    
+						</div>
+						<div class="snapchatProfileContainer">
+							<div class="snapchatProfileContent">
+								<div class="snapchatProfileContentDetails">
+									<h1 class="profileName"><%= profile.name %></h1>
+									<h2 class="profileNickName">@<%= profile.nickname %></h2>
+									<p class="profileAbout"><%= profile.description %></p>
+									<% profile.tags.any? %>
+										<% profile.tags.each do |tag| %>
+											<span class="tags">
+											#<%= link_to tag.name, tag_path(tag.name) %>
+											</span>  
+									<% end %>
+									<div class="profileLinks">
+									    <%= link_to 'Näytä', profile %>
+									    <% if profile.user == current_user %>
+									    <%= link_to 'Muokkaa', edit_profile_path(profile) %>
+									    <%= link_to 'Poista', profile, method: :delete, data: { confirm: 'Oletko varma' } %>
+									    <% end %>
+								    </div>
+							    </div>
+						    </div>
+					    </div>
+					</div>
+					<% end %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,29 +1,40 @@
-<h2>Sign up</h2>
+<%= render "layouts/header" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<section id="signUp" class="pageContent">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-xs-12 col-sm-8 text-center">
+				<h1>Rekisteröidy</h1>
+				<h3>Täytä alla oleva lomake ja olet mukana Snäpääjät yhteisössä.</h3>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+				  <%= devise_error_messages! %>
+				
+				  <div class="field">
+				    <%= f.label :email, 'Sähköpostisi *'  %><small>( Ei näytetä missään )</small>
+				    <%= f.email_field :email, autofocus: true %>
+				  </div>
+				
+				  <div class="field">
+				    <%= f.label :password, 'Salasana *' %>
+				    <% if @minimum_password_length %>
+				    <small>( Vähintää  <%= @minimum_password_length %> merkkiä ps: käytä salasanaa jota et käytä sähkostissa tai muualla )</small>
+				    <% end %>
+				    <%= f.password_field :password, autocomplete: "off" %>
+				  </div>
+				
+				  <div class="field">
+				    <%= f.label :password_confirmation, 'Salasana vahvistus *' %><br />
+				    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+				  </div>
+				
+				  <div class="actions">
+				    <button class="linkbutton"><%= f.submit "Rekisteröidy" %></button>
+				  </div>
+				<% end %>
+			</div>
+			<div class="col-xs-12 col-sm-2"></div>
+		</div>
+	</div>
+</section>
