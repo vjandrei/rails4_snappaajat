@@ -18,8 +18,7 @@
 //= require maj-text-counter
 //= require jquery.tokeninput
 //= require profiles
-//= require jquery.jcrop
-//= require papercrop
+//= require jcrop.js
 
 
 // Detect file input support
@@ -65,11 +64,14 @@ $( document ).ready(function() {
 	});
     
     
-     $(".profilesSnapCodeScan").on("click", function () {  
+    $(".profilesSnapCodeScan").on("click", function () {  
         $(this).parent().find(".profilesSnapCode").slideToggle(function() {
 	       $(this).addClass('animated bounceInDown').css('top', '0px');
         });
-        
     });
+    
+    $(document).ready(function() {
+		document.jcrop.init({ file_input_id: 'profile_image' });
+	});
 
 });

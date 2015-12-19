@@ -19,6 +19,13 @@
     <%= f.label :nickname %><br>
     <%= f.text_field :nickname %>
   </div>
+   <div class="field">
+	 <%= image_tag(@profile.image_url) if @profile.image? %><br/>
+	 <%= f.file_field :image %>
+	 <%= f.cropbox :image, width: 400, height: 400 %>
+	 <%= f.previewbox :image %>
+	 <%= f.hidden_field :image_cache %>
+  </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
