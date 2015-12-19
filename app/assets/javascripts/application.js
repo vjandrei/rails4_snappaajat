@@ -70,8 +70,6 @@ $( document ).ready(function() {
         });
     });
     
-    $(document).ready(function() {
-		document.jcrop.init({ file_input_id: 'profile_image' });
-	});
+	this.jcrop.init({ file_input_id: 'profile_image' });
 
 });
