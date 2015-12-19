@@ -1,6 +1,3 @@
-//= require jquery.jcrop.js
-//= require_self
-
 document.jcrop = (function() {
     var exports = { };
 
