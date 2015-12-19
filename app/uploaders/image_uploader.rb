@@ -3,8 +3,8 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  #include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -52,7 +52,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   version :thumb do
     process crop: [100,100]  ## Crops this version based on original image
-    resize_to_limit(100,100)
   end
 
 end
