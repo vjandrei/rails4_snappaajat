@@ -18,6 +18,8 @@
 //= require profiles
 //= require jcrop.js
 //= require jquery.jcrop.js
+//= require select2
+//= require select2_locale_fi
 //= require_self
 $( document ).ready(function() {
 	
@@ -52,5 +54,9 @@ $( document ).ready(function() {
     });
     
 	this.jcrop.init({ file_input_id: 'profile_image' });
+	
+	$( "#profile_locations_id" ).select2({
+	    theme: "classic"
+	});
 
 });

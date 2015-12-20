@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220150634) do
+ActiveRecord::Schema.define(version: 20151220160342) do
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
@@ -21,11 +27,12 @@ ActiveRecord::Schema.define(version: 20151220150634) do
     t.string   "twitter"
     t.string   "instagram"
     t.string   "linkedin"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "image"
     t.integer  "user_id"
     t.string   "snapcode"
+    t.integer  "locations_id"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

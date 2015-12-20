@@ -19,13 +19,16 @@
     <%= f.label :nickname , 'Snapchat tunnus' %><br>
     <%= f.text_field :nickname %>
   </div>
+  <div class="field">
+	  <%= f.label :locations_id , 'Paikkakunta' %><br>
+	  <%= f.collection_select :locations_id, Location.all,  :id, :name, {promt: "Valitse paikkakunta"} %>
+  </div>
    <div class="field">
 	 <%= f.label :image, 'Profiilikuva' %>
 	 <%= f.file_field :image %>
 	 <%= f.cropbox :image, width: 400, height: 400 %>
 	 <%= f.hidden_field :image_cache %>
   </div>
-  
   <div class="field">
 	<%= f.label :image, 'Snapchat koodi' %>
 	<%= f.file_field :snapcode %>
