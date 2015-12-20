@@ -12,9 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
 //= require maj-text-counter
 //= require jquery.tokeninput
 //= require profiles
