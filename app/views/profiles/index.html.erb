@@ -41,11 +41,11 @@
 						<div class="profilesContainer">
 							<div class="profilesHeader">
 								<div class="profilesImage">
-									<%= image_tag profile.image.url(:medium), :class => "img-bg" %>	
+									<%= image_tag profile.image.url, :class => "img-bg" %>	
 								</div>
 							</div>
 							<div class="profilesContent">
-								<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url(:medium) %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
+								<div class="profilesSnapCode" style="background-image: url(); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
 								
 								<div class="profilesNickName">
 									@<%= profile.nickname %>
