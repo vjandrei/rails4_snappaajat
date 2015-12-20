@@ -12,8 +12,6 @@ set :passenger_restart_with_touch, true
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deploy/rails4_snappaajat'
 
-set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
-
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -34,6 +32,7 @@ set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
 
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
