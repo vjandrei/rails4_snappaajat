@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :Nimi %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :nickname %><br>
+    <%= f.label :nickname , 'Snapchat tunnus' %><br>
     <%= f.text_field :nickname %>
   </div>
    <div class="field">
+	 <%= f.label :image, 'Profiilikuva' %>
 	 <%= image_tag(@profile.image_url) if @profile.image? %><br/>
 	 <%= f.file_field :image %>
 	 <%= f.cropbox :image, width: 400, height: 400 %>
-	 <%= f.previewbox :image %>
 	 <%= f.hidden_field :image_cache %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
+	<%= f.label :description, 'Kirjoita itsestäni lyhyt esittely ( 160 merkkiä )' %>
+	<%= f.text_area :description %>
+	</div>
   <div class="field">
 	<%= f.label :tags, "Aihetunnisteet ( erottele pilkulla )" %>
 	<%= f.text_field(:tag_list, value: @profile.tag_list.join(","))%>
@@ -51,6 +51,6 @@
     <%= f.text_field :linkedin %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <button class="linkbutton"><%= f.submit 'Tallenna'%></button>
   </div>
 <% end %>

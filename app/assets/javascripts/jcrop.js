@@ -46,7 +46,7 @@ document.jcrop = (function() {
                             setSelect: selection.position_and_size,
                             onChange: showPreview,
                             onSelect: showPreview,
-                            boxWidth: 300, boxHeight: 300
+                            boxWidth: 800, boxHeight: 300
                         });
                     });
                 }
