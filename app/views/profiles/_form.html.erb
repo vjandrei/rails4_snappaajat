@@ -21,11 +21,17 @@
   </div>
    <div class="field">
 	 <%= f.label :image, 'Profiilikuva' %>
-	 <%= image_tag(@profile.image_url) if @profile.image? %><br/>
 	 <%= f.file_field :image %>
 	 <%= f.cropbox :image, width: 400, height: 400 %>
 	 <%= f.hidden_field :image_cache %>
   </div>
+  
+  <div class="field">
+	<%= f.label :image, 'Snapchat koodi' %>
+	<%= f.file_field :snapcode %>
+    <%= f.hidden_field :snapcode_cache %>
+  </div>
+  
   <div class="field">
 	<%= f.label :description, 'Kirjoita itsestäni lyhyt esittely ( 160 merkkiä )' %>
 	<%= f.text_area :description %>
