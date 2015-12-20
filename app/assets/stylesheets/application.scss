@@ -483,30 +483,30 @@ form{
 			}
 		}
 		.profilesFooter{
+			width: 100%;
+			background: $snap-black;
 			.profileSome{
+				width: 100%;
+				display: table;
+				table-layout: fixed;
 				a{
-					background: $snap-black;
-					float: left;
-				    width:25%;
-				    height:50px;
-				    border-right: solid 1px #c7c1c1;
-				    box-sizing: border-box;
-				    text-align: center;
-				    line-height: 50px;
-				    &:last-child{
-						border: none;   
-				    }
+					display: table-cell;
+					.linksToSome{
+						background: $snap-black;
+					    display: block;
+					    height:50px;
+					    border-right: solid 1px #c7c1c1;
+					    box-sizing: border-box;
+					    text-align: center;
+					    line-height: 50px;
+					}
+					&:last-child{
+						.linksToSome{
+						border: none;
+						}   
+					}
 				}
-				.linksToSome {  
-				    
-				}
-			}
-			.profileLinks{
-				a{
-					color: white;
-					font-size: 0.7rem;
-				}
-			}
+			}	
 		}
 	}
 }

@@ -41,14 +41,38 @@
 			</div>
 			<div class="profilesFooter">
 				<div class="profileSome">
-					<%= profile.facebook %>
-			        <%= profile.twitter %>
-			        <%= profile.instagram %>
-			        <%= profile.linkedin %>
-					<a href=""><div class="linksToSome"><img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" /></div></a>
-					<a href=""><div class="linksToSome"><img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" /></div></a>
-					<a href=""><div class="linksToSome"><img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" /></div></a>
-					<a href=""><div class="linksToSome"><img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" /></div></a>	
+					<% if profile.facebook.present? %>
+					<a href="<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
+						<div class="linksToSome">
+							<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
+						</div>
+					</a>
+					<% else %>
+					<% end %>
+					<% if profile.twitter.present? %>
+						<a href="<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
+						<div class="linksToSome">
+							<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
+						</div>
+					</a>
+					<% else %>
+					<% end %>
+					<% if profile.instagram.present? %>	
+					<a href="<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
+						<div class="linksToSome">
+							<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
+						</div>
+					</a>
+					<% else %>
+					<% end %>
+					<% if profile.linkedin.present? %>
+					<a href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
+						<div class="linksToSome">
+							<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
+						</div>
+					</a>	
+					<% else %>
+					<% end %>
 				</div>
 			</div>
 		</div>
