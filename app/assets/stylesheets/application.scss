@@ -70,6 +70,17 @@ a{
 	}
 }
 
+.alert-notice{
+    background: $snap-yellow;
+    padding: 10px 20px;
+    border-radius: 30px;
+    min-width: 200px;
+    display: inline-block;
+    margin: 15px auto;
+    color: $snap-black;
+    text-align: center;
+}
+
 .text-center{
 	text-align: center;
 }
@@ -166,6 +177,7 @@ header{
 		}
 	}	
 	#brandHeading{
+		max-width: 720px;
 		margin: 30px 30px 0px 30px;
 		@include media-breakpoint-down(xs) {
 			text-align: center;
@@ -183,6 +195,9 @@ header{
 				position: relative;
 				top:0;
 			}
+		}
+		h2{
+			line-height: 30px;
 		}
 	}
 	nav{
@@ -710,4 +725,34 @@ form{
 	font-family: 'Open Sans', sans-serif;	
 	font-size: 1rem;
 	color: white;
+}
+
+#aboutApp{
+	
+}
+
+.select2-container--above select2-container--open{
+	.select2-container--classic .select2-selection--single .select2-selection__rendered{
+		color: $snap-black;
+	}
+}
+
+#profile_image_cropbox_wrapper{
+	width: 100%!important;
+	height: auto!important;
+	background: $snap-black;
+}
+.jcrop-holder{
+	margin: 0 auto;
+}
+
+.pagination{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9rem;
+	color: white;
+	em{font-style: normal;}
+	a{
+		font-family: 'Open Sans', sans-serif;
+		font-size: 0.9rem;
+	}
 }

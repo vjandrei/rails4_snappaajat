@@ -1,7 +1,7 @@
 <header>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-12 col-sm-5 text-center" id="pageBrandNavLinks">
+		<div class="col-xs-12 col-sm-4 text-center" id="pageBrandNavLinks">
 			<div class="headerContent">
 				<a href="/"><div id="snappi-suomi-logo"></div></a>
 				<% if user_signed_in? %>
@@ -17,11 +17,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-7" id="resentProfiles">
+		<div class="col-xs-12 col-sm-8" id="resentProfiles">
 			<div class="headerContent">
 				<div id="brandHeading">
 					<a href="/"><h1>Snappaajat.fi</h1></a>
-					<h2>Löydä mielenkiintoisia Snapchat käyttäjiä.</h2>
+					<h2>Snappaajat.fi:n avulla löydät vaivattomasti Suomen Snapchattaajat ja voit myös<br/> lisätä oman tunnuksesi sivustolle.</h2>
 					<% if user_signed_in? %>
 					<% else %>
 					<%= link_to "Rekisteröidy", new_user_registration_path, :class => "linkbutton" %>

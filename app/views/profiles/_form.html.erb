@@ -44,19 +44,19 @@
 	<%= f.text_field(:tag_list, value: @profile.tag_list.join(","))%>
   </div>
   <div class="field">
-    <%= f.label :facebook %><br>
+    <%= f.label :facebook, "Facebook nimesi esim. matti.meikäläinen" %><br>
     <%= f.text_field :facebook %>
   </div>
   <div class="field">
-    <%= f.label :twitter %><br>
+    <%= f.label :twitter, "Twitter käyttäjätunnus esim. @twitter" %><br>
     <%= f.text_field :twitter %>
   </div>
   <div class="field">
-    <%= f.label :instagram %><br>
+    <%= f.label :instagram, "Instagram käyttäjätunnus esim. mattinstaa"%><br>
     <%= f.text_field :instagram %>
   </div>
   <div class="field">
-    <%= f.label :linkedin %><br>
+    <%= f.label :linkedin, "LinkedIn" %><br>
     <%= f.text_field :linkedin %>
   </div>
   <div class="actions">

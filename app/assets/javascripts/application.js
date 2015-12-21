@@ -25,9 +25,9 @@ $( document ).ready(function() {
 	
 	$('#profile_description').majTextCounter({
 		carLimit: 160,
-		words: "",
-		letters: "kirjainta",
-		separator: "",
+		words: "Sanaa ",
+		letters: " merkkiä",
+		separator: "ja ",
 		maximum: " Maksimimäärä : ",
 	});
 	
