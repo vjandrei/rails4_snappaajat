@@ -55,7 +55,7 @@
 								<div class="profilesFooter">
 									<div class="profileSome">
 										<% if profile.facebook.present? %>
-										<a href="<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
+										<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
 											<div class="linksToSome">
 												<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
 											</div>
@@ -63,7 +63,7 @@
 										<% else %>
 										<% end %>
 										<% if profile.twitter.present? %>
-											<a href="<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
+											<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
 											<div class="linksToSome">
 												<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
 											</div>
@@ -71,7 +71,7 @@
 										<% else %>
 										<% end %>
 										<% if profile.instagram.present? %>	
-										<a href="<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
+										<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
 											<div class="linksToSome">
 												<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
 											</div>
@@ -79,7 +79,7 @@
 										<% else %>
 										<% end %>
 										<% if profile.linkedin.present? %>
-										<a href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
+										<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
 											<div class="linksToSome">
 												<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
 											</div>
