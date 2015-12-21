@@ -21,6 +21,8 @@
 //= require select2
 //= require select2_locale_fi
 //= require_self
+//= require rails.validations
+
 $( document ).ready(function() {
 	
 	$('#profile_description').majTextCounter({

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/DavyJonesLocker/client_side_validations.git
+  revision: 4a11b821bbc095c6967f19b9b45796d2f0ca7d34
+  specs:
+    client_side_validations (4.2.0)
+      jquery-rails (>= 3.1.2, < 5.0.0)
+      rails (>= 4.0.0, < 4.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -214,6 +222,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.0.3)
   carrierwave
   carrierwave-crop-on-fly
+  client_side_validations!
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.2)
   jbuilder (~> 2.0)
