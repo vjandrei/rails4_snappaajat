@@ -12,7 +12,25 @@
 	</div>
 </div>
 
-
+<% if user_signed_in? %>
+<% if  Profile.exists? user_id: current_user.id %>
+<% else %>
+<section id="ownProfiles">
+  	<div class="container-fluid bg-inverse">
+    <div class="row">
+		<div class="col-xs-12 col-sm-12 text-center">
+			<div id="noProfileAdded">
+				<h1>Et ole vielä lisännyt profiilia</h1>
+				<h2>Lisää oma snappaaja tunnuksesi</h2>
+				<%= link_to 'Lisää profiili', new_profile_path, :class => "linkbutton" %>
+				<h3>Voi lisää useampia profiileita.</h3>
+			</div>
+		</div>
+	</div>
+  	</div>
+</section>
+<%  end %>
+<%  end %>
 
 <section id="profilesGrid">
 	<div class="container-fluid">
