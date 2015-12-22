@@ -13,13 +13,14 @@ class ProfilesController < ApplicationController
 	    else
 	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 	    end  
-	    @profile = current_user.profiles.build
+	    
 	   
 		if params[:location].blank?
 		    @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 		else
 			@location_id = Location.find_by(name: params[:location]).id
 			@profiles = Profile.where(location_id: @location_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+			@profile = current_user.profiles.build
 		end
 	end
 
