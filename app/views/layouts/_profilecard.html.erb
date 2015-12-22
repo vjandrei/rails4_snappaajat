@@ -17,7 +17,7 @@
 					<%= profile.name %>
 				</div>
 				<div class="profileLocation">
-					<%= link_to profile.location.name, profiles_path(profile.location.name) %>
+					<%= link_to profile.location.name, profiles_path(profile: profile.location.name) %>
 				</div>
 				<div class="profilesDescription">
 					<p class="profileAbout"><%= profile.description %></p>
