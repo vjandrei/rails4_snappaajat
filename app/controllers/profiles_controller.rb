@@ -14,6 +14,13 @@ class ProfilesController < ApplicationController
 	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 	    end  
 	    @profile = current_user.profiles.build
+	   
+		if params[:location].blank?
+		    @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+		else
+			@location_id = Location.find_by(name: params[:location]).id
+			@profiles = Profile.where(location_id: @location_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+		end
 	end
 
   # GET /profiles/1
@@ -88,7 +95,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :nickname, :description, :image, :snapcode, {category_ids: []}, :tag_list, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h, :facebook, :twitter, :instagram, :linkedin, :snapcode, :locations_id)
+      params.require(:profile).permit(:name, :nickname, :description, :image, :snapcode, {category_ids: []}, :tag_list, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id)
     end
     
     def find_profile

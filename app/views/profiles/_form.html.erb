@@ -21,7 +21,7 @@
   </div>
   <div class="field">
 	  <%= f.label :locations_id , 'Paikkakunta' %><br>
-	  <%= f.collection_select :locations_id, Location.all,  :id, :name, {promt: "Valitse paikkakunta"} %>
+	  <%= f.collection_select :location_id, Location.all,  :id, :name, {promt: "Valitse paikkakunta"} %>
   </div>
    <div class="field">
 	 <%= f.label :image, 'Profiilikuva' %>

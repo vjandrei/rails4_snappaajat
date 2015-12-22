@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220160342) do
+ActiveRecord::Schema.define(version: 20151222182757) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20151220160342) do
     t.string   "twitter"
     t.string   "instagram"
     t.string   "linkedin"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "image"
     t.integer  "user_id"
     t.string   "snapcode"
-    t.integer  "locations_id"
+    t.integer  "location_id"
+    t.string   "location_name"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

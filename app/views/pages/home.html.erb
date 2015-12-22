@@ -12,6 +12,16 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<% Location.all.each do |location| %>	
+			<%= link_to location.name, profiles_path(location: location.name) %>	
+			<% end %>
+		</div>
+	</div>
+</div>
+
 <% if user_signed_in? %>
 <% if  Profile.exists? user_id: current_user.id %>
 <% else %>

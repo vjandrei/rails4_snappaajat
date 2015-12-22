@@ -57,7 +57,7 @@ $( document ).ready(function() {
     
 	this.jcrop.init({ file_input_id: 'profile_image' });
 	
-	$( "#profile_locations_id" ).select2({
+	$( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
 
