@@ -9,13 +9,6 @@ class PagesController < ApplicationController
 		@profile = Profile.where(category_id: @category_id).order("created_at DESC")
 	end
 	
-	if params[:location].blank?
-		@profile = Profile.all.order("created_at DESC")
-	else
-		@location_id = Location.find_by(name: params[:location]).id
-		@profile = Profile.where(location_id: @location_id).order("created_at DESC")
-	end
-	
 	
   end
   
