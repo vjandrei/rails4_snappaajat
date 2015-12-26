@@ -9,7 +9,21 @@ class PagesController < ApplicationController
 		@profile = Profile.where(category_id: @category_id).order("created_at DESC")
 	end
 	
-	
+	@filterrific = initialize_filterrific(
+      Profile,
+      params[:filterrific],
+      :select_options => {
+        sorted_by: Profile.options_for_sorted_by,
+        with_location_id: Location.options_for_select
+      }
+    ) or return
+    @profiles = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    
   end
   
   def tags

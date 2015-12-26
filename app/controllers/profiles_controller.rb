@@ -8,11 +8,27 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
 
     def index
-	    if params[:tag].present? 
+	    
+		if params[:tag].present? 
 	      @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 12)
 	    else
 	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 	    end  
+	    
+	    @filterrific = initialize_filterrific(
+      Profile,
+      params[:filterrific],
+      :select_options => {
+        sorted_by: Profile.options_for_sorted_by,
+        with_location_id: Location.options_for_select
+      }
+    ) or return
+    @profiles = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
 	    
 	end
 

@@ -23,6 +23,7 @@
 //= require select2_locale_fi
 //= require_self
 //= require rails.validations
+//= require filterrific/filterrific-jquery
 
 $( document ).ready(function() {
 	
