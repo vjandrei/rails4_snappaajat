@@ -82,7 +82,7 @@ class Profile < ActiveRecord::Base
       ['Nimi (a-ö)', 'name_asc'],
       ['Rekisteröitynyt (uudet ensin)', 'created_at_desc'],
       ['Rekisteröitynyt (vanhat ensin)', 'created_at_asc'],
-      ['Paikkakunta (a-ö)', 'country_name_asc']
+      ['Paikkakunta (a-ö)', 'location_name_asc']
     ]
   end
   
