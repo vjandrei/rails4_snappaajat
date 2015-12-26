@@ -21,21 +21,27 @@
 <% end %>
 <% end %>
 
-<%= form_for_filterrific @filterrific do |f| %>
-	
-	<%= f.text_field(
-      :search_query,
-      class: 'filterrific-periodically-observed'
-    ) %>
-    
-    <%= f.select :with_location_id,@filterrific.select_options[:with_location_id],{ :include_blank => '- Any -' },{ :class => 'form-control' } %>
-	<%= f.text_field:with_created_at_gte,:class =>'js-datepicker form-control' %>
-	<%= f.select :sorted_by,@filterrific.select_options[:sorted_by],{},{ :class => 'form-control' } %>
-
-    
-    <div id="results">
-	<%= render :partial => 'profiles/list', :locals => { :profiles => @profiles } %>
-	</div>
-
-<% end %>
-
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Country</th>
+    <th>Registered at</th>
+  </tr>
+  <% @profiles.each do |profile| %>
+    <tr>
+      <td>
+        <%= profile.name %>
+      </td>
+      <td>
+        <%= profile.nickname %>
+      </td>
+      <td>
+        <%= profile.location_name %>
+      </td>
+      <td>
+        <%= profile.created_at.to_date.to_s(:long) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

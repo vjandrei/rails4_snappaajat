@@ -79,10 +79,10 @@ class Profile < ActiveRecord::Base
   
   def self.options_for_sorted_by
     [
-      ['Name (a-z)', 'name_asc'],
-      ['Registration date (newest first)', 'created_at_desc'],
-      ['Registration date (oldest first)', 'created_at_asc'],
-      ['Country (a-z)', 'country_name_asc']
+      ['Nimi (a-ö)', 'name_asc'],
+      ['Rekisteröitynyt (uudet ensin)', 'created_at_desc'],
+      ['Rekisteröitynyt (vanhat ensin)', 'created_at_asc'],
+      ['Paikkakunta (a-ö)', 'country_name_asc']
     ]
   end
   
