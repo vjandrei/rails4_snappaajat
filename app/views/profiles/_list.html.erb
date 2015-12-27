@@ -1,0 +1,18 @@
+<div id="filterrific_results">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Country</th>
+      <th>Registered at</th>
+    </tr>
+    <% profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.name %></td>
+        <td><%= profile.nickname %></td>
+        <td><%= profile.location_name %></td>
+        <td><%= profile.decorated_created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

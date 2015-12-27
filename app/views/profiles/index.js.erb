@@ -1,9 +1,5 @@
-
+<%# app/views/profiles/index.js.erb %>
 <% js = escape_javascript(
-	
-  render(
-    :partial => 'profiles/list',
-    :locals => { :profiles => @profiles }
-  )
+  render(partial: 'profiles/list', locals: { profiles: @profiles })
 ) %>
-$("#results").html("<%= js %>");
+$("#filterrific_results").html("<%= js %>");

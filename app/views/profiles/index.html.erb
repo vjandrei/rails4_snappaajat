@@ -21,27 +21,31 @@
 <% end %>
 <% end %>
 
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Country</th>
-    <th>Registered at</th>
-  </tr>
-  <% @profiles.each do |profile| %>
-    <tr>
-      <td>
-        <%= profile.name %>
-      </td>
-      <td>
-        <%= profile.nickname %>
-      </td>
-      <td>
-        <%= profile.location_name %>
-      </td>
-      <td>
-        <%= profile.created_at.to_date.to_s(:long) %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<section id="profilesFilter">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+				<%= f.text_field(:search_query) %>
+				<%= f.select :with_location_id,@filterrific.select_options[:with_location_id],{ :include_blank => '- Kaikki -' } %>
+				<%= f.select :sorted_by,@filterrific.select_options[:sorted_by],{}%>
+				<%= link_to('Reset filters',reset_filterrific_url,) %>
+				<%= render_filterrific_spinner %>
+				<%= f.submit 'Filter' %>
+			<% end %>	
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="profilesGrid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			    <div id="results">
+					<%= render :partial => 'profiles/list', :locals => { :profiles => @profiles } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
