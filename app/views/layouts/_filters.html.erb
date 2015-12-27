@@ -5,10 +5,10 @@
 			<span class="pull-sm-right">
 			<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
 			<li class="nav-item filtercontent">Näytä paikkakunnasta:
-				<%= f.select :with_location_id, @filterrific.select_options[:with_location_id], { :include_blank => '- Kaikki -' } %>
+				<%= f.select :with_location_id, @filterrific.select_options[:with_location_id], { :include_blank => 'Kaikki' } %>
 			</li>
 			<li class="nav-item filtercontent">Järjestä:
-				<%= f.select :sorted_by,@filterrific.select_options[:sorted_by],{}%>
+				<%= f.select :sorted_by, @filterrific.select_options[:sorted_by], { }%>
 			</li>
 			<li class="nav-item">
 				<%= f.submit 'Hae', :class => 'submitfilter' %>
