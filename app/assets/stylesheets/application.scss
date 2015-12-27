@@ -570,6 +570,7 @@ form{
 			}
 			
 			.profilesDescription{
+				min-height: 80px;
 				p{
 					margin: 0;
 					max-height: 130px;
@@ -582,6 +583,7 @@ form{
 			}
 			.profilesTags{
 				padding: 10px;
+				height: 50px;
 			}
 			.tags{
 				position: relative;
