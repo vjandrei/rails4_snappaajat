@@ -54,6 +54,7 @@ $( document ).ready(function() {
     $(".profilesSnapCodeScan").on("click", function () {  
         $(this).parent().find(".profilesSnapCode").slideToggle(function() {
 	       $(this).addClass('animated bounceInDown').css('top', '0px');
+	       console.log('painettu');
         });
     });
     
