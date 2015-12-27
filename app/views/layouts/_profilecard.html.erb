@@ -11,13 +11,44 @@
 			<div class="profilesContent">
 				<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url() %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
 				<div class="profilesNickName">
-					@<%= profile.nickname %>
+					@<%= profile.nickname %> 
+					
+					<span class="someLinks">
+						<% if profile.facebook.present? %>
+						<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
+							<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
+						</a>
+						<% else %>
+						<% end %>
+						
+						<% if profile.twitter.present? %>
+						<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
+							<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
+						</a>
+						<% else %>
+						<% end %>
+						
+						<% if profile.instagram.present? %>	
+						<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
+							<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
+						</a>
+						<% else %>
+						<% end %>
+						
+						<% if profile.linkedin.present? %>
+						<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
+							<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
+						</a>	
+						<% else %>
+						<% end %>
+					</span>
+					
 				</div>
 				<div class="profilesRealName">
 					<%= profile.name %>
 				</div>
 				<div class="profileLocation">
-					<%= link_to profile.location.name, profiles_path(profile: profile.location.name) %>
+					<%= profile.location.name %>
 				</div>
 				<div class="profilesDescription">
 					<p class="profileAbout"><%= profile.description %></p>
@@ -41,42 +72,6 @@
 					</div>
 				<% end %>
 				
-			</div>
-			<div class="profilesFooter">
-				<div class="profileSome">
-					<% if profile.facebook.present? %>
-					<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
-						<div class="linksToSome">
-							<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
-						</div>
-					</a>
-					<% else %>
-					<% end %>
-					<% if profile.twitter.present? %>
-						<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
-						<div class="linksToSome">
-							<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
-						</div>
-					</a>
-					<% else %>
-					<% end %>
-					<% if profile.instagram.present? %>	
-					<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
-						<div class="linksToSome">
-							<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
-						</div>
-					</a>
-					<% else %>
-					<% end %>
-					<% if profile.linkedin.present? %>
-					<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
-						<div class="linksToSome">
-							<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
-						</div>
-					</a>	
-					<% else %>
-					<% end %>
-				</div>
 			</div>
 		</div>
 	</div>
