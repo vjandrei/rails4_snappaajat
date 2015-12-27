@@ -62,5 +62,6 @@ $( document ).ready(function() {
 	$( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
+	
 
 });

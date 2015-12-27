@@ -18,12 +18,18 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lobster+Two:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700,300);
 @import "bootstrap";
 
 $snap-yellow: 	#FFFC00;
 $main-yellow: 	#E8B419;
 $snap-black: 	#16191a;
 $snap-red: #ff4545;
+
+.no-mp{
+	padding: 0px;
+	margin: 0px;
+}
 
 html{
 	height: 100%;
@@ -119,9 +125,82 @@ a{
 	}
 }
 
+#topNav{
+	a{
+		color: white;
+	}
+	#navContent{
+		padding: 0;
+		@include media-breakpoint-down(xs) { position: relative; margin-bottom: 20px;}
+	}
+	min-height: 50px;
+	background: $snap-black;
+	padding-top: 10px;
+	h3{
+		a{
+		font-family: 'Nunito', sans-serif;
+		font-weight: 600;
+		color: white;
+		font-size: 1.8rem;
+		}
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li{
+			@include media-breakpoint-down(xs) { 
+				display: block; 
+				width: 90%; 
+				margin-left: 5%; 
+				padding: 10px 0px;
+				border-bottom: solid 1px $snap-yellow;
+			}
+			@include media-breakpoint-up(sm) { display: none; }
+			@include media-breakpoint-up(md) { display: none; }
+			@include media-breakpoint-up(lg) { display: block; }
+			@include media-breakpoint-up(xl) { display: block; }
+
+			margin-top: 3px;
+			float: left;
+			margin-right: 10px;
+			a{
+				color: white;
+			}
+		}
+	}
+	a #ownProfile{
+		position: relative;
+		top: 0px;
+		float: left;
+		display: inline-block;
+		border-radius: 100px;
+		height: 30px;
+		width: 30px;
+		border: solid 2px $snap-yellow;
+		background: url('../images/icons/small-snap.svg') no-repeat;
+		background-position: center;
+		background-size: 60%;
+	}
+	a .logInOutButton{
+		position: relative;
+		top: 0px;
+		display: inline-block;
+		height: 30px;
+		border-radius: 5px;
+		background: #FEF012;
+		line-height: 30px;
+		padding: 0px 20px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color: $snap-black;
+	}
+}
+
 header{
 	position: relative;
 	width: 100%;
+	background: $snap-yellow;
 	.row{
 		.headerContent{
 			position: relative;
@@ -130,8 +209,7 @@ header{
 		}
 		#pageBrandNavLinks{
 			padding: 0px;
-			background: $snap-yellow;
-			min-height: 335px;
+			min-height: 235px;
 			@include media-breakpoint-down(xs) {
 				min-height: 200px;	
 				padding-bottom: 10px;
@@ -147,7 +225,7 @@ header{
 			background: url('/images/hipsters.jpg') no-repeat;
 			background-size: cover;
 			background-position: center center;
-			min-height: 335px;
+			min-height: 235px;
 			height: 100%;
 			@include media-breakpoint-down(xs) {
 				min-height:245px
@@ -178,19 +256,13 @@ header{
 	}	
 	#brandHeading{
 		max-width: 720px;
-		margin: 30px 30px 0px 30px;
+		margin: 10px 30px 0px 30px;
 		@include media-breakpoint-down(xs) {
 			text-align: center;
-			.navbar{
-				a{
-					display: block;
-					margin: 10px 0px;
-				}
-			}
 		}
 		.linkbutton{
-				position: absolute;
-				top: 199px;
+			
+			top: 100px;
 			@include media-breakpoint-down(xs) {
 				position: relative;
 				top:0;
@@ -215,6 +287,20 @@ header{
 			color: white;
 		}
 	}
+	.submitfilter{
+		position: relative;
+	    top: 0px;
+	    display: inline-block;
+	    height: 30px;
+	    border-radius: 5px;
+	    background: #FEF012;
+	    line-height: 30px;
+	    padding: 0px 20px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    border: none;
+	    color: $snap-black;
+	}
 	a.navbar-brand{
 		color: $snap-yellow;
 	}
@@ -232,6 +318,10 @@ header{
 		}
 	}
 	.nav-item{
+		color: white;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 600;
 		@include media-breakpoint-down(xs) {
 			display: block;
 			width: 100%;
@@ -363,6 +453,10 @@ form{
 	}
 }
 
+#profilesFilter{
+	margin: 10px 0px;	
+	background: $snap-yellow;	
+}
 
 #profilesGrid{
 	margin: 10px 0px;	
@@ -764,4 +858,16 @@ form{
 		font-family: 'Open Sans', sans-serif;
 		font-size: 0.9rem;
 	}
+}
+
+#filterrific_with_location_id, #filterrific_sorted_by{
+	background: none;
+	border: none;
+	color: $snap-yellow;
+}
+#filterrific_with_location_id{
+	width: 90px;
+}
+.filtercontent{
+		margin-top: 4px;
 }
