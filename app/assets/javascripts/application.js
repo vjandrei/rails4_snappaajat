@@ -58,6 +58,10 @@ $( document ).ready(function() {
         });
     });
     
+    $(".profilesTagsAll").on("click", function () {  
+        $(this).parent().toggleClass('active');
+    });
+    
 	this.jcrop.init({ file_input_id: 'profile_image' });
 	
 	$( "#profile_location_id" ).select2({

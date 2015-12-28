@@ -584,6 +584,12 @@ form{
 			.profilesTags{
 				padding: 10px;
 				height: 50px;
+				&.active{
+					height: 100%;
+				}
+				span{
+					font-size: 0.8rem;
+				}
 			}
 			.tags{
 				position: relative;

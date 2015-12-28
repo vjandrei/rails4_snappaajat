@@ -53,14 +53,19 @@
 				<div class="profilesDescription">
 					<p class="profileAbout"><%= profile.description %></p>
 				</div>
-				<% profile.tags.any? %>
+				
+				<% if profile.tags.present? %>
 				<div class="profilesTags">
+				<span class="profilesTagsAll">Näytä kaikki</span>
 				<% profile.tags.each do |tag| %>
 					<span class="tags">
 						#<%= link_to tag.name, tag_path(tag.name) %>
 					</span>  
 				<% end %>
 				</div>
+				<% else %>
+				<% end %>
+				
 				<div class="profilesSnapCodeScan text-center">
 					<img src="/images/icons/camera-icon.png" alt="camera-icon" width="32" height="32" /><br/>
 					skannaa snapkoodi
