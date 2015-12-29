@@ -29,11 +29,22 @@ class PagesController < ApplicationController
   def tags
 	  
 	if params[:tag].present? 
+		@filterrific = initialize_filterrific(
+      Profile,
+      params[:filterrific],
+      :select_options => {
+        sorted_by: Profile.options_for_sorted_by,
+        with_location_id: Location.options_for_select
+      }
+    ) or return
 	  @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
 	else
 	  @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
 	end  
 	
+	    
+
+
   end
   
   def about
