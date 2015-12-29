@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
+//= require bootstrap
 //= require maj-text-counter
 //= require jquery.tokeninput
 //= require profiles
@@ -25,7 +25,6 @@
 //= require rails.validations
 //= require_tree .
 
-$( document ).ready(function() {
 	$('#profile_description').majTextCounter({
 		carLimit: 160,
 		words: "Sanaa ",
@@ -63,4 +62,3 @@ $( document ).ready(function() {
 	$( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
-});
