@@ -23,10 +23,9 @@
 //= require select2_locale_fi
 //= require_self
 //= require rails.validations
-//= require filterrific/filterrific-jquery
+//= require_tree .
 
 $( document ).ready(function() {
-	
 	$('#profile_description').majTextCounter({
 		carLimit: 160,
 		words: "Sanaa ",
@@ -47,14 +46,11 @@ $( document ).ready(function() {
 	      $('#profile_image_exists').remove();
 	    }
 	    reader.readAsDataURL(image);
-	    console.log(files);
 	});
-    
     
     $(".profilesSnapCodeScan").on("click", function () {  
         $(this).parent().find(".profilesSnapCode").slideToggle(function() {
 	       $(this).addClass('animated bounceInDown').css('top', '0px');
-	       console.log('painettu');
         });
     });
     
@@ -67,6 +63,4 @@ $( document ).ready(function() {
 	$( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
-	
-
 });
