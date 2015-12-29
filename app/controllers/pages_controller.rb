@@ -17,7 +17,7 @@ class PagesController < ApplicationController
         with_location_id: Location.options_for_select
       }
     ) or return
-    @profiles = @filterrific.find.page(params[:page])
+    @profiles = @filterrific.find.page(params[:page]).paginate(:page => params[:page], :per_page => 30)
 
     respond_to do |format|
       format.html

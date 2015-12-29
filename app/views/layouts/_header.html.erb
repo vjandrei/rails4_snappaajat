@@ -9,7 +9,8 @@
 		<div class="col-xs-12 col-sm-8" id="resentProfiles">
 			<div class="headerContent">
 				<div id="brandHeading">
-					<a href="/"><h1>Tervetuloa!</h1></a>
+					<%= link_to "Tervetuloa!", reset_filterrific_url, :class => 'main-heading' %>
+
 					<h2>Snappaajat.fi:n avulla löydät vaivattomasti Suomen Snapchattaajat ja voit myös<br/> lisätä oman tunnuksesi sivustolle.</h2>
 					<% if user_signed_in? %>
 					<%= link_to "Kirjaudu ulos",destroy_user_session_path, method: :delete , :class => "linkbutton" %>

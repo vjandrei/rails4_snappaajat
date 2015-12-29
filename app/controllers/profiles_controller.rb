@@ -10,9 +10,9 @@ class ProfilesController < ApplicationController
     def index
 	    
 		if params[:tag].present? 
-	      @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 12)
+	      @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
 	    else
-	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
 	    end  
 	    
 	    @filterrific = initialize_filterrific(
