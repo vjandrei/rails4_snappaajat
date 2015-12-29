@@ -259,6 +259,12 @@ header{
 		@include media-breakpoint-down(xs) {
 			text-align: center;
 		}
+		.main-heading{
+			font-family: 'Open Sans', sans-serif;
+		    font-size: 5vw;
+		    margin-bottom: 20px;
+		    font-weight: 800;
+		}
 		.linkbutton{
 			
 			top: 100px;
