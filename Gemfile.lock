@@ -8,6 +8,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.5)
       actionpack (= 4.2.5)
@@ -78,8 +79,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    carrierwave-crop-on-fly (0.0.4)
-      carrierwave (>= 0.8.0)
+    carrierwave-crop (0.1.2)
+      carrierwave (>= 0.8.0, < 0.11.0)
       jquery-rails
       rails (>= 3.2)
     coffee-rails (4.1.0)
@@ -123,7 +124,6 @@ GEM
       railties (~> 4.0)
       sass-rails (~> 5.0.1)
     mime-types (2.99)
-    mini_magick (4.3.3)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
@@ -148,6 +148,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5)
       sprockets-rails
+    rails-assets-jcrop (2.0.4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -165,6 +166,7 @@ GEM
     rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rmagick (2.15.4)
     sass (3.4.20)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -223,7 +225,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.1.3)
   capistrano-rbenv (~> 2.0.3)
   carrierwave
-  carrierwave-crop-on-fly
+  carrierwave-crop
   client_side_validations!
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.2)
@@ -231,9 +233,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   maj-text-counter-rails
-  mini_magick
   pg
   rails (= 4.2.5)
+  rails-assets-jcrop!
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   select2-rails

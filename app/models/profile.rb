@@ -90,6 +90,6 @@ class Profile < ActiveRecord::Base
   end
 
 	def user_params
-    	params.require(:profile).permit(:nickname, :description, {category_ids: []}, :tag_list, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h, :image, :snapcode, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id)
+    	params.require(:profile).permit(:nickname, :description, {category_ids: []}, :tag_list, :image, :snapcode, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id)
 	end
 end

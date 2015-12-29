@@ -26,9 +26,9 @@ end
 
 gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'devise', '~> 3.5', '>= 3.5.2'
+gem 'rmagick', :require => 'RMagick'  ## Specify appropriate version, if needed
 gem 'carrierwave'
-gem 'mini_magick'
-gem 'carrierwave-crop-on-fly'
+gem 'carrierwave-crop'
 gem 'maj-text-counter-rails'
 gem 'acts-as-taggable-on'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
@@ -36,3 +36,8 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'select2-rails'
 gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'filterrific'
+
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jcrop'
+end
