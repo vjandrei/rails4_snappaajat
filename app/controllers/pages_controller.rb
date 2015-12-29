@@ -29,7 +29,7 @@ class PagesController < ApplicationController
   def tags
 	  
 	if params[:tag].present? 
-		@filterrific = initialize_filterrific(
+	@filterrific = initialize_filterrific(
       Profile,
       params[:filterrific],
       :select_options => {
