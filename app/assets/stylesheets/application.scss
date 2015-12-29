@@ -369,6 +369,11 @@ form{
 				margin-top: 5px;
 			}
 		}
+		small a{
+			font-size: 0.8rem;
+			font-weight: 400;
+			color: $snap-yellow;
+		}
 		input{
 			background: none;
 			border: solid 2px white;
@@ -388,9 +393,9 @@ form{
 		}
 		label{
 			font-family: 'Open Sans', sans-serif;
-			font-weight: 400;
-			font-size: 0.8rem;
-			color: $snap-yellow;
+			font-weight: 600;
+			font-size: 0.9rem;
+			color: white;
 			margin-bottom: 2px;
 		}
 		textarea{

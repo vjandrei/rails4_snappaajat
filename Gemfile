@@ -42,4 +42,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jcrop'
   gem 'rails-assets-select2'
   gem 'rails-assets-animate.css'
+  gem 'rails-assets-tether', '>= 1.1.0'
 end

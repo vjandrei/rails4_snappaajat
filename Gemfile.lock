@@ -151,6 +151,7 @@ GEM
     rails-assets-animate.css (3.5.0)
     rails-assets-jcrop (2.0.4)
     rails-assets-select2 (4.0.1)
+    rails-assets-tether (1.1.1)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -240,6 +241,7 @@ DEPENDENCIES
   rails-assets-animate.css!
   rails-assets-jcrop!
   rails-assets-select2!
+  rails-assets-tether (>= 1.1.0)!
   rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

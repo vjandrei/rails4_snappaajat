@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require tether
+//= require bootstrap-sprockets
 //= require jcrop
 //= require select2
 //= require select2_locale_fi
@@ -40,4 +42,6 @@ $(function() {
     $( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
+	
+	$('#snapcodeInfo').modal(options)
 });

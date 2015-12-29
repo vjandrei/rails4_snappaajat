@@ -16,7 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :nickname , 'Snapchat tunnus' %><br>
+    <%= f.label :nickname , 'Snapchat tunnus ilman @ merkkiä' %><br>
     <%= f.text_field :nickname %>
   </div>
   <div class="field">
@@ -32,6 +32,15 @@
 	<%= f.label :image, 'Snapchat koodi' %>
 	<%= f.file_field :snapcode %>
     <%= f.hidden_field :snapcode_cache %>
+    <small><a href="" data-toggle="modal" data-target=".bd-example-modal-lg">Katso ohjeet täältä</a></small>
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+		<iframe width="100%" height="500" src="https://www.youtube.com/embed/JKA7YSL6py8" frameborder="0" allowfullscreen></iframe>
+	</div>
+	</div>
+	</div>
+
   </div>
   
   <div class="field">
