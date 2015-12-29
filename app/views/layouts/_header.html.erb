@@ -1,4 +1,10 @@
+<% if current_page?( new_user_registration_path ) %>
+<% else %>
+<% if user_signed_in? %>
+<header class="hidden-xs-down">
+<% else %>
 <header>
+<% end %>	
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 col-sm-4 text-center hidden-xs-down" id="pageBrandNavLinks">
@@ -22,3 +28,4 @@
 	</div>
 </div>
 </header>
+<% end %>

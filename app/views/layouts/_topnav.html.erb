@@ -16,13 +16,11 @@
 						<li><a href="">Mikä on Snappaajat.fi</a></li>
 						<li><a href="">Keskustelupalsta</a></li>
 						<li><a href="">Ota yhteyttä</a></li>
-						<% if user_signed_in? %>
-						<li><a href="/profiles">Omat profiilit</a></li>
-						<% else %>					
-						<% end %>
-						<% if user_signed_in? %>
+						<% if user_signed_in? %> 
+						<li class="hidden-sm-up"><%= link_to "Kirjaudu ulos", destroy_user_session_path %></li>
 						<% else %>
-						<li class="hidden-sm-up"><a href="">Kirjaudu sisään</a></li>
+						<li class="hidden-sm-up"><%= link_to "Rekisteröidy", new_user_registration_path %></li>
+						<li class="hidden-sm-up"><%= link_to "Kirjaudu sisään", new_user_session_path %></li>
 						<% end %>	
 					</ul>
 					<div class="pull-sm-right hidden-sm-down">
