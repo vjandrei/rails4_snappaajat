@@ -40,4 +40,6 @@ gem 'filterrific'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jcrop'
+  gem 'rails-assets-select2'
+  gem 'rails-assets-animate.css'
 end

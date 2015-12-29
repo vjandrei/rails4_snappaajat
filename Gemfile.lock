@@ -148,7 +148,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5)
       sprockets-rails
+    rails-assets-animate.css (3.5.0)
     rails-assets-jcrop (2.0.4)
+    rails-assets-select2 (4.0.1)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -235,7 +237,9 @@ DEPENDENCIES
   maj-text-counter-rails
   pg
   rails (= 4.2.5)
+  rails-assets-animate.css!
   rails-assets-jcrop!
+  rails-assets-select2!
   rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

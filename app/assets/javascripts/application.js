@@ -14,4 +14,30 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jcrop
+//= require select2
+//= require select2_locale_fi
+//= require rails.validations
+//= require filterrific/filterrific-jquery
+//= require maj-text-counter
 //= require_tree .
+
+$(function() {
+	$('#profile_description').majTextCounter({
+		carLimit: 160,
+		words: "Sanaa ",
+		letters: " merkkiä",
+		separator: "ja ",
+		maximum: " Maksimimäärä : ",
+	});
+	$(".profilesTagsAll").on("click", function () {  
+        $(this).parent().toggleClass('active');
+    });
+    $(".profilesSnapCodeScan").on("click", function () {  
+        $(this).parent().find(".profilesSnapCode").slideToggle(function() {
+	       $(this).addClass('animated bounceInDown').css('top', '0px');
+        });
+    });
+    $( "#profile_location_id" ).select2({
+	    theme: "classic"
+	});
+});
