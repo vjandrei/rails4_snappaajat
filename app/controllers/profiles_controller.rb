@@ -21,7 +21,8 @@ class ProfilesController < ApplicationController
       :select_options => {
         sorted_by: Profile.options_for_sorted_by,
         with_location_id: Location.options_for_select
-      }
+      },
+	  :persistence_id => false,   
     ) or return
     @profiles = @filterrific.find.page(params[:page])
 

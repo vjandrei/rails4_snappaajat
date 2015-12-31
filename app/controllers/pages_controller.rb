@@ -15,10 +15,11 @@ class PagesController < ApplicationController
       :select_options => {
         sorted_by: Profile.options_for_sorted_by,
         with_location_id: Location.options_for_select
-      }
+      },
+	  :persistence_id => false,   
     ) or return
     @profiles = @filterrific.find.page(params[:page]).paginate(:page => params[:page], :per_page => 30)
-
+	
     respond_to do |format|
       format.html
       format.js
@@ -35,19 +36,21 @@ class PagesController < ApplicationController
       :select_options => {
         sorted_by: Profile.options_for_sorted_by,
         with_location_id: Location.options_for_select
-      }
+      },
+	  :persistence_id => false,   
     ) or return
 	  @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
 	else
 	  @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
-	end  
-	
-	    
-
+	end 
 
   end
   
   def about
 	   
   end 
+  
+  def myprofiles
+	@profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
+  end
 end
