@@ -44,7 +44,7 @@ en:
       updated: "Your account has been updated successfully."
     sessions:
       signed_in: "Tervetuloa, olet kirjautunnut onnistuneesti!"
-      signed_out: "Ikävä kun lähdet, mutta olet tervetullut uudellen!"
+      signed_out: "Ikävä kun lähdet, mutta olet tervetullut uudelleen!"
       already_signed_out: "Ikävä kun lähdet, mutta olet tervetullut uudellen!"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
