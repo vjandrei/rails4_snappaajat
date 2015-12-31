@@ -33,5 +33,5 @@ en:
         other: "%{count}"
 
       multi_page: "%{from} - %{to} profiilista %{count} yhteensä"
-      multi_page_html: "näytetään %{from}&nbsp;-&nbsp;%{to}  %{count} yhteensä"
+      multi_page_html: "näytetään %{from}&nbsp;-&nbsp;%{to} / yhteensä %{count}"
 
