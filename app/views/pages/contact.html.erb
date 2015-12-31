@@ -1,0 +1,39 @@
+<%= render "layouts/topnav" %>
+
+<%= render "layouts/header" %>
+
+<section id="#forumApp" class="pageContent">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Ota yhteyttä</h1>
+				<h3>Kiinnostaako olla mukana tekemässä Snappaajat.fi:tä tai sinulla heräsi kysymys sivustosta.</h3>
+				<p>Voit ottaa yhteyttä alla näkyvällä lomakkeella.</p>
+				<!--iframe src="https://docs.google.com/forms/d/1xyodP4jklg6mt69WPvNb2tLZWIIaaePsvbaAAvn4B78/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe-->
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<form action="https://docs.google.com/forms/d/1xyodP4jklg6mt69WPvNb2tLZWIIaaePsvbaAAvn4B78/formResponse" method="post">
+						  <fieldset class="form-group">
+						    <label for="entry.1485524790">Nimesi</label>
+						    <input type="text" class="form-control" id="entry.1485524790" name="entry.1485524790" placeholder="Nimesi">
+						  </fieldset>
+						  <fieldset class="form-group">
+						    <label for="entry_733367355">Sähköposti</label>
+						    <input type="text" class="form-control" id="entry_733367355" name="entry_733367355" placeholder="Sähköposti">
+						  </fieldset>
+						  <fieldset class="form-group">
+						    <label for="entry.916231276">Kysymyksesi</label>
+						    <textarea class="form-control" id="entry.916231276" name="entry.916231276" rows="3" placeholder="Vapaamuotoinen"></textarea>
+						  </fieldset>
+						  <input type="hidden" name="draftResponse" value="[,,&quot;5298352053412699346&quot;]">
+						  <input type="hidden" name="pageHistory" value="0">
+						  <input type="hidden" name="fvv" value="0">
+						  <input type="hidden" name="fbzx" value="5298352053412699346">
+						  <button type="submit" class="submitBtn">Lähetä</button>
+						</form>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+</section>

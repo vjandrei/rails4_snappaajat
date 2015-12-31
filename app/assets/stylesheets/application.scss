@@ -878,6 +878,18 @@ form{
 	}
 }
 
+#forumApp{
+	p{
+		font-family: 'Open Sans', sans-serif;	
+		font-size: 15px;
+		a{
+			font-size: 15px;
+			font-weight: normal;
+			color: $snap-yellow;	
+		}
+	}
+}
+
 .select2-container--above select2-container--open{
 	.select2-container--classic .select2-selection--single .select2-selection__rendered{
 		color: $snap-black;
@@ -952,4 +964,26 @@ form{
 		font-weight: 600;
 		color: #ffffff;
 	}
+}
+
+.checkbox{
+	a{
+		color: $snap-yellow;
+	}
+}
+
+form .submitBtn{
+		position: relative;
+		top: 0px;
+		display: inline-block;
+		height: 30px;
+		border-radius: 5px;
+		background: #FEF012;
+		line-height: 30px;
+		padding: 0px 20px;
+		color: $snap-black;
+		border: none;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 600;
 }
