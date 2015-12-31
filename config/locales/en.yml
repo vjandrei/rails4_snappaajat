@@ -32,6 +32,6 @@ en:
         one:   "1"
         other: "%{count}"
 
-      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page: "%{from} - %{to} profiilista %{count} yhteensä"
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
 
