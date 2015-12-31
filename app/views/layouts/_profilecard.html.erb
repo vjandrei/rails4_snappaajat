@@ -11,7 +11,7 @@
 			<div class="profilesContent">
 				<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url() %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
 				<div class="profilesNickName">
-					@<%= profile.nickname %> 
+					@<a href="snapcaht://?u=<%= profile.nickname %>"><%= profile.nickname %> </a>
 					
 					<span class="someLinks">
 						<% if profile.facebook.present? %>

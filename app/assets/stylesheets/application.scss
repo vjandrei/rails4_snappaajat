@@ -527,6 +527,7 @@ form{
 				}
 			}
 			.profilesNickName{
+				
 				margin-top: 45px;
 				position: relative;
 				left: 10px;
@@ -534,6 +535,12 @@ form{
 				font-family: 'Open Sans', sans-serif;
 				font-weight: 600;
 				font-size: 1.2rem;
+				a{
+					color: $snap-yellow;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 1.2rem;
+				}
 				.someLinks{
 					position: relative;
 					bottom: 2px;
