@@ -21,6 +21,7 @@
 //= require rails.validations
 //= require filterrific/filterrific-jquery
 //= require maj-text-counter
+//= require sharer.min
 //= require_tree .
 
 $(function() {
@@ -64,4 +65,5 @@ $(function() {
 	      });
 	  });
 	}
+	
 });
