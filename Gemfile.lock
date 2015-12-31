@@ -150,6 +150,7 @@ GEM
       sprockets-rails
     rails-assets-animate.css (3.5.0)
     rails-assets-jcrop (2.0.4)
+    rails-assets-modernizr (3.2.0)
     rails-assets-select2 (4.0.1)
     rails-assets-tether (1.1.1)
     rails-deprecated_sanitizer (1.0.3)
@@ -240,6 +241,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails-assets-animate.css!
   rails-assets-jcrop!
+  rails-assets-modernizr!
   rails-assets-select2!
   rails-assets-tether (>= 1.1.0)!
   rmagick

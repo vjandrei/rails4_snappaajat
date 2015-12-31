@@ -30,6 +30,64 @@
 				    <%= f.password_field :password_confirmation, autocomplete: "off" %>
 				  </div>
 				
+				  <div class="checkbox">
+					  <%= f.label :terms_and_conditions do %>
+					  <%= f.check_box :terms_and_conditions %>  Hyväksyn  
+					  <a data-toggle="modal" data-target=".bd-example-modal-lg">käyttöehdot</a>
+					  <% end %>
+				  </div>
+
+					<div class="modal fade bd-example-modal-lg" id="termsOfUseModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<section class="termsOfUse" id="termsOfUseContainer">
+							<h2>Käyttöehdot</h2>
+							<h3>Yleistä</h3>
+							<p>Andreas Koutsoukos tarjoaa käyttäjälle Snappaajat.fi-palvelun 
+							internet-osoitteessa snappaajat.fi näiden käyttöehtojen ja niihin mahdollisesti 
+							myöhemmin tehtävien lisäysten ja muutosten mukaisesti.</p>
+						</section>
+						
+						<section class="termsOfUse">
+							<h3>Käyttäjän valvoitteet</h3>
+							<p>Käyttäjä sitoutuu noudattamaan Suomen lakia ja muita säännöksiä. Käyttäjä sitoutuu olemaan käyttämättä 
+							sivustoa lain tai hyvien tapojen vastaisiin toimenpiteisiin, kaupallisiin tarkoituksiin tai
+							markkinointiin. Käyttäjä ei saa levittää sivustolla mitään yhteystietoja, eikä muiden henkilöiden 
+							henkilötietoja.</p>
+						</section>
+						
+						<section class="termsOfUse">
+							<h3>Käyttäjätunnus</h3>
+							<p>Snappaajat.fi:llä on oikeus ilman eri perustelua ottaa 
+							käyttöönsä tai poistaa käyttäjätunnukseen liitetty nimimerkki. Tällöin käyttäjälle myönnetään uusi nimimerkki.</p>
+		
+							<p>Jos käyttäjä ei noudata näitä käyttöehtoja tai palvelukohtaisia 
+							sääntöjä, on Snappaajat.fillä oikeus poistaa käyttäjän profiili sekä kaikki 
+							käyttäjän koskevat tiedot käyttäjätietokannasta ja asettaa käytönesto IP osoitteeseen.</p>
+						</section>
+						
+						<section class="termsOfUse">
+							<h3>Snappaajat.fi:n oikeudet ja velvoitteet</h3>
+							<p>Snappaajat.fi noudattaa Suomen tietosuojalainsäädännön säännöksiä. Käyttäjän antamia tietoja ei 
+							luovuteta kolmansille osapuolille ilman käyttäjän lupaa muuten kuin lain määräyksestä. 
+							Snappaaajat.fi voi luovuttaa kolmansille osapuolille asiakkaita 
+							koskevia tietoja, joista yksittäinen asiakas ei ole tunnistettavissa.</p>
+						</section>
+						
+						<section class="termsOfUse">
+							<h3>Linkit ja mainokset</h3>
+							<p>Snappaajat.fi ei vastaa sivustolla olevien mainosten
+							sisällöstä, eikä mainoksissa tai linkeissä tarjottavien 
+							Palveluiden sisällöstä, virheettömyydestä tai niitä koskevien tietojen oikeellisuudesta.</p>
+						</section>
+						
+						<section class="termsOfUse">
+							<h3 data-toggle="modal" data-target=".bd-example-modal-lg">Sulje</h3>
+						</section>
+					</div>
+					</div>
+					</div>
+				  
 				  <div class="actions">
 				    <button class="linkbutton"><%= f.submit "Rekisteröidy" %></button>
 				  </div>

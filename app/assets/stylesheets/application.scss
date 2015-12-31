@@ -867,7 +867,15 @@ form{
 }
 
 #aboutApp{
-	
+	p{
+		font-family: 'Open Sans', sans-serif;	
+		font-size: 15px;
+		a{
+			font-size: 15px;
+			font-weight: normal;
+			color: $snap-yellow;	
+		}
+	}
 }
 
 .select2-container--above select2-container--open{
@@ -900,6 +908,9 @@ form{
 	background: none;
 	border: none;
 	color: $snap-yellow;
+	option{
+		color: $snap-black;
+	}
 }
 #filterrific_with_location_id{
 	width: 75px;
@@ -913,4 +924,32 @@ form{
 .modal-content{
 	background: none;
 	border: none;
+}
+
+#termsOfUseModal{
+	background: $snap-black;
+	padding: 10px;
+}
+
+#termsOfUseContainer{
+	position: relative;
+	display: block;
+	margin-top: 60px;
+}
+.termsOfUse{
+	h2{
+		position: relative;
+		margin-bottom: 20px;
+		font-family: 'Open Sans', sans-serif;	
+		font-size: 2rem;	
+		color: white;
+		font-weight: 800;
+		
+	}
+	h3{
+		font-size: 1.3rem;
+		margin-bottom: 10px;
+		font-weight: 600;
+		color: #ffffff;
+	}
 }

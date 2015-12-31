@@ -43,4 +43,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-select2'
   gem 'rails-assets-animate.css'
   gem 'rails-assets-tether', '>= 1.1.0'
+  gem 'rails-assets-modernizr'
 end
