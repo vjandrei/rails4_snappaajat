@@ -74,10 +74,14 @@
 				<% else %>
 				<% end %>
 				
+				<% if profile.snapcode.url.present? %>
 				<div class="profilesSnapCodeScan text-center">
 					<img src="/images/icons/camera-icon.png" alt="camera-icon" width="32" height="32" /><br/>
 					skannaa snapkoodi
 				</div>
+				<% else %>
+				<% end %>
+				
 				<% if profile.user == current_user %>
 					<div class="userProfiles">
 						<%= link_to 'Muokkaa', edit_profile_path(profile) %>
