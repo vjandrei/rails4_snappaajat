@@ -6,7 +6,7 @@
 				<% @profiles.each do |profile| %>
 					<% profile.tags.each do |tag| %>
 						<span class="tags">
-						#<%= link_to tag.name, tag_path(tag.name) %>
+						#<%= link_to tag.name, tag_path(tag.name) %> | <%= tag.taggings_count %> kpl
 					</span>  
 					<% end %>
 				<% end %>
