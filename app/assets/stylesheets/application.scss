@@ -164,7 +164,7 @@ a{
 			float: left;
 			margin-right: 10px;
 			a{
-				color: white;
+				color: $snap-yellow;
 			}
 		}
 	}
@@ -289,8 +289,9 @@ header{
 	.navbar{
 		border-radius: 0;
 		background: $snap-black;
+		padding-top: 5px;
 		a{
-			color: white;
+			color: $snap-yellow;
 		}
 	}
 	.submitfilter{
@@ -956,7 +957,13 @@ form{
 	width: 120px;
 }
 .filtercontent{
-		margin-top: 4px;
+		span{
+			position: relative;
+			top: 5px;
+		}
+		a{
+			color: $snap-yellow!important;
+		}
 }
 .modal-content{
 	background: none;
@@ -1075,5 +1082,27 @@ form .submitBtn{
 		width: 27px;
 	    height: 27px;
 	    
+	}
+}
+
+#tagcloud{
+	margin: 20px 0px;
+}
+
+.tags{
+	position: relative;
+	display: inline-block;
+	padding: 5px 5px;
+	border-radius: 30px;
+	background: $snap-yellow;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 0.7rem;
+	margin: 5px 0px 5px 0px;
+	a{
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		font-size: 0.7rem;
+		color: $snap-black;
 	}
 }

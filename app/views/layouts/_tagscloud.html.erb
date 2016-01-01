@@ -1,0 +1,17 @@
+<div class="collapse" id="tagcloud">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="profilesTags">
+				<% @profiles.each do |profile| %>
+					<% profile.tags.each do |tag| %>
+						<span class="tags">
+						#<%= link_to tag.name, tag_path(tag.name) %>
+					</span>  
+					<% end %>
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
