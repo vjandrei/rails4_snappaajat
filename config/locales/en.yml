@@ -32,6 +32,6 @@ en:
         one:   "1"
         other: "%{count}"
 
-      multi_page: "%{from} - %{to} profiilista %{count} yhteensä"
-      multi_page_html: "%{from}&nbsp;-&nbsp;%{to} / yhteensä %{count}"
+      multi_page: "yhteensä %{count}"
+      multi_page_html: "yhteensä %{count}"
 
