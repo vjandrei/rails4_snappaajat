@@ -5,11 +5,17 @@
 		<div class="profilesContainer">
 			<div class="profilesHeader">
 				<div class="profilesImage">
-					<%= image_tag profile.image.url(), :class => "img-bg" %>	
+					<% if profile.image.url.present? %>
+					<%= image_tag profile.image.url(), :class => "img-bg" %>
+					<% else %>
+					<img src="/images/icons/small-snap.svg" class="img-bg no-image" />
+					<% end %>	
 				</div>
 			</div>
 			<div class="profilesContent">
 				<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url() %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
+				
+				
 				<div class="profilesNickName">
 					@<a href="snapcaht://?u=<%= profile.nickname %>"><%= profile.nickname %> </a>
 					

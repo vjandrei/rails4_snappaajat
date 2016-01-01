@@ -501,8 +501,15 @@ form{
 				overflow: hidden;
 				border-radius: 200px;
 				z-index: 20;
+				background: $snap-black;
+				text-align: center;
 				img{
 					width: 100%;
+				}
+				.no-image{
+					position: relative;
+					margin-top: 10px;
+					width: 70%;	
 				}
 			}
 		}
