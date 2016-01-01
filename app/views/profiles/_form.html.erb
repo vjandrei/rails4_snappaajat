@@ -55,7 +55,7 @@
 	<%= f.text_area :description %>
 	</div>
   <div class="field">
-	<%= f.label :tags, "Aihetunnisteet ( erottele pilkulla älä käytä risuaitaa)" %>
+	<%= f.label :tags, "Aihetunnisteet ( erottele pilkulla älä käytä # risuaitaa )" %>
 	<%= f.text_field(:tag_list, value: @profile.tag_list.join(","))%>
   </div>
   <div class="field">
