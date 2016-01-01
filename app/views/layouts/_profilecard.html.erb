@@ -4,13 +4,15 @@
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 		<div class="profilesContainer">
 			<div class="profilesHeader">
-				<div class="profilesImage">
-					<% if profile.image.url.present? %>
-					<%= image_tag profile.image.url(), :class => "img-bg" %>
+				<% if profile.image.url.present? %>
+					<div class="profilesImage">
+						<%= image_tag profile.image.url(), :class => "img-bg" %>
+					</div>
 					<% else %>
-					<img src="/images/icons/small-snap.svg" class="img-bg no-image" />
-					<% end %>	
-				</div>
+					<div class="profilesImage noprofileImage">
+						<img src="/images/icons/small-snap.svg" class="img-bg no-image" />
+					</div>
+				<% end %>					
 			</div>
 			<div class="profilesContent">
 				<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url() %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
