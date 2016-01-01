@@ -32,6 +32,6 @@ en:
         one:   "1"
         other: "%{count}"
 
-      multi_page: "yhteensä %{count}"
-      multi_page_html: "yhteensä %{count}"
+      multi_page: "%{count}"
+      multi_page_html: "%{count}"
 
