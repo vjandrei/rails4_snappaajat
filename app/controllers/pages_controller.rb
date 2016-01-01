@@ -57,6 +57,6 @@ class PagesController < ApplicationController
   end 
   
   def myprofiles
-	@profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
+	@profiles = Profile.all.order("created_at DESC")
   end
 end
