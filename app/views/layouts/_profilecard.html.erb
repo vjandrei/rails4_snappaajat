@@ -19,7 +19,7 @@
 				
 				
 				<div class="profilesNickName">
-					@<a href="snapcaht://?u=<%= profile.nickname %>"><%= profile.nickname %> </a>
+					@<%= link_to profile.nickname, profile %>
 					
 					<span class="someLinks">
 						<% if profile.facebook.present? %>

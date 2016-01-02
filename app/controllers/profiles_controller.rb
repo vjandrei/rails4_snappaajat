@@ -15,27 +15,32 @@ class ProfilesController < ApplicationController
 	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
 	    end  
 	    
-	    @filterrific = initialize_filterrific(
-      Profile,
-      params[:filterrific],
-      :select_options => {
-        sorted_by: Profile.options_for_sorted_by,
-        with_location_id: Location.options_for_select
-      },
-	  :persistence_id => false,   
-    ) or return
-    @profiles = @filterrific.find.page(params[:page])
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
+		@filterrific = initialize_filterrific(
+		Profile,
+		params[:filterrific],
+		:select_options => {
+		sorted_by: Profile.options_for_sorted_by,
+		with_location_id: Location.options_for_select
+		},
+		:persistence_id => false,   
+		) or return
+		@profiles = @filterrific.find.page(params[:page])
+		
+		respond_to do |format|
+		format.html
+		format.js
+		end
 	    
 	end
 
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+	if params[:tag].present? 
+	@profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
+	else
+	@profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
+	end  
   end
 
   # GET /profiles/new
@@ -95,11 +100,14 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.friendly.find(params[:id])
     end
     
     def correct_user
-	    @profile = current_user.profiles.find_by(id: params[:id])
+	    #@profile = current_user.profiles.friendly.find_by(id: params[:id])
+		#redirect_to profiles_path, notice: "Not authorized to edit this pin" if @profile.nil?
+		
+		@profile = current_user.profiles.friendly.find(params[:id])
 		redirect_to profiles_path, notice: "Not authorized to edit this pin" if @profile.nil?
 	end
 
@@ -109,6 +117,6 @@ class ProfilesController < ApplicationController
     end
     
     def find_profile
-	    @profile = Profile.find(params[:id])
+	    @profile = Profile.friendly.find(params[:id])
 	end
 end

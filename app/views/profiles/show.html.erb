@@ -1,39 +1,90 @@
-<p id="notice"><%= notice %></p>
+<%= render "layouts/topnav" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @profile.nickname %>
-</p>
+<section id="profilesGridSingle">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="profilesContainer">
+					<div class="profilesHeader">	
+						<% if @profile.image.url.present? %>
+						<div class="profilesImage">
+							<%= image_tag @profile.image.url(), :class => "img-bg" %>
+						</div>
+						<% else %>
+						<div class="profilesImage noprofileImage">
+							<img src="/images/icons/small-snap.svg" class="img-bg no-image" />
+						</div>
+						<% end %>
+					</div>
+					<div class="profilesContent text-center">
+						<div class="profilesNickName">
+							@<%= link_to @profile.nickname, @profile %>
+						</div>
+						<div class="profilesRealName">
+							<%= @profile.name %>
+						</div>
+						<div class="profileLocation">
+							<%= @profile.location.name %>
+						</div>
+					</div>
+					<div class="profilesContent">
+						<div class="row">
+							<div class="col-xs-12 col-sm-7">
+							<div class="profilesDescription">
+								<h2>Lyhyesti minusta</h2>
+								<span class="someLinks">
+								<% if @profile.facebook.present? %>
+								<a  target="_blank" href="https://www.facebook.com/<% if @profile.facebook.present? %><%= @profile.facebook %><% end %>">
+								<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
+								</a>
+								<% else %>
+								<% end %>
+								
+								<% if @profile.twitter.present? %>
+								<a target="_blank" href="https://twitter.com/<% if @profile.twitter.present?  %><%= @profile.twitter %><% end %>">
+								<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
+								</a>
+								<% else %>
+								<% end %>
+								
+								<% if @profile.instagram.present? %>	
+								<a target="_blank" href="https://instagram.com/<% if @profile.instagram.present?  %><%= @profile.instagram %><% end %>">
+								<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
+								</a>
+								<% else %>
+								<% end %>
+								
+								<% if @profile.linkedin.present? %>
+								<a target="_blank" href="<% if @profile.linkedin.present?  %><%= @profile.linkedin %><% end %>">
+								<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
+								</a>	
+								<% else %>
+								<% end %>
+								</span>
 
-<p>
-  <strong>Description:</strong>
-  <%= @profile.description %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @profile.facebook %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @profile.twitter %>
-</p>
-
-<p>
-  <strong>Instagram:</strong>
-  <%= @profile.instagram %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @profile.linkedin %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+								<p class="profileAbout"><%= @profile.description %></p>
+							</div>
+								
+							</div>
+							<div class="col-xs-12 col-sm-5">
+								<% if @profile.tags.present? %>
+								<div class="profilesTags">
+								<h2>Avainsanat</h2>
+								<% @profile.tags.each do |tag| %>
+									<span class="tags">
+										#<%= link_to tag.name, tag_path(tag.name) %>
+									</span>  
+								<% end %>
+								</div>
+								<% else %>
+								<% end %>
+							</div>
+						</div>
+						
+					</div>
+				</div>						
+			</div>
+		</div>
+	</div>
+</section>

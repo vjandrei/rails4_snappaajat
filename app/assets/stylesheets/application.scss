@@ -684,6 +684,227 @@ form{
 		}
 	}
 }
+
+#profilesGridSingle{
+	position: relative;	
+	margin: 10px auto;
+	
+	.profilesContainer{
+		position: relative;
+		border-radius: 5px 5px 0px 0px;
+		overflow: hidden;
+		margin-bottom: 20px;
+		background: white;
+		.profilesHeader{
+			position: relative;
+			background: $snap-yellow;
+			&:after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: url('../images/icon_pattern_1x.png');
+				background-position: center top;
+				background-repeat: repeat;
+				z-index: 10;
+			}
+			.profilesImage{
+				position: relative;
+				top: 40px;
+				margin: 0 auto;
+				width: 280px;
+				height: 280px;
+				border: solid 3px white;
+				overflow: hidden;
+				border-radius: 200px;
+				z-index: 20;
+				text-align: center;
+				img{
+					width: 100%;
+				}
+				.no-image{
+					position: relative;
+					margin-top: 10px;
+					width: 70%;	
+					background: $snap-black;
+				}
+			}
+			.noprofileImage{
+				background: $snap-black;
+			}
+		}
+		.profilesContent{
+			position: relative;
+			max-width: 600px;
+			margin: 0 auto;
+			overflow: hidden;
+			background: white;
+			.profilesSnapCode{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: -304px;
+				left: 0;
+				overflow: hidden;
+				display: none;
+				background: black;
+				z-index: 10;
+				
+				img{
+					position: relative;
+					width: 100%;	
+				}
+			}
+			.profilesNickName{
+				
+				margin-top: 45px;
+				position: relative;
+				left: 10px;
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 1.2rem;
+				a{
+					color: $snap-black;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 1.2rem;
+				}
+				.someLinks{
+					position: relative;
+					bottom: 2px;
+					a{
+						text-align: center;
+						margin-right: 10px;
+					}
+				}
+			}
+			.profilesRealName{
+				position: relative;
+				left: 10px;
+				margin-top: 5px;
+				color: #9f9f9f;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 0.6rem;
+				text-transform: uppercase;
+				margin-bottom: 0px;
+			}
+			.profileLocation{
+				position: relative;
+				left: 10px;
+				margin-top: 0px;
+				color: #575757;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+			.profilesTagsAll{
+				cursor: pointer;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+			}
+			.profilesSnapCodeScan{
+				cursor: pointer;
+				position: relative;
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.6rem;
+				width: 100%;
+				margin: 0 auto;
+				padding: 5px 10px;
+				background: #FFFC00;
+				color: #16191a;
+				z-index: 40;
+			}
+			
+			.profilesDescription{
+				min-height: 116px;
+				p{
+					margin: 0;
+					max-height: 130px;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 0.8rem;
+					color: $snap-black;
+					padding: 10px;
+				}
+			}
+			.profilesTags{
+				padding: 10px;
+				height: 50px;
+				&.active{
+					height: 100%;
+				}
+				span{
+					font-size: 0.8rem;
+				}
+			}
+			.tags{
+				position: relative;
+				display: inline-block;
+				padding: 5px 5px;
+				border-radius: 30px;
+				background: $snap-yellow;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+				margin: 5px 0px 5px 0px;
+				a{
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					color: $snap-black;
+				}
+			}
+			.userProfiles{
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px;
+				a{
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					color: $snap-black;
+				}
+			}
+		}
+		.profilesFooter{
+			width: 100%;
+			background: $snap-black;
+			.profileSome{
+				width: 100%;
+				display: table;
+				table-layout: fixed;
+				a{
+					display: table-cell;
+					.linksToSome{
+						background: $snap-black;
+					    display: block;
+					    height:50px;
+					    border-right: solid 1px #c7c1c1;
+					    box-sizing: border-box;
+					    text-align: center;
+					    line-height: 50px;
+					}
+					&:last-child{
+						.linksToSome{
+						border: none;
+						}   
+					}
+				}
+			}	
+		}
+	}
+}
+
 /*
 #profiles{
 	margin: 10px 0px;

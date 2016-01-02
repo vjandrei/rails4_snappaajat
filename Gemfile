@@ -36,6 +36,7 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'select2-rails'
 gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'filterrific'
+gem 'friendly_id'
 
 
 source 'https://rails-assets.org' do

@@ -104,6 +104,8 @@ GEM
     execjs (2.6.0)
     filterrific (2.0.5)
       rails (>= 3.1.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -234,6 +236,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.2)
   filterrific
+  friendly_id
   jbuilder (~> 2.0)
   jquery-rails
   maj-text-counter-rails
