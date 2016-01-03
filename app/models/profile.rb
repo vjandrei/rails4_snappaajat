@@ -7,6 +7,7 @@ class Profile < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :nickname, use: :slugged
 	
+	
 	validates_length_of :description, maximum: 160
 	
 	acts_as_taggable
@@ -93,6 +94,6 @@ class Profile < ActiveRecord::Base
   end
 
 	def user_params
-    	params.require(:profile).permit(:nickname, :description, {category_ids: []}, :tag_list, :image, :snapcode, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id)
+    	params.require(:profile).permit(:nickname, :description, {category_ids: []}, :tag_list, :image, :snapcode, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id, :slug)
 	end
 end
