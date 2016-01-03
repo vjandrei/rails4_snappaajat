@@ -3,7 +3,13 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="profilesTags">
-				
+				<% @profiles.each do |profile| %>
+					<% profile.tags.each do |tag| %>
+						<span class="tags">
+						#<%= link_to tag.name, tag_path(tag.name)  %> | <%= tag.taggings_count %> kpl
+					</span>  
+					<% end %>
+				<% end %>
 				</div>
 			</div>
 		</div>
