@@ -19,7 +19,7 @@
 				
 				
 				<div class="profilesNickName">
-					@<a href="snapcaht://?u=<%= profile.nickname %>"><%= profile.nickname %> </a>
+					@<%= link_to profile.nickname, profile %>
 					
 					<span class="someLinks">
 						<% if profile.facebook.present? %>
@@ -62,17 +62,7 @@
 					<p class="profileAbout"><%= profile.description %></p>
 				</div>
 				
-				<% if profile.tags.present? %>
-				<div class="profilesTags">
-				<span class="profilesTagsAll">Näytä kaikki</span>
-				<% profile.tags.each do |tag| %>
-					<span class="tags">
-						#<%= link_to tag.name, tag_path(tag.name) %>
-					</span>  
-				<% end %>
-				</div>
-				<% else %>
-				<% end %>
+				
 				
 				<% if profile.snapcode.url.present? %>
 				<div class="profilesSnapCodeScan text-center">
