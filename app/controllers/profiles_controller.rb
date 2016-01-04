@@ -99,13 +99,13 @@ class ProfilesController < ApplicationController
     end
     
     def correct_user
-	    @profile = current_user.profiles.find_by(id: params[:id])
+	    @profile = current_user.profiles.friendly.find(params[:id])
 		redirect_to profiles_path, notice: "Not authorized to edit this pin" if @profile.nil?
 	end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :nickname, :description, :image, :snapcode, {category_ids: []}, :tag_list, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id)
+      params.require(:profile).permit(:name, :nickname, :description, :image, :snapcode, {category_ids: []}, :tag_list, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id, :slug)
     end
     
     def find_profile
