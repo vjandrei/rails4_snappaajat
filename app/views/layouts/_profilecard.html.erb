@@ -19,7 +19,7 @@
 				
 				
 				<div class="profilesNickName">
-					@<a href="snapcaht://?u=<%= profile.nickname %>"><%= profile.nickname %> </a>
+					@<%= link_to profile.nickname, profile %>
 					
 					<span class="someLinks">
 						<% if profile.facebook.present? %>
@@ -56,7 +56,7 @@
 					<%= profile.name %>
 				</div>
 				<div class="profileLocation">
-					<%= profile.location.name %>
+					<a href="?utf8=✓&filterrific%5Bwith_location_id%5D=<%= profile.location.id %>&filterrific%5Bsorted_by%5D=created_at_desc&commit=Hae"><%= profile.location.name %></a>
 				</div>
 				<div class="profilesDescription">
 					<p class="profileAbout"><%= profile.description %></p>
