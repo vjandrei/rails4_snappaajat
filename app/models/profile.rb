@@ -4,6 +4,9 @@ class Profile < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 	mount_uploader :snapcode, SnapcodeUploader
 	
+	extend FriendlyId
+	friendly_id :nickname, use: :slugged
+	
 	validates_length_of :description, maximum: 160
 	
 	acts_as_taggable
