@@ -516,6 +516,22 @@ form{
 			.noprofileImage{
 				background: $snap-black;
 			}
+			.scanCode{
+				position: absolute;
+			    top: 70px;
+			    right: 130px;
+			    z-index: 30;
+			    background: #16191A;
+			    border-radius: 200px;
+			    padding: 10px;
+			    border: solid 3px white;
+			    width: 40px;
+			    height: 40px;
+			    img{
+				    width: 15px;
+				    height: 15px;
+			    }
+			}
 		}
 		.profilesContent{
 			position: relative;
@@ -607,7 +623,6 @@ form{
 			}
 			
 			.profilesDescription{
-				min-height: 116px;
 				p{
 					margin: 0;
 					max-height: 130px;
@@ -615,7 +630,7 @@ form{
 					font-weight: 400;
 					font-size: 0.8rem;
 					color: $snap-black;
-					padding: 10px;
+					padding: 0px 10px;
 				}
 			}
 			.profilesTags{
@@ -722,6 +737,7 @@ form{
 				border-radius: 200px;
 				z-index: 20;
 				text-align: center;
+				
 				img{
 					width: 100%;
 				}
@@ -735,12 +751,24 @@ form{
 			.noprofileImage{
 				background: $snap-black;
 			}
+			.scanCode{
+				position: absolute;
+			    top: 70px;
+			    right: 130px;
+			    z-index: 30;
+			    background: #16191A;
+			    border-radius: 200px;
+			    padding: 10px;
+			    border: solid 3px white;
+			}
 		}
 		.profilesContent{
 			position: relative;
 			max-width: 600px;
 			margin: 0 auto;
 			background: white;
+			margin-bottom: 20px;
+			padding: 0px 10px;
 			.profilesSnapCode{
 				position: absolute;
 				width: 100%;
@@ -768,14 +796,6 @@ form{
 					font-family: 'Open Sans', sans-serif;
 					font-weight: 600;
 					font-size: 1.2rem;
-				}
-				.someLinks{
-					position: relative;
-					bottom: 2px;
-					a{
-						text-align: center;
-						margin-right: 10px;
-					}
 				}
 			}
 			.profilesRealName{
@@ -868,6 +888,14 @@ form{
 					font-weight: 600;
 					font-size: 0.7rem;
 					color: $snap-black;
+				}
+			}
+			.someLinks{
+				position: relative;
+				bottom: 2px;
+				a{
+					text-align: center;
+					margin-right: 10px;
 				}
 			}
 		}
