@@ -80,6 +80,12 @@
 								<% end %>
 								</span>
 							</div>
+						</div>
+						<div class="row" id="profileLinks">
+							<div class="col-xs-12 text-center">
+								<%= link_to 'Muokkaa', edit_profile_path(@profile) %> |
+								<%= link_to 'Takaisin', profiles_path %>
+							</div>
 						</div>	
 					</div>
 				</div>						
@@ -87,5 +93,3 @@
 		</div>
 	</div>
 </section>
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
