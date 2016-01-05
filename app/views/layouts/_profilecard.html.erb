@@ -6,7 +6,9 @@
 			<div class="profilesHeader">
 				<% if profile.image.url.present? %>
 					<div class="profilesImage">
-						<%= image_tag profile.image.url(), :class => "img-bg" %>
+						<%= link_to(profile) do %>
+							<%= image_tag profile.image.url(), :class => "img-bg" %>
+						<% end %>
 					</div>
 					<% else %>
 					<div class="profilesImage noprofileImage">
@@ -15,12 +17,11 @@
 				<% end %>					
 			</div>
 			<div class="profilesContent">
-				<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url() %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
-				
-				
+				<div class="profilesSnapCode" 
+				style="background-image: url(<%= profile.snapcode.url() %>); 
+				background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
 				<div class="profilesNickName">
 					@<%= link_to profile.nickname, profile %>
-					
 					<span class="someLinks">
 						<% if profile.facebook.present? %>
 						<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
