@@ -37,6 +37,7 @@ gem 'select2-rails'
 gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'filterrific'
 gem 'friendly_id', '~> 5.1'
+gem 'meta-tags'
 
 
 source 'https://rails-assets.org' do
