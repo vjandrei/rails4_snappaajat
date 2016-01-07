@@ -904,6 +904,15 @@ form{
 					margin-right: 10px;
 				}
 			}
+			.someLinksText{
+				position: relative;
+				display: block;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.8rem;
+				color: $snap-black;
+				margin-bottom: 10px;
+			}
 		}
 		.profilesFooter{
 			width: 100%;

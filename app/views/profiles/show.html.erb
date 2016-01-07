@@ -33,6 +33,40 @@
 									<h2>Lyhyesti minusta</h2>
 									<p class="profileAbout"><%= @profile.description %></p>
 								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<span class="someLinksText">Löydä minut somesta</span>
+										<span class="someLinks">
+										<% if @profile.facebook.present? %>
+										<a  target="_blank" href="https://www.facebook.com/<% if @profile.facebook.present? %><%= @profile.facebook %><% end %>">
+										<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
+										</a>
+										<% else %>
+										<% end %>
+										
+										<% if @profile.twitter.present? %>
+										<a target="_blank" href="https://twitter.com/<% if @profile.twitter.present?  %><%= @profile.twitter %><% end %>">
+										<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
+										</a>
+										<% else %>
+										<% end %>
+										
+										<% if @profile.instagram.present? %>	
+										<a target="_blank" href="https://instagram.com/<% if @profile.instagram.present?  %><%= @profile.instagram %><% end %>">
+										<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
+										</a>
+										<% else %>
+										<% end %>
+										
+										<% if @profile.linkedin.present? %>
+										<a target="_blank" href="<% if @profile.linkedin.present?  %><%= @profile.linkedin %><% end %>">
+										<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
+										</a>	
+										<% else %>
+										<% end %>
+										</span>
+									</div>
+								</div>
 							</div>
 							<div class="col-xs-12 col-sm-4">
 								<h2>Avainsanat</h2>
@@ -48,45 +82,13 @@
 								<% end %>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-xs-12 text-center">
-								<span class="someLinks">
-								<% if @profile.facebook.present? %>
-								<a  target="_blank" href="https://www.facebook.com/<% if @profile.facebook.present? %><%= @profile.facebook %><% end %>">
-								<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
-								</a>
-								<% else %>
-								<% end %>
-								
-								<% if @profile.twitter.present? %>
-								<a target="_blank" href="https://twitter.com/<% if @profile.twitter.present?  %><%= @profile.twitter %><% end %>">
-								<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
-								</a>
-								<% else %>
-								<% end %>
-								
-								<% if @profile.instagram.present? %>	
-								<a target="_blank" href="https://instagram.com/<% if @profile.instagram.present?  %><%= @profile.instagram %><% end %>">
-								<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
-								</a>
-								<% else %>
-								<% end %>
-								
-								<% if @profile.linkedin.present? %>
-								<a target="_blank" href="<% if @profile.linkedin.present?  %><%= @profile.linkedin %><% end %>">
-								<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
-								</a>	
-								<% else %>
-								<% end %>
-								</span>
-							</div>
-						</div>
 						<div class="row" id="profileLinks">
 							<div class="col-xs-12 text-center">
 								<%= link_to 'Muokkaa', edit_profile_path(@profile) %> |
 								<%= link_to 'Takaisin', profiles_path %>
 							</div>
-						</div>	
+						</div>
+						
 					</div>
 				</div>						
 			</div>
