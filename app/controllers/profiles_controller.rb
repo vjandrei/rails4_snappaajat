@@ -9,6 +9,8 @@ class ProfilesController < ApplicationController
 
     def index
 	    
+	    prepare_meta_tags title: "Profiili", description: "Find on this page all our lovely products"
+	    
 		if params[:tag].present? 
 	      @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
 	    else
@@ -36,6 +38,23 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+   @profiles = Profile.friendly.find(params[:id])
+   prepare_meta_tags(
+   title: "Snappaaja " + @profiles.name,
+   description: @profile.description,
+   keywords: @profile.nickname + "Snapchat",
+   image: @profile.image.url(),
+   twitter: {site: request.url,
+        site: "@snappaajat",
+        card: @profiles.name + @profile.description,
+        description: @profile.description,
+        image: @profile.image.url()},
+   og: {url: request.url,
+        site: "Snappaajat.fi",
+        title: "Snappaaja - " + @profiles.name,
+        image: @profile.image.url(),
+        description: @profile.description,
+        type: 'website'})
   end
 
   # GET /profiles/new

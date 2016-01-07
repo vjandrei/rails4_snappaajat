@@ -3,16 +3,11 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
   <title>Snappaajat</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %> 
+  <%= display_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta property="fb:app_id" content="992072134196125" /> 
-  <meta property="og:type"   content="website" /> 
-  <meta property="og:url"    content="http://www.snappaajat.fi" /> 
-  <meta property="og:title"  content="Snappaajat.fi sivusto" />
-  <meta property="og:description" content="Snappaajat.fi:n avulla löydät vaivattomasti Suomen Snapchattaajat ja voit myös lisätä oman tunnuksesi sivustolle." />
-  <meta property="og:image"  content="http://www.snappaajat.fi/images/snappaajat-facebook.jpg" /> 
-  <script></script>
 </head>
 <body>
 <%= yield %>
