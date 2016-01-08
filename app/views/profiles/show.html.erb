@@ -80,15 +80,22 @@
 								</div>
 								<% else %>
 								<% end %>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="profilesTags">
+											<h2>Jaa minut someen</h2>	
+											<%= render "layouts/profileshare" %>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="row" id="profileLinks">
-							<div class="col-xs-12 text-center">
+							<div class="col-xs-12">
 								<%= link_to 'Muokkaa', edit_profile_path(@profile) %> |
 								<%= link_to 'Takaisin', profiles_path %>
 							</div>
 						</div>
-						
 					</div>
 				</div>						
 			</div>

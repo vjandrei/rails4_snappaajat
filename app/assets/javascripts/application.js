@@ -22,6 +22,7 @@
 //= require filterrific/filterrific-jquery
 //= require maj-text-counter
 //= require sharer.min
+//= require jquery.prettySocial.min
 //= require_tree .
 
 $(function() {
@@ -43,8 +44,7 @@ $(function() {
     $( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
-	
-	
+
 	//$('.collapse').collapse()
 	
 	autoPlayYouTubeModal();
@@ -65,5 +65,7 @@ $(function() {
 	      });
 	  });
 	}
+	
+	$('.prettySocial').prettySocial();
 	
 });

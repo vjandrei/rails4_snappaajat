@@ -1,0 +1,18 @@
+<ul id="shareProfile">
+
+<li>
+<a href="#" data-type="facebook" data-url="<%= request.url %>" data-title="Snappaaja - <%= @profiles.name %>" data-description="<%= @profile.description %>" data-media="<%= @profile.image.url() %>" class="prettySocial fa fa-facebook">F</a>
+</li>
+
+<li>	
+<a href="#" data-type="twitter" data-url="<%= request.url %>" data-description="Snappaaja - <%= @profiles.name %> | <%= @profile.description %>" data-via="snappaajat" class="prettySocial fa fa-twitter">T</a>
+</li>
+<li>
+<a href="#" data-type="pinterest" data-url="<%= request.url %>" data-description="<%= @profile.description %>" data-media="<%= @profile.image.url() %>" class="prettySocial fa fa-pinterest">P</a>
+</li>
+
+<li>
+<a href="#" data-type="linkedin" data-url="<%= request.url %>" data-title="Snappaaja - <%= @profiles.name %>" data-description="<%= @profile.description %>" data-via="sonnyt" data-media="<%= @profile.image.url() %>" class="prettySocial fa fa-linkedin">L</a>
+</li>
+
+</ul>
