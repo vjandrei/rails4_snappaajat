@@ -3,6 +3,7 @@ class Profile < ActiveRecord::Base
 	belongs_to :location
 	mount_uploader :image, ImageUploader
 	mount_uploader :snapcode, SnapcodeUploader
+	has_many :likes
 	
 	extend FriendlyId
 	friendly_id :nickname, use: :slugged

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :profiles
+  resources :profiles do 
+  	resource :like, module: :profiles
+  end
   devise_for :users
   root "pages#home"
   get 'tags/:tag' => 'pages#tags', to: 'tags#tags', as: :tag

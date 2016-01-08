@@ -1,0 +1,11 @@
+<% if user_signed_in? && current_user.likes?(profile) %>
+  <%= link_to "Peru tykkääminen", profile_like_path(profile), method: :delete, remote: true %>
+<% else %>
+  <%= link_to "Tykkää", profile_like_path(profile), method: :post, remote: true %>
+<% end %>
+
+<%= profile.likes.count %>
+
+<% profile.likes.each do |like| %>
+  <%= image_tag like.profile.image.url(), width: 20 %>
+<% end %>
