@@ -921,11 +921,32 @@ form{
 			display: table;
 			table-layout: fixed;
 			width: 100%;
+			margin-top: 20px;
 			li{
 				display: table-cell;
 				text-align: center;
+				background: $snap-yellow;
+				height: 40px;
+				line-height: 40px;
 				a{
 					display: block;
+					color: white;
+					&.fa-facebook{
+						background: #3B5998;
+					}
+					&.fa-twitter{
+						background: #55ACEE;
+					}
+					&.fa-pinterest{
+						background: #BD081C;
+					}
+					&.fa-linkedin{
+						background: #0077B5;
+					}
+					img{
+						width: 20px;
+						height: 20px;
+					}
 				}
 			}
 		}
@@ -1336,12 +1357,14 @@ form .submitBtn{
 		    background: url('../images/icons/facebook-icon.svg') no-repeat; 
 		    background-size: 60%;
 		    background-position: center center;
+		    background-color: #3B5998;
 	    	
 	    }
 	    &#twitter{
 		    background: url('../images/icons/twitter-icon.svg') no-repeat; 
 		    background-size: 60%;
 		    background-position: center center;
+		    background-color: #55ACEE;
 	    }
 	}
 	li button{
