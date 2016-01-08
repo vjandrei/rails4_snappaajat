@@ -1,5 +1,5 @@
 set :stage, :production
-server '46.101.120.93', user: 'deploy', roles: %w{web app db}
+server '46.101.244.151', user: 'deploy', roles: %w{web app db}
 set :branch, 'DeployTestCap'
 
 # server-based syntax
