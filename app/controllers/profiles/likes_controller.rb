@@ -24,6 +24,5 @@ class Profiles::LikesController < ApplicationController
 
     def set_profile
 		@profile = Profile.friendly.find(params[:profile_id])
-		#@profile = Profile.find(params[:profile_id])
     end
 end
