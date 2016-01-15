@@ -11,6 +11,7 @@ class Profile < ActiveRecord::Base
 	validates_length_of :description, maximum: 160
 	
 	acts_as_taggable
+	acts_as_votable
 	
 	validates :name, :presence => true
 	validates :nickname, :presence => true

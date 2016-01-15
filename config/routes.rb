@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :profiles do 
-  	resource :like, module: :profiles
+  	#resource :like, module: :profiles
+  	member do
+    	put "like", to: "profiles#upvote"
+	 end
   end
   devise_for :users
   root "pages#home"

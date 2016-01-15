@@ -38,6 +38,7 @@ gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'filterrific'
 gem 'friendly_id', '~> 5.1'
 gem 'meta-tags'
+gem 'acts_as_votable', '~> 0.10.0'
 
 
 source 'https://rails-assets.org' do

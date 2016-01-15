@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
    
 	has_many :likes
 	
+	acts_as_voter
+	
 	def likes?(profile)
 		profile.likes.where(user_id: id).any?
 	end

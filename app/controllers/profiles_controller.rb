@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_profile, only: [:show, :edit, :update, :destroy]
@@ -18,20 +18,20 @@ class ProfilesController < ApplicationController
 	    end  
 	    
 	    @filterrific = initialize_filterrific(
-      Profile,
-      params[:filterrific],
-      :select_options => {
-        sorted_by: Profile.options_for_sorted_by,
-        with_location_id: Location.options_for_select
-      },
-	  :persistence_id => false,   
-    ) or return
-    @profiles = @filterrific.find.page(params[:page])
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
+	      Profile,
+	      params[:filterrific],
+	      :select_options => {
+	        sorted_by: Profile.options_for_sorted_by,
+	        with_location_id: Location.options_for_select
+	      },
+		  :persistence_id => false,   
+	    ) or return
+	    @profiles = @filterrific.find.page(params[:page])
+	
+	    respond_to do |format|
+	      format.html
+	      format.js
+	    end
 	    
 	end
 
@@ -95,6 +95,16 @@ class ProfilesController < ApplicationController
       end
     end
   end
+  
+  def upvote
+  	##@profile = Profile.find(params[:id])
+  	##@profile.upvote_by current_user
+  	##redirect_to :back
+  	
+  	@profile.upvote_from current_user
+  	redirect_to :back
+  end
+  
   
   # POST /landscapes/1/crop
   # POST /landscapes/1/crop.json

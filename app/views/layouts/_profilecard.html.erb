@@ -63,6 +63,10 @@
 				</div>
 				<div class="profilesDescription">
 					<p class="profileAbout"><%= profile.description %></p>
+					<%= link_to like_profile_path(profile), method: :put do %>
+					  Tykkää
+					  <%= profile.get_upvotes.size %>
+					<% end %>
 				</div>
 				
 				<% if profile.tags.present? %>
