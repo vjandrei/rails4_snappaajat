@@ -4,6 +4,7 @@
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 		<div class="profilesContainer">
 			<div class="profilesHeader">
+				
 				<% if profile.image.url.present? %>
 					<div class="profilesImage">
 						<%= link_to(profile) do %>
@@ -14,7 +15,8 @@
 					<div class="profilesImage noprofileImage">
 						<img src="/images/icons/small-snap.svg" class="img-bg no-image" />
 					</div>
-				<% end %>					
+				<% end %>
+									
 			</div>
 			<div class="profilesContent">
 				<div class="profilesSnapCode" 
