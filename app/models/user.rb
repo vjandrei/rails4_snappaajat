@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
 	def likes?(profile)
 		profile.likes.where(user_id: id).any?
 	end
+	
+	def liker_image
+    	
+	end
 end
