@@ -92,7 +92,7 @@ Rails.application.configure do
 	  authentication: "plain",
 	  enable_starttls_auto: true,
 	  user_name: ENV["email_username"],
-	  password: ENV["email_username"]
+	  password: ENV["email_passwors"]
 	  }
   end
 
