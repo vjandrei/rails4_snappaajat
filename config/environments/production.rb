@@ -89,8 +89,8 @@ Rails.application.configure do
   domain: "snappaajat.fi",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV["email_username"],
-  password: ENV["email_passwors"]
+  user_name: ENV["EMAIL_USERNAME"],
+  password: ENV["EMAIL_PASSWORD"]
   }
   
 
