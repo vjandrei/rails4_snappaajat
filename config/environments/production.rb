@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   
-  config.after_initialize do
+  
 	  Rails.application.routes.default_url_options[:host] = 'http://46.101.244.151'
 	  config.action_mailer.default_url_options = { host: 'http://46.101.244.151' }
 	  config.action_mailer.delivery_method = :smtp
@@ -91,9 +91,11 @@ Rails.application.configure do
 	  domain: "snappaajat.fi",
 	  authentication: "plain",
 	  enable_starttls_auto: true,
-	  user_name: ENV["email_username"],
-	  password: ENV["email_passwors"]
+	  config.after_initialize do
+	 	 user_name: ENV["email_username"],
+	 	 password: ENV["email_passwors"]
+	  end
 	  }
-  end
+ 
 
 end
