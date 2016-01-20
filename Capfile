@@ -24,6 +24,7 @@ require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano/figaro_yml'
 require 'capistrano/rails/assets'
+require 'capistrano/dotenv/tasks'
 
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
