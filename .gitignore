@@ -21,5 +21,7 @@ config/secrets.yml
 .DS_Store
 public/uploads
 .env
+.env.local
 config/application.yml
 config/secrets.yml
+
