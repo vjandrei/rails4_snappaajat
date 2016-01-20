@@ -250,7 +250,7 @@ DEPENDENCIES
   client_side_validations!
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.2)
-  dotenv-rails
+  dotenv-rails (~> 2.0, >= 2.0.2)
   filterrific
   friendly_id (~> 5.1)
   jbuilder (~> 2.0)
