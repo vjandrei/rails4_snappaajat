@@ -40,8 +40,6 @@ gem 'filterrific'
 gem 'friendly_id', '~> 5.1'
 gem 'meta-tags'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
-gem 'capistrano-dotenv-tasks'
 
 
 source 'https://rails-assets.org' do
