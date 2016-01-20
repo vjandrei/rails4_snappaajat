@@ -26,7 +26,7 @@ end
 
 gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'devise', '~> 3.5', '>= 3.5.2'
-gem 'rmagick', :require => 'RMagick'  ## Specify appropriate version, if needed
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'carrierwave'
 gem 'carrierwave-crop'
 gem 'maj-text-counter-rails'
