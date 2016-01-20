@@ -40,7 +40,7 @@ gem 'friendly_id', '~> 5.1'
 gem 'meta-tags'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'capistrano-figaro-yml', '~> 1.0', '>= 1.0.2'
-gem 'capistrano-dotenv-tasks'
+gem 'capistrano-dotenv-tasks', :require => false
 
 
 source 'https://rails-assets.org' do
