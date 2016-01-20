@@ -67,6 +67,8 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-dotenv-tasks (0.1.2)
+      capistrano (~> 3.0)
     capistrano-figaro-yml (1.0.2)
       capistrano (~> 3.1)
       sshkit (~> 1.2, >= 1.2.0)
@@ -234,6 +236,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha1)
   byebug
   capistrano (~> 3.4.0)
+  capistrano-dotenv-tasks
   capistrano-figaro-yml (~> 1.0, >= 1.0.2)
   capistrano-passenger
   capistrano-rails (~> 1.1.3)
