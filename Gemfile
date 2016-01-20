@@ -18,10 +18,10 @@ end
 
 group :development do
   gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-figaro-yml', '~> 1.0', '>= 1.0.2'
   gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rbenv', '~> 2.0.3'
   gem 'capistrano-passenger'
+  gem 'capistrano-secrets-yml', '~> 1.0.0'
   gem 'sqlite3'
 end
 
