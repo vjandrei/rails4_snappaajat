@@ -21,7 +21,6 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rbenv', '~> 2.0.3'
   gem 'capistrano-passenger'
-  gem 'capistrano-dotenv-tasks'
   gem 'sqlite3'
 end
 
@@ -41,7 +40,6 @@ gem 'friendly_id', '~> 5.1'
 gem 'meta-tags'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'capistrano-figaro-yml', '~> 1.0', '>= 1.0.2'
-gem 'dotenv-rails', :groups => [:development, :test]
 
 
 source 'https://rails-assets.org' do
