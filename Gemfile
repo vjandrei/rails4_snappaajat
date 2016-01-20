@@ -42,6 +42,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'capistrano-figaro-yml', '~> 1.0', '>= 1.0.2'
 gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
+gem 'capistrano-dotenv-tasks'
 
 
 source 'https://rails-assets.org' do
