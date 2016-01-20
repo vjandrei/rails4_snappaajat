@@ -41,7 +41,6 @@ set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
 set :keep_releases, 1
 
 namespace :deploy do
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -50,5 +49,29 @@ namespace :deploy do
       # end
     end
   end
+  desc 'Symlink shared directories and files'
+	 task :symlink_directories_and_files do
+	 run "ln -s #{shared_path}/config/application.yml #{release_path}/config/application.yml"
+   end
+end
 
+namespace :rails do
+  desc "Remote console"
+  task :console do
+    on roles(:app) do |h|
+      run_interactively "bundle exec rails console #{fetch(:rails_env)}", h.user
+    end
+  end
+
+  desc "Remote dbconsole"
+  task :dbconsole do
+    on roles(:app) do |h|
+      run_interactively "bundle exec rails dbconsole #{fetch(:rails_env)}", h.user
+    end
+  end
+
+  def run_interactively(command, user)
+    info "Running `#{command}` as #{user}@#{host}"
+    exec %Q(ssh #{user}@#{host} -t "bash --login -c 'cd #{fetch(:deploy_to)}/current && #{command}'")
+  end
 end
