@@ -512,6 +512,16 @@ form{
 				background: url('/images/icons/like.svg') no-repeat, white;
 				border: 2px solid $snap-yellow;
 			}
+			.profileSome{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				background: url('../images/icon_pattern_1x.png'), $snap-yellow;
+				background-position: center top;
+				background-size: 100%;
+				padding: 0px 0px 0px 10px;
+			}
 			@include media-breakpoint-down(sm) {
 				
 			} 

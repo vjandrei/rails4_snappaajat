@@ -17,6 +17,37 @@
 						<div class="profilesLike unliked"></div>
 					<% end %>
 				<% end %>
+				<div class="profileSome">
+					<span class="someLinks">
+						<% if profile.facebook.present? %>
+						<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
+							<img src="/images/icons/facebook-box.svg" alt="facebook-icon" width="16" height="16" />
+						</a>
+						<% else %>
+						<% end %>
+						
+						<% if profile.twitter.present? %>
+						<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
+							<img src="/images/icons/twitter-box.svg" alt="twitter-icon" width="16" height="16" />
+						</a>
+						<% else %>
+						<% end %>
+						
+						<% if profile.instagram.present? %>	
+						<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
+							<img src="/images/icons/instagram-box.svg" alt="instagram-icon" width="16" height="16" />
+						</a>
+						<% else %>
+						<% end %>
+						
+						<% if profile.linkedin.present? %>
+						<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
+							<img src="/images/icons/linkedin-box.svg" alt="linkedin-icon" width="16" height="16" />
+						</a>	
+						<% else %>
+						<% end %>
+					</span>
+				</div>
 			</div>
 			<div class="profilesDetails">
 				<div class="profilesNickName">
