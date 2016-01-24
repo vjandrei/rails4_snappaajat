@@ -25,6 +25,13 @@
 				<div class="profilesRealName">
 					<%= profile.name %>
 				</div>
+				<div class="profileLocation">
+					<img src="/images/icons/map.svg"  width="11" height="15"/>
+					<a href="?utf8=✓&filterrific%5Bwith_location_id%5D=<%= profile.location.id %>&filterrific%5Bsorted_by%5D=created_at_desc&commit=Hae"><%= profile.location.name %></a>
+				</div>
+				<div class="profilesDescription">
+					<p class="profileAbout"><%= profile.description %></p>
+				</div>
 			</div>
 		</div>	
 	</div>

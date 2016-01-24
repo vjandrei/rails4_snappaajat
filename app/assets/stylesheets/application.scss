@@ -487,6 +487,7 @@ form{
 		}
 		.profilesImage{
 			position: relative;
+			flex-grow: 2; 
 			width: 135px;
 			height: 165px;
 			background-size: cover!important;
@@ -515,8 +516,10 @@ form{
 			} 
 		}
 		.profilesDetails{
+			width: 300px;
+			flex-grow: 1; 
 			height: 165px;
-			padding: 20px 40px;
+			padding: 10px 10px 20px 25px;
 			.profilesNickName{
 				a{
 				color: $snap-black;
@@ -525,7 +528,35 @@ form{
 				font-size: 1.2rem;
 				}
 			}
-
+			.profilesRealName{
+				color: #9f9f9f;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 0.6rem;
+				text-transform: uppercase;
+			}
+			.profileLocation{
+				margin: 0px;
+				a{
+					margin: 0px;
+					color: #575757;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					text-transform: uppercase;
+					border-bottom: solid 2px $snap-yellow;
+				}
+			}
+			
+			.profilesDescription{
+				p{
+					margin: 0;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 0.8rem;
+					color: $snap-black;
+				}
+			}
 		    
 			@include media-breakpoint-down(sm) {
 				
