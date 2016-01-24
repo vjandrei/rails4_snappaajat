@@ -1,6 +1,41 @@
 <% @profiles.each_slice(4).each do |group| %>
 <div class="row">
 	<% group.each do |profile| %>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+		<div class="profilesContainer">
+			<div class="profilesImage" style="background: url('<%= profile.image.url() %>'); ">
+				<% if user_signed_in? %>
+					<% if current_user.liked? profile %>
+					<div class="profilesLike liked"></div>
+					<% else %>
+						<%= link_to like_profile_path(profile), method: :put do %>
+							<div class="profilesLike unliked"></div>
+						<% end %>
+					<% end %>
+				<% else %>
+					<%= link_to like_profile_path(profile), method: :put do %>
+						<div class="profilesLike unliked"></div>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="profilesDetails">
+				<div class="profilesNickName">
+					@<%= link_to profile.nickname, profile %>
+				</div>
+				<div class="profilesRealName">
+					<%= profile.name %>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<% end %>
+</div>
+<% end %>
+
+<!--
+<% @profiles.each_slice(4).each do |group| %>
+<div class="row">
+	<% group.each do |profile| %>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 		<div class="profilesContainer">
 			<div class="profilesHeader">
@@ -102,3 +137,4 @@
 	<% end %>
 </div>
 <% end %>
+-->

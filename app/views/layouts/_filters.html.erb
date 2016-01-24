@@ -1,35 +1,31 @@
 <section id="filterMenu">
-	<nav class="navbar">
-		<ul class="nav navbar-nav">
-			<li class="nav-item filtercontent"><span>Snappaajia: <%= page_entries_info @profiles, :model => 'profile' %> kpl</span></li>
-			<% if user_signed_in? %>
-			<li class="nav-item filtercontent"><span><a href="/myprofiles">Omat profiilit</a></span></li>
-			<% else %>					
-			<% end %>
-			<span class="pull-sm-right">
-			<li class="nav-item filtercontent"><span>Näytä 
-			<a data-toggle="collapse" href="#tagcloud" aria-expanded="false" aria-controls="tagcloud">avainsanat</a></span></li>
-			<li class="nav-item filtercontent">
-			<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
-			
-				<li class="nav-item filtercontent"><span>Näytä paikkakunnalta:
-					<%= f.select :with_location_id, @filterrific.select_options[:with_location_id], { :include_blank => 'Kaikki' } %></span>
-				</li>
-				
-				<li class="nav-item filtercontent"><span>Järjestä:
-					<%= f.select :sorted_by, @filterrific.select_options[:sorted_by], { }%></span>
-				</li>
-				
-				<li class="nav-item">
-					<%= f.submit 'Hae', :class => 'submitfilter' %>
-				</li>
-				
-				<li class="nav-item">
-					<span><%= link_to "Tyhjennä haku", reset_filterrific_url %></span>
-				</li>
-			<% end %>
-			</li>
-			</span>
-		</ul>
-	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Snappaajia: <%= page_entries_info @profiles, :model => 'profile' %> kpl</h1>
+			</div>
+		</div>
+		<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+		<div class="row">
+			<div class="col-xs-12">
+				<%= f.text_field(:search_query, :class => 'wildcardSearch') %>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-2">
+				<div class="bigbutton">Avainsanat</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<%= f.select :with_location_id, @filterrific.select_options[:with_location_id], { :include_blank => 'Näytä paikkakunnalta:' } %></span>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<%= f.select :sorted_by, @filterrific.select_options[:sorted_by], { }%>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-2 text-center">
+				<%= f.submit 'Hae', :class => 'bigbutton' %>
+				<span class="emptySearch"><%= link_to "Tyhjennä haku", reset_filterrific_url %></span>
+			</div>
+		</div>
+		<% end %>
+	</div>
 </section>

@@ -97,14 +97,13 @@ class ProfilesController < ApplicationController
   end
   
   def upvote
-  	##@profile = Profile.find(params[:id])
+  	#@profile = Profile.find(params[:id])
   	##@profile.upvote_by current_user
   	##redirect_to :back
   	
   	@profile.upvote_from current_user
   	redirect_to :back
   end
-  
   
   # POST /landscapes/1/crop
   # POST /landscapes/1/crop.json

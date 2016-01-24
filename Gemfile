@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
+gem "autoprefixer-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -49,4 +50,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-animate.css'
   gem 'rails-assets-tether', '>= 1.1.0'
   gem 'rails-assets-modernizr'
+  gem 'rails-assets-octopuscreative--FancySelect'
 end

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-145.000000, -559.000000)" fill="#FFFFFF">
+            <g id="ProfileCard02" sketch:type="MSLayerGroup" transform="translate(20.000000, 534.000000)">
+                <g id="profile-image" sketch:type="MSShapeGroup">
+                    <g id="liked" transform="translate(117.000000, 15.000000)">
+                        <path d="M15,11.7716364 C13.1636667,8.82509091 8,9.68527273 8,13.3774545 C8,15.9192727 11.2491667,18.52 15,22 C18.7508333,18.52 22,15.9198182 22,13.3774545 C22,9.67272727 16.8229167,8.84690909 15,11.7716364 L15,11.7716364 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

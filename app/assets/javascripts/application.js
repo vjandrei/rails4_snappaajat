@@ -23,6 +23,7 @@
 //= require maj-text-counter
 //= require sharer.min
 //= require jquery.prettySocial.min
+//= require fancySelect
 //= require_tree .
 
 $(function() {
@@ -67,5 +68,7 @@ $(function() {
 	}
 	
 	$('.prettySocial').prettySocial();
+	
+	$('#filterrific_sorted_by, #filterrific_with_location_id').fancySelect();
 	
 });

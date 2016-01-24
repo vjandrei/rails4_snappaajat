@@ -8,7 +8,7 @@ class Profile < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :nickname, use: :slugged
 	
-	validates_length_of :description, maximum: 160
+	validates_length_of :description, maximum: 161
 	
 	acts_as_taggable
 	acts_as_votable
@@ -34,30 +34,24 @@ class Profile < ActiveRecord::Base
 	
 	belongs_to :location
 	
-	scope :search_query, lambda { |query|
+  scope :search_query, lambda { |query|
     return nil  if query.blank?
-    # condition query, parse into individual keywords
     terms = query.downcase.split(/\s+/)
-    # replace "*" with "%" for wildcard searches,
-    # append '%', remove duplicate '%'s
     terms = terms.map { |e|
-      (e.gsub('*', '%') + '%').gsub(/%+/, '%')
+      (e.gsub('%', '%') + '%').gsub(/%+/, '%')
     }
-    # configure number of OR conditions for provision
-    # of interpolation arguments. Adjust this if you
-    # change the number of OR conditions.
-    num_or_conditions = 3
+    num_or_conds = 3
     where(
-      terms.map {
+    terms.map {
         or_clauses = [
           "LOWER(profiles.name) LIKE ?",
-          "LOWER(profiles.nickname) LIKE ?",
-          "LOWER(profiles.description) LIKE ?"
+          "LOWER(profiles.description) LIKE ?",
+          "LOWER(profiles.nickname) LIKE ?"
         ].join(' OR ')
         "(#{ or_clauses })"
       }.join(' AND '),
-      *terms.map { |e| [e] * num_or_conditions }.flatten
-    )
+    *terms.map { |e| [e] * num_or_conds }.flatten
+	)
   }
   scope :sorted_by, lambda { |sort_option|
     # extract the sort direction from the param value.

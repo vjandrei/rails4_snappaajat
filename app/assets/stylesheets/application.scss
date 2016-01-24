@@ -11,6 +11,7 @@
  * file per style scope.
  *= require jcrop
  *= require animate
+ *= require fancySelect
  *= require select2-bootstrap
  */
 
@@ -25,6 +26,15 @@ $main-yellow: 	#E8B419;
 $snap-black: 	#16191a;
 $snap-red: #ff4545;
 
+.clearfix{
+	&:after { 
+	content: ""; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+	}
+}
 .no-mp{
 	padding: 0px;
 	margin: 0px;
@@ -286,54 +296,50 @@ header{
 }
 
 #filterMenu{
-	.navbar{
-		border-radius: 0;
-		background: $snap-black;
-		padding-top: 5px;
-		a{
-			color: $snap-yellow;
+	margin: 20px 0px;
+	.row{
+		margin-bottom: 10px;
+		.col-xs-12{
+			@include media-breakpoint-down(sm) {
+				margin: 10px 0px; 
+			}
 		}
 	}
-	.submitfilter{
-		position: relative;
-	    top: 0px;
-	    display: inline-block;
-	    height: 30px;
-	    border-radius: 5px;
-	    background: #FEF012;
-	    line-height: 30px;
-	    padding: 0px 20px;
-	    margin-left: 10px;
-	    margin-right: 10px;
-	    border: none;
-	    color: $snap-black;
-	}
-	a.navbar-brand{
-		color: $snap-yellow;
-	}
-	a.dropdown-item{
-		color: $snap-black;
-	}
-	.navbar-brand{
-		@include media-breakpoint-down(xs) {
-			display: none;
-		}
-	}
-	.navbar-nav{
-		@include media-breakpoint-down(xs) {
-		margin-top: 20px;
-		}
-	}
-	.nav-item{
+	h1{
 		color: white;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 0.9rem;
+		font-size: 1rem;
 		font-weight: 600;
-		@include media-breakpoint-down(xs) {
-			display: block;
-			width: 100%;
-			text-align: left;
-			margin: 10px 0px 10px 0px;
+	}
+	.wildcardSearch{
+		width: 100%;
+		border-radius: 5px;
+		height: 40px;
+		border: none;
+		padding: 5px 50px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		background: url('/images/icons/search.svg') no-repeat, white;
+		background-position: 10px center;
+		background-size: 17px 17px;	
+	}
+	.bigbutton{
+		cursor: pointer;
+		border-radius: 5px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		border: none;
+		background: $snap-yellow;
+		width: 100%;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+	.emptySearch{
+		a{
+			position: relative;
+			top: 10px;
+			color: $snap-yellow;
 		}
 	}
 }
@@ -469,7 +475,66 @@ form{
 	margin: 10px 0px;	
 	background: $snap-yellow;	
 }
+#profilesGrid{
+	.profilesContainer{
+		display: flex;
+		border-radius: 5px;
+		background: white;
+		overflow: hidden;
+		height: 165px;
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 10px;
+		}
+		.profilesImage{
+			position: relative;
+			width: 135px;
+			height: 165px;
+			background-size: cover!important;
+			background-position: center center!important;
+			.profilesLike{
+				width: 40px;
+				height: 40px;
+				border-radius: 100px;
+				background: white;
+				position: absolute;
+				top: 20px;
+				right: -20px;
+				background-position: center 55% !important;
+				background-size: 14px 12px!important;
+			}
+			.liked{
+				background: url('/images/icons/liked.svg') no-repeat, $snap-yellow;
+				border: 2px solid white;
+			}
+			.unliked{
+				background: url('/images/icons/like.svg') no-repeat, white;
+				border: 2px solid $snap-yellow;
+			}
+			@include media-breakpoint-down(sm) {
+				
+			} 
+		}
+		.profilesDetails{
+			height: 165px;
+			padding: 20px 40px;
+			.profilesNickName{
+				a{
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 1.2rem;
+				}
+			}
 
+		    
+			@include media-breakpoint-down(sm) {
+				
+			}
+		}	
+	}
+}
+
+/*
 #profilesGrid{
 	margin: 10px 0px;	
 	.profilesContainer{
@@ -703,6 +768,7 @@ form{
 		}
 	}
 }
+*/
 
 #profileLinks{
 	margin-top: 20px;
