@@ -494,6 +494,7 @@ form{
 			background-size: cover!important;
 			background-position: center center!important;
 			cursor: pointer;
+			z-index: 20;
 			&:after{
 				transition: background 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
 			}

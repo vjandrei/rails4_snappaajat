@@ -38,11 +38,10 @@ $(function() {
         $(this).parent().toggleClass('active');
     });
     $(".profilesImage").on("click", function () {  
-        $(this).parent().find(".profilesSnapCode").toggle(function() {
-	       $(this).addClass('bounceInDown animated').css({
-		       'top': '0px',
-		       'height' : '100%'
-	       });
+        $(this).parent().find(".profilesSnapCode").slideToggle(function() {
+	       /*$(this).addClass('bounceInDown animated').css({
+		       'top': '0px'
+	       });*/
         });
     });
     $( "#profile_location_id" ).select2({

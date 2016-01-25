@@ -23,7 +23,7 @@
 				<% end %>
 			</div>
 			<div class="profilesDetails">
-				<div class="profilesSnapCode" style="background: url('<%= profile.snapcode.url() %>'), black; background-size: auto 100%; background-position: center; background-repeat: no-repeat;"></div>
+				<div class="profilesSnapCode bounceInLeft animated" style="background: url('<%= profile.snapcode.url() %>'), black; background-size: auto 100%; background-position: center; background-repeat: no-repeat; display: none; height: 100%; width: 100%;"></div>
 				<div class="profilesDetailsContainer">
 					<div class="profilesNickName">
 						@<%= link_to profile.nickname, profile %>
