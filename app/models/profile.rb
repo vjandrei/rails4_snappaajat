@@ -40,13 +40,14 @@ class Profile < ActiveRecord::Base
     terms = terms.map { |e|
       ('%' + e.gsub('%', '%') + '%').gsub(/%+/, '%')
     }
-    num_or_conds = 3
+    num_or_conds = 4
     where(
     terms.map {
         or_clauses = [
           "LOWER(profiles.name) LIKE ?",
           "LOWER(profiles.description) LIKE ?",
-          "LOWER(profiles.nickname) LIKE ?"
+          "LOWER(profiles.nickname) LIKE ?",
+          "(LOWER(locations.name) LIKE ? AND locations.id = profiles.location_id)"  
         ].join(' OR ')
         "(#{ or_clauses })"
       }.join(' AND '),
