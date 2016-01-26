@@ -38,7 +38,7 @@ class Profile < ActiveRecord::Base
     return nil  if query.blank?
     terms = query.downcase.split(/\s+/)
     terms = terms.map { |e|
-      (e.gsub('%', '%') + '%').gsub(/%+/, '%')
+      ('%' + e.gsub('%', '%') + '%').gsub(/%+/, '%')
     }
     num_or_conds = 3
     where(
