@@ -38,10 +38,12 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'select2-rails'
 gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'filterrific'
+gem 'ransack'
 gem 'friendly_id', '~> 5.1'
 gem 'meta-tags'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
+gem 'browser', '~> 1.1'
 
 
 source 'https://rails-assets.org' do
@@ -51,4 +53,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
   gem 'rails-assets-modernizr'
   gem 'rails-assets-octopuscreative--FancySelect'
+  gem 'rails-assets-modernizr'
 end
