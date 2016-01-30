@@ -1,13 +1,24 @@
+<% if browser.mobile? %>
+  <p class="disclaimer">You're running an older IE version. Please update it!</p>
+<% end %>
+
 <% @profiles.each_slice(30).each do |group| %>
 <div class="row">
 	<% group.each do |profile| %>
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 		<div class="profilesContainer">
+			<% if profile.image.url() %>
 			<div class="profilesImage" style="background: url('<%= profile.image.url() %>'); ">
+			<% else %>
+			<div class="profilesNoImage" style="background: url('images/small-icon.png'); ">
+			<% end %>
+				<% if profile.snapcode.url() %>
 				<div class="profilesScanText">
 					<img src="/images/icons/scancode-icon.svg" />
 					Skannaa snappikoodi
 				</div>
+				<% else %>
+				<% end %>
 				<% if user_signed_in? %>
 					<% if current_user.liked? profile %>
 					<div class="profilesLike liked"></div>
