@@ -37,13 +37,22 @@ $(function() {
 	$(".profilesTagsAll").on("click", function () {  
         $(this).parent().toggleClass('active');
     });
-    $(".profilesImage").on("click", function () {  
-        $(this).parent().find(".profilesSnapCode").slideToggle(function() {
-	       /*$(this).addClass('bounceInDown animated').css({
-		       'top': '0px'
-	       });*/
-        });
-    });
+    
+    if ( Modernizr.touch ) {
+	   // click
+	} else {
+    
+	    $(".profilesImage").on("click", function () {  
+	        $(this).parent().find(".profilesSnapCode").slideToggle(function() {
+		       /*$(this).addClass('bounceInDown animated').css({
+			       'top': '0px'
+		       });*/
+	        });
+	    });
+    
+       // mouseover
+	}
+    
     $( "#profile_location_id" ).select2({
 	    theme: "classic"
 	});
