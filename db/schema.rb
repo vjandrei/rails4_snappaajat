@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115114441) do
+ActiveRecord::Schema.define(version: 20160131181421) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160115114441) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "website"
   end
 
   add_index "profiles", ["cached_votes_down"], name: "index_profiles_on_cached_votes_down"

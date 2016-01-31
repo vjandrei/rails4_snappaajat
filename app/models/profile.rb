@@ -40,14 +40,14 @@ class Profile < ActiveRecord::Base
     terms = terms.map { |e|
       ('%' + e.gsub('%', '%') + '%').gsub(/%+/, '%')
     }
-    num_or_conds = 4
+    num_or_conds = 3
     where(
     terms.map {
         or_clauses = [
           "LOWER(profiles.name) LIKE ?",
           "LOWER(profiles.description) LIKE ?",
-          "LOWER(profiles.nickname) LIKE ?",
-          "(LOWER(locations.name) LIKE ? AND locations.id = profiles.location_id)"  
+          "LOWER(profiles.nickname) LIKE ?"
+          #"(LOWER(locations.name) LIKE ? AND locations.id = profiles.location_id)"  
         ].join(' OR ')
         "(#{ or_clauses })"
       }.join(' AND '),
@@ -90,6 +90,6 @@ class Profile < ActiveRecord::Base
   end
 
 	def user_params
-    	params.require(:profile).permit(:nickname, :description, {category_ids: []}, :tag_list, :image, :snapcode, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id)
+    	params.require(:profile).permit(:nickname, :description, {category_ids: []}, :tag_list, :image, :snapcode, :facebook, :twitter, :instagram, :linkedin, :snapcode, :location_id, :website)
 	end
 end

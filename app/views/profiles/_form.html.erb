@@ -59,6 +59,10 @@
 	<%= f.text_field(:tag_list, value: @profile.tag_list.join(","))%>
   </div>
   <div class="field">
+    <%= f.label :website, "Kotisivut / Blogi" %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
     <%= f.label :facebook, "Facebook nimesi esim. matti.meikäläinen" %><br>
     <%= f.text_field :facebook %>
   </div>

@@ -13,20 +13,20 @@
 				  <%= devise_error_messages! %>
 				
 				  <div class="field">
-				    <%= f.label :email, 'Sähköpostisi *'  %><small>( Ei näytetä sivustolla muille käyttäjille )</small>
+				    <%= f.label :email, 'Sähköpostisi *'  %><small>( Ei näytetä sivustolla muille käyttäjille. )</small>
 				    <%= f.email_field :email, autofocus: true %>
 				  </div>
 				
 				  <div class="field">
 				    <%= f.label :password, 'Salasana *' %>
 				    <% if @minimum_password_length %>
-				    <small>( Vähintään  <%= @minimum_password_length %> merkkiä ps: käytä salasanaa jota et käytä sähköpostissasi )</small>
+				    <small>( Vähintään <%= @minimum_password_length %> merkkiä. Tietosuojasyistä käytäthän salasanaa, jota et käytä sähköpostissasi.)</small>
 				    <% end %>
 				    <%= f.password_field :password, autocomplete: "off" %>
 				  </div>
 				
 				  <div class="field">
-				    <%= f.label :password_confirmation, 'Salasana vahvistus *' %><br />
+				    <%= f.label :password_confirmation, 'Salasanan vahvistus *' %><br />
 				    <%= f.password_field :password_confirmation, autocomplete: "off" %>
 				  </div>
 				
