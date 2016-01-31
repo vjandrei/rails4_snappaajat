@@ -8,13 +8,14 @@
 			<% if browser.mobile? %>
 				
 				<% if profile.image.url() %>
-				<div class="profilesImage" style="background: url('<%= profile.image.url() %>'); ">
+				<div class="profilesImageMobile" style="background: url('<%= profile.image.url() %>'); ">
 				<% else %>
-				<div class="profilesNoImage" style="background: url('images/small-icon.png'); ">
+				<div class="profilesNoImageMobile" style="background: url('images/small-icon.png'); ">
 				<% end %>
+					<div class="profilesScanText">
+						Lisää Snapchattiin
+					</div>
 				</div>
-			
-				
 				
 			<% else %>
 				<% if profile.image.url() %>
