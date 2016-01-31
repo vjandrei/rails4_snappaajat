@@ -5,12 +5,14 @@
 	<% group.each do |profile| %>
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 		<div class="profilesContainer">
-			<% if browser.mobile? %>
-				<a href="https://go.snapchat.com/add/<%= profile.nickname %>">
+			
+				
 				<% if profile.image.url() %>
-				<div class="profilesImageMobile" style="background: url('<%= profile.image.url() %>'); ">
+				<div class="profilesImageMobile" style="background: url('<%= profile.image.url() %>');">
+				<a href="https://go.snapchat.com/add/<%= profile.nickname %>">
 				<% else %>
-				<div class="profilesNoImageMobile" style="background: url('images/small-icon.png'); ">
+				<div class="profilesNoImageMobile" style="background: url('images/small-icon.png');">
+				<a href="https://go.snapchat.com/add/<%= profile.nickname %>">
 				<% end %>
 					<div class="profilesScanText">
 						Lisää Snapchattiin
@@ -28,37 +30,10 @@
 							<div class="profilesLike unliked"></div>
 						<% end %>
 					<% end %>
-				</div>
 				</a>
-			<% else %>
-				<% if profile.image.url() %>
-				<div class="profilesImage" style="background: url('<%= profile.image.url() %>'); ">
-				<% else %>
-				<div class="profilesNoImage" style="background: url('images/small-icon.png'); ">
-				<% end %>
-					<% if profile.snapcode.url() %>
-						<div class="profilesScanText">
-							<img src="/images/icons/scancode-icon.svg" />
-							Skannaa snappikoodi
-						</div>
-					<% else %>
-					<% end %>
-					<% if user_signed_in? %>
-						<% if current_user.liked? profile %>
-						<div class="profilesLike liked"></div>
-						<% else %>
-							<%= link_to like_profile_path(profile), method: :put do %>
-								<div class="profilesLike unliked"></div>
-							<% end %>
-						<% end %>
-					<% else %>
-						<%= link_to like_profile_path(profile), method: :put do %>
-							<div class="profilesLike unliked"></div>
-						<% end %>
-					<% end %>
-				
 				</div>
-			<% end %>
+				
+			
 			<div class="profilesDetails">
 				<div class="profilesSnapCode bounceInLeft animated" style="background: url('<%= profile.snapcode.url() %>'), black; background-size: auto 100%; background-position: center; background-repeat: no-repeat; display: none; height: 100%; width: 100%;"></div>
 				<div class="profilesDetailsContainer">
