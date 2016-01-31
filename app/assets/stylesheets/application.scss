@@ -562,6 +562,13 @@ form{
 				
 			} 
 		}
+		
+		.no-touch profilesNoImage:hover,
+			profilesNoImage.hover {
+			/* your css hover stuff here */
+			background: white;
+		}
+		
 		.profilesNoImage{
 			background-size: 50%!important;
 			background-repeat: no-repeat!important;
