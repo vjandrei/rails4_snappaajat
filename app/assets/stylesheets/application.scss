@@ -497,6 +497,10 @@ form{
 			height: 165px;
 			cursor: pointer;
 			z-index: 20;
+			a{
+				display: block;
+				height: 100%;
+			}
 			&:after{
 				transition: background 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
 			}
@@ -552,6 +556,10 @@ form{
 			background-position: center center!important;
 			cursor: pointer;
 			z-index: 20;
+			a{
+				display: block;
+				height: 100%;
+			}
 			.profilesScanText{
 				position: absolute;
 			    left: 0;

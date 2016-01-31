@@ -9,10 +9,10 @@
 				
 				<% if profile.image.url() %>
 				<div class="profilesImageMobile" style="background: url('<%= profile.image.url() %>');">
-				<a href="https://go.snapchat.com/add/<%= profile.nickname %>">
+				<a href="http://go.snapchat.com/add/<%= profile.nickname %>">
 				<% else %>
 				<div class="profilesNoImageMobile" style="background: url('images/small-icon.png');">
-				<a href="https://go.snapchat.com/add/<%= profile.nickname %>">
+				<a href="http://go.snapchat.com/add/<%= profile.nickname %>">
 				<% end %>
 					<div class="profilesScanText">
 						Lisää Snapchattiin
