@@ -1,10 +1,8 @@
-<%= render "layouts/topnav" %>
+<%= render :partial => 'layouts/topnav', :locals => { :profiles => @profiles } %>
 
 <%= render "layouts/header" %>
 
 <%= render "layouts/filters" %>
-
-<%= render "layouts/tagscloud" %>
 
 <%= render "layouts/share" %>
 

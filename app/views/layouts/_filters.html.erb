@@ -13,7 +13,10 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-2">
-				<div class="bigbutton">Avainsanat</div>
+				
+				<a data-toggle="collapse" href="#tagcloud" aria-expanded="false" aria-controls="tagcloud" class="collapsed">
+					<div class="bigbutton">Avainsanat</div>
+				</a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-4">
 				<%= f.select :with_location_id, @filterrific.select_options[:with_location_id], { :include_blank => 'Näytä paikkakunnalta:' } %></span>
@@ -27,5 +30,6 @@
 			</div>
 		</div>
 		<% end %>
+		<%= render "layouts/tagscloud" %>
 	</div>
 </section>

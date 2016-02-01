@@ -12,10 +12,9 @@
 			<div class="col-xs-12 col-sm-8 no-mp">
 				<div class="col-xs-12 col-sm-12 collapse in" id="navContent">
 					<ul>
-						<li><a href="/">Koti</a></li>
 						<li><a href="/about">Mikä on Snappaajat.fi</a></li>
-						<li><a href="/forum">Keskustelupalsta</a></li>
 						<li><a href="/contact">Ota yhteyttä</a></li>
+						<li><a href="/profiles">Omat profiilit</a></li>
 						<% if user_signed_in? %> 
 						<li class="hidden-sm-up"><%= link_to "Kirjaudu ulos", destroy_user_session_path %></li>
 						<% else %>
@@ -25,7 +24,7 @@
 					</ul>
 					<div class="pull-sm-right hidden-sm-down">
 					<% if user_signed_in? %>
-						<a href="/users/edit"><div id="ownProfile"></div></a>
+						<a href="/users/edit"><div id="ownProfile" style="background: background: url('') no-repeat;"></div></a>
 						<%= link_to destroy_user_session_path, method: :delete do %>
 							<div class="logInOutButton">Kirjaudu ulos</div>
 						<% end %>
