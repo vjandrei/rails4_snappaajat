@@ -29,125 +29,131 @@
 		<div class="row">
 			<div class="col-xs-12">
 			    <div id="results">
-					<div class="row">
-					
-					<% @profiles.each do |profile| %>
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="profilesContainer">
-						<% if browser.mobile? %>
-							<% if profile.image.url() %>
-							<div class="profilesImageMobile" style="background: url('<%= profile.image.url() %>');">
-							<a href="https://snapchat.com/add/<%= profile.nickname %>" target="_blank">
-							<% else %>
-							<div class="profilesNoImageMobile" style="background: url('images/small-icon.png');">
-							<a href="https://snapchat.com/add/<%= profile.nickname %>" target="_blank">
-							<% end %>
-								<div class="profilesScanText">
-									Lisää Snapchattiin
-								</div>
-								<% if user_signed_in? %>
-									<% if current_user.liked? profile %>
-									<div class="profilesLike liked"></div>
-									<% else %>
-										<%= link_to like_profile_path(profile), method: :put do %>
-											<div class="profilesLike unliked"></div>
-										<% end %>
-									<% end %>
-								<% else %>
-									<%= link_to like_profile_path(profile), method: :put do %>
-										<div class="profilesLike unliked"></div>
-									<% end %>
-								<% end %>
-							</a>
-							</div>
-						<% else %>
-							<% if profile.image.url() %>
-							<div class="profilesImage" style="background: url('<%= profile.image.url() %>'); ">
-							<% else %>
-							<div class="profilesNoImage" style="background: url('images/small-icon.png'); ">
-							<% end %>
-								<% if profile.snapcode.url() %>
-									<div class="profilesScanText">
-										<img src="/images/icons/scancode-icon.svg" />
-										Skannaa snappikoodi
-									</div>
-								<% else %>
-								<% end %>
-								<% if user_signed_in? %>
-									<% if current_user.liked? profile %>
-									<div class="profilesLike liked"></div>
-									<% else %>
-										<%= link_to like_profile_path(profile), method: :put do %>
-											<div class="profilesLike unliked"></div>
-										<% end %>
-									<% end %>
-								<% else %>
-									<%= link_to like_profile_path(profile), method: :put do %>
-										<div class="profilesLike unliked"></div>
-									<% end %>
-								<% end %>
-							
-							</div>
-						<% end %>
-						<div class="profilesDetails">
-							<div class="profilesSnapCode bounceInLeft animated" style="background: url('<%= profile.snapcode.url() %>'), black; background-size: auto 100%; background-position: center; background-repeat: no-repeat; display: none; height: 100%; width: 100%;"></div>
-							<div class="profilesDetailsContainer">
-								<div class="profilesNickName">
-									@<%= link_to profile.nickname, profile %>
-								</div>
-								<div class="profilesRealName">
-									<%= profile.name %> 
-									<span class="someLinks">
-										<% if profile.website.present? %>
-										<a  target="_blank" href="http://<%= profile.website %>">
-											<img src="/images/icons/website-link.svg" alt="website-icon" width="13" height="13" />
-										</a>
-										<% else %>
-										<% end %>
-										
-										<% if profile.facebook.present? %>
-										<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
-											<img src="/images/icons/facebook-link.svg" alt="facebook-icon" width="13" height="13" />
-										</a>
-										<% else %>
-										<% end %>
-										
-										<% if profile.twitter.present? %>
-										<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
-											<img src="/images/icons/twitter-link.svg" alt="twitter-icon" width="13" height="13" />
-										</a>
-										<% else %>
-										<% end %>
-										
-										<% if profile.instagram.present? %>	
-										<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
-											<img src="/images/icons/instagram-link.svg" alt="instagram-icon" width="13" height="13" />
-										</a>
-										<% else %>
-										<% end %>
-										
-										<% if profile.linkedin.present? %>
-										<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
-											<img src="/images/icons/linkedin-link.svg" alt="linkedin-icon" width="13" height="13" />
-										</a>	
-										<% else %>
-										<% end %>
-									</span>
-								</div>
-								<div class="profileLocation">
-									<img src="/images/icons/map.svg"  width="11" height="15"/>
-									<a href="?utf8=✓&filterrific%5Bwith_location_id%5D=<%= profile.location.id %>&filterrific%5Bsorted_by%5D=created_at_desc&commit=Hae"><%= profile.location.name %></a>
-								</div>
-								<div class="profilesDescription">
-									<p class="profileAbout"><%= profile.description %></p>
-								</div>
-							</div>
-						</div>
-					</div>	
-				</div>
-					<% end %>
-					
+
+				  
+<% @profiles.each_slice(30).each do |group| %>
+<div class="row">
+	<% group.each do |profile| %>
+	<% if profile.user == current_user %>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+		<div class="profilesContainer">
+			<% if browser.mobile? %>
+				<% if profile.image.url() %>
+				<div class="profilesImageMobile" style="background: url('<%= profile.image.url() %>');">
+				<a href="https://snapchat.com/add/<%= profile.nickname %>" target="_blank">
+				<% else %>
+				<div class="profilesNoImageMobile" style="background: url('images/small-icon.png');">
+				<a href="https://snapchat.com/add/<%= profile.nickname %>" target="_blank">
+				<% end %>
+					<div class="profilesScanText">
+						Lisää Snapchattiin
 					</div>
+					<% if user_signed_in? %>
+						<% if current_user.liked? profile %>
+						<div class="profilesLike liked"></div>
+						<% else %>
+							<%= link_to like_profile_path(profile), method: :put do %>
+								<div class="profilesLike unliked"></div>
+							<% end %>
+						<% end %>
+					<% else %>
+						<%= link_to like_profile_path(profile), method: :put do %>
+							<div class="profilesLike unliked"></div>
+						<% end %>
+					<% end %>
+				</a>
+				</div>
+			<% else %>
+				<% if profile.image.url() %>
+				<div class="profilesImage" style="background: url('<%= profile.image.url() %>'); ">
+				<% else %>
+				<div class="profilesNoImage" style="background: url('images/small-icon.png'); ">
+				<% end %>
+					<% if profile.snapcode.url() %>
+						<div class="profilesScanText">
+							<img src="/images/icons/scancode-icon.svg" />
+							Skannaa snappikoodi
+						</div>
+					<% else %>
+					<% end %>
+					<% if user_signed_in? %>
+						<% if current_user.liked? profile %>
+						<div class="profilesLike liked"></div>
+						<% else %>
+							<%= link_to like_profile_path(profile), method: :put do %>
+								<div class="profilesLike unliked"></div>
+							<% end %>
+						<% end %>
+					<% else %>
+						<%= link_to like_profile_path(profile), method: :put do %>
+							<div class="profilesLike unliked"></div>
+						<% end %>
+					<% end %>
+				
+				</div>
+			<% end %>
+			<div class="profilesDetails">
+				<div class="profilesSnapCode bounceInLeft animated" style="background: url('<%= profile.snapcode.url() %>'), black; background-size: auto 100%; background-position: center; background-repeat: no-repeat; display: none; height: 100%; width: 100%;"></div>
+				<div class="profilesDetailsContainer">
+					<div class="profilesNickName">
+						@<%= link_to profile.nickname, profile %>
+					</div>
+					<div class="profilesRealName">
+						<%= profile.name %> 
+						<span class="someLinks">
+							<% if profile.website.present? %>
+							<a  target="_blank" href="http://<%= profile.website %>">
+								<img src="/images/icons/website-link.svg" alt="website-icon" width="13" height="13" />
+							</a>
+							<% else %>
+							<% end %>
+							
+							<% if profile.facebook.present? %>
+							<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
+								<img src="/images/icons/facebook-link.svg" alt="facebook-icon" width="13" height="13" />
+							</a>
+							<% else %>
+							<% end %>
+							
+							<% if profile.twitter.present? %>
+							<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
+								<img src="/images/icons/twitter-link.svg" alt="twitter-icon" width="13" height="13" />
+							</a>
+							<% else %>
+							<% end %>
+							
+							<% if profile.instagram.present? %>	
+							<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
+								<img src="/images/icons/instagram-link.svg" alt="instagram-icon" width="13" height="13" />
+							</a>
+							<% else %>
+							<% end %>
+							
+							<% if profile.linkedin.present? %>
+							<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
+								<img src="/images/icons/linkedin-link.svg" alt="linkedin-icon" width="13" height="13" />
+							</a>	
+							<% else %>
+							<% end %>
+						</span>
+					</div>
+					<div class="profileLocation">
+						<img src="/images/icons/map.svg"  width="11" height="15"/>
+						<a href="?utf8=✓&filterrific%5Bwith_location_id%5D=<%= profile.location.id %>&filterrific%5Bsorted_by%5D=created_at_desc&commit=Hae"><%= profile.location.name %></a>
+					</div>
+					<div class="profilesDescription">
+						<p class="profileAbout"><%= profile.description %></p>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+		<% end %>
+	<% end %>
+</div>
+<% end %>
+
+					
 				</div>
 			</div>
 		</div>
