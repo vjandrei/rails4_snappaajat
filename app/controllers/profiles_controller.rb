@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
 	    
 	    prepare_meta_tags title: "Profiili", description: "Find on this page all our lovely products"
 	    
-		if params[:tag].present? 
+			if params[:tag].present? 
 	      @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
 	    else
 	      @profiles = Profile.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
@@ -26,7 +26,9 @@ class ProfilesController < ApplicationController
 	      },
 		  :persistence_id => false,   
 	    ) or return
+	    
 	    @profiles = @filterrific.find.page(params[:page])
+	    
 	
 	    respond_to do |format|
 	      format.html
@@ -47,12 +49,10 @@ class ProfilesController < ApplicationController
    twitter: {site: request.url,
         site: "@snappaajat",
         card: @profiles.name + @profile.description,
-        description: @profile.description,
-        image: "http://www.snappaajat.fi" + @profile.image.url()},
+        description: @profile.description},
    og: {url: request.url,
         site: "Snappaajat.fi",
         title: "Snappaaja - " + @profiles.name,
-        image: "http://www.snappaajat.fi" + @profile.image.url(),
         description: @profile.description,
         type: 'website'})
   end

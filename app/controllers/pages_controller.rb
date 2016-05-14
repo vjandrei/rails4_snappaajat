@@ -31,6 +31,10 @@ class PagesController < ApplicationController
       format.js
     end
     
+     def tag_cloud
+        @profiles = Profile.tag_counts_on(:tags).limit(1).order('count desc')
+    end
+    
   end
   
   def tags
@@ -55,6 +59,7 @@ class PagesController < ApplicationController
   def about
 	   
   end 
+  
   
   def myprofiles
 	@profiles = Profile.all.order("created_at DESC")
