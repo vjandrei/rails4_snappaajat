@@ -18,22 +18,22 @@
 				<small>Currently waiting confirmation for: <%= resource.unconfirmed_email %></small>
 				<% end %>
 				</div>
-				
+
 				<div class="field">
 				<%= f.label :password, 'Salasana' %> <small>( Jätä tyhjäksi jos et halua muuttaa salasanaa)</small>
 				<%= f.password_field :password, autocomplete: "off" %>
 				</div>
-				
+
 				<div class="field">
 				<%= f.label :password_confirmation, 'Salasana vahvistus'%><br />
 				<%= f.password_field :password_confirmation, autocomplete: "off" %>
 				</div>
-				
+
 				<div class="field">
 				<%= f.label :current_password, 'Nykyinen salasana' %> <small>( Syötä salsanasi jotta muutokset tulevat voimaan )</small>
 				<%= f.password_field :current_password, autocomplete: "off" %>
 				</div>
-				
+
 				<div class="actions">
 				<button class="linkbutton"><%= f.submit "Päivitä" %></button>
 				</div>
@@ -47,4 +47,3 @@
 		</div>
 	</div>
 </section>
-
