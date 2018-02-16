@@ -47,7 +47,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rbenv', '~> 2.0.3'
   gem 'capistrano-passenger'
-  gem 'sqlite3'
+  gem 'pq'
 end
 
 gem 'bootstrap', '~> 4.0.0.alpha1'
