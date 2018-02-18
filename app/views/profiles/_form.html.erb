@@ -1,0 +1,84 @@
+<%= form_for @profile, :validate => true do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nimi %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :nickname , 'Snapchat tunnus ilman @ merkkiä' %><br>
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="field">
+	  <%= f.label :locations_id , 'Paikkakunta' %><br>
+	  <%= f.collection_select :location_id, Location.all,  :id, :name, {promt: "Valitse paikkakunta"} %>
+  </div>
+   <div class="field">
+	 <%= f.label :image, 'Profiilikuva' %>
+	 <%= f.file_field :image %>
+	 <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+	<%= f.label :image, 'Snapchat koodi' %>
+	<%= f.file_field :snapcode %>
+    <%= f.hidden_field :snapcode_cache %>
+	 <small>
+	 	<a href="#" data-toggle="modal" data-target="#videoModal" data-theVideo="https://www.youtube.com/embed/JKA7YSL6py8">Katso ohjeet täältä</a>
+	 </small>
+
+	<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+	    <div class="modal-dialog modal-lg">
+	        <div class="modal-content">
+	            <div class="modal-content">
+	                <div>
+	                    <iframe width="100%" height="500" src="" frameborder="0" allowfullscreen></iframe>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+  </div>
+  
+  <div class="field">
+	<%= f.label :description, 'Kirjoita itsestäni lyhyt esittely ( 160 merkkiä )' %>
+	<%= f.text_area :description %>
+	</div>
+  <div class="field">
+	<%= f.label :tags, "Aihetunnisteet ( erottele pilkulla älä käytä # risuaitaa )" %>
+	<%= f.text_field(:tag_list, value: @profile.tag_list.join(","))%>
+  </div>
+  <div class="field">
+    <%= f.label :website, "Kotisivut / Blogi  ( vain www.esimerkki.fi muodossa )" %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook, "Facebook nimesi esim. matti.meikäläinen" %><br>
+    <%= f.text_field :facebook %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter, "Twitter käyttäjätunnus esim. matti89" %><br>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :instagram, "Instagram käyttäjätunnus esim. mattinstaa"%><br>
+    <%= f.text_field :instagram %>
+  </div>
+  <div class="field">
+    <%= f.label :linkedin, "LinkedIn koko url" %><br>
+    <%= f.text_field :linkedin %>
+  </div>
+  <div class="actions">
+    <button class="linkbutton"><%= f.submit 'Tallenna'%></button>
+  </div>
+<% end %>

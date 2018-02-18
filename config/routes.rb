@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :profiles do 
+  	#resource :like, module: :profiles
+  	member do
+    	put "like", to: "profiles#upvote"
+	 end
+  end
+  devise_for :users
+  root "pages#home"
+  get 'tags/:tag' => 'pages#tags', to: 'tags#tags', as: :tag
+  get "about" => "pages#about"
+  get "forum" => "pages#forum"
+  get "contact" => "pages#contact"
+  get "myprofiles" => "pages#myprofiles"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

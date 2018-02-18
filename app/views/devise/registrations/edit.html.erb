@@ -1,0 +1,49 @@
+<%= render "layouts/topnav" %>
+<%= render "layouts/header" %>
+
+<section id="editUser" class="pageContent">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-xs-12 col-sm-8 text-center">
+				<h1 class="smallHeading">Muokkaa käyttätunnustasi</h1>
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+				<%= devise_error_messages! %>
+				<div class="field">
+				<%= f.label :email, 'Sähköposti' %><br />
+				<%= f.email_field :email, autofocus: true %>
+				</div>
+				<div class="field">
+				<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+				<small>Currently waiting confirmation for: <%= resource.unconfirmed_email %></small>
+				<% end %>
+				</div>
+
+				<div class="field">
+				<%= f.label :password, 'Salasana' %> <small>( Jätä tyhjäksi jos et halua muuttaa salasanaa)</small>
+				<%= f.password_field :password, autocomplete: "off" %>
+				</div>
+
+				<div class="field">
+				<%= f.label :password_confirmation, 'Salasana vahvistus'%><br />
+				<%= f.password_field :password_confirmation, autocomplete: "off" %>
+				</div>
+
+				<div class="field">
+				<%= f.label :current_password, 'Nykyinen salasana' %> <small>( Syötä salsanasi jotta muutokset tulevat voimaan )</small>
+				<%= f.password_field :current_password, autocomplete: "off" %>
+				</div>
+
+				<div class="actions">
+				<button class="linkbutton"><%= f.submit "Päivitä" %></button>
+				</div>
+				<% end %>
+				<br/>
+				<p>Haluatko poistaa käyttäjä tunnuksesi? <br/>
+				<%= link_to "Poista tunnukseni", registration_path(resource_name), data: { confirm: "Oletko aivan varma?" }, method: :delete, class: "alertLink" %></p>
+				<%= link_to "Peruuta", root_path %>
+			</div>
+			<div class="col-xs-12 col-sm-2"></div>
+		</div>
+	</div>
+</section>

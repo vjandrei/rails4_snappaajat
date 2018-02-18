@@ -1,0 +1,28 @@
+<%= render "layouts/topnav" %>
+
+<%= render "layouts/header" %>
+
+<%= render "layouts/filters" %>
+
+<%= render "layouts/tagscloud" %>
+
+<section id="profilesGrid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			    <div id="results">
+					<%= render :partial => 'layouts/profilecard', :locals => { :profiles => @profiles } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+		<!--, renderer: BootstrapPagination::Rails-->
+		<%= will_paginate @profiles ,previous_label: 'Uusimmat', next_label: 'Vanhimmat', inner_window: 1, outer_window: 0 %>	
+		</div>
+	</div>
+</div>

@@ -1,0 +1,1636 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *= require jcrop
+ *= require animate
+ *= require fancySelect
+ *= require select2-bootstrap
+ */
+
+
+@import url(https://fonts.googleapis.com/css?family=Lobster+Two:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700,300);
+@import "bootstrap";
+
+$snap-yellow: 	#FFFC00;
+$main-yellow: 	#E8B419;
+$snap-black: 	#16191a;
+$snap-red: #ff4545;
+
+.clearfix{
+	&:after { 
+	content: ""; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+	}
+}
+.no-mp{
+	padding: 0px;
+	margin: 0px;
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	background: #474749;
+}
+
+a{
+	h1{
+	color: $snap-black;
+	}
+	&:hover{
+	text-decoration: none;	
+	}
+}
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 5vw;
+	@include media-breakpoint-down(xs) {
+	font-size: 2rem;	
+	}
+	margin-bottom: 20px;
+	font-weight: 800;
+	&.smallHeading{
+		font-size: 3vw;	
+	}
+}
+h2{
+	color: $snap-black;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2rem;
+}
+
+a{
+	color: $snap-black;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9rem;
+	font-weight: 600;
+	&:hover{
+		color: $snap-black;
+		opacity: 0.6;
+	}
+}
+
+.alert-notice{
+    background: $snap-yellow;
+    padding: 10px 20px;
+    border-radius: 30px;
+    min-width: 200px;
+    display: inline-block;
+    margin: 15px auto;
+    color: $snap-black;
+    text-align: center;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.linkbutton{
+	background: none;
+	border: solid 2px white;
+	background: white;
+	padding: 10px 20px;
+	border-radius: 30px;
+	min-width: 200px;
+	display: inline-block;
+	margin: 15px auto;
+	color: $snap-black;	
+	text-align: center;
+	&:hover{
+		background: none;
+		border: solid 2px white;
+		color: $snap-black;	
+		text-shadow: none;
+		text-decoration: none;
+		input{
+			color: white;	
+			text-shadow: none;
+		}
+	}
+	input{
+		background: none;
+		border: none;
+		font-family: 'Open Sans', sans-serif;
+		text-decoration: none;
+		&:hover{
+			text-shadow: none;
+			color: white;
+		}
+	}
+}
+
+#topNav{
+	a{
+		color: white;
+	}
+	#navContent{
+		padding: 0;
+		@include media-breakpoint-down(xs) { position: relative; margin-bottom: 20px;}
+	}
+	min-height: 50px;
+	background: $snap-black;
+	padding-top: 10px;
+	h3{
+		a{
+		font-family: 'Nunito', sans-serif;
+		font-weight: 600;
+		color: white;
+		font-size: 1.8rem;
+		}
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li{
+			@include media-breakpoint-down(xs) { 
+				display: block; 
+				width: 90%; 
+				margin-left: 5%; 
+				padding: 10px 0px;
+				border-bottom: solid 1px $snap-yellow;
+			}
+			@include media-breakpoint-up(sm) { display: none; }
+			@include media-breakpoint-up(md) { display: block; }
+			@include media-breakpoint-up(lg) { display: block; }
+			@include media-breakpoint-up(xl) { display: block; }
+
+			margin-top: 3px;
+			float: left;
+			margin-right: 10px;
+			a{
+				color: $snap-yellow;
+			}
+		}
+	}
+	a #ownProfile{
+		position: relative;
+		top: 0px;
+		float: left;
+		display: inline-block;
+		border-radius: 100px;
+		height: 30px;
+		width: 30px;
+		border: solid 2px $snap-yellow;
+		background: url('../images/icons/small-snap.svg') no-repeat;
+		background-position: center;
+		background-size: 60%;
+	}
+	a .logInOutButton{
+		@include media-breakpoint-down(md) {width: 80px;padding: 0px 10px;}
+		position: relative;
+		top: 0px;
+		display: inline-block;
+		height: 30px;
+		border-radius: 5px;
+		background: #FEF012;
+		line-height: 30px;
+		padding: 0px 20px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color: $snap-black;
+	}
+}
+
+header{
+	position: relative;
+	width: 100%;
+	background: $snap-yellow;
+	.row{
+		.headerContent{
+			position: relative;
+			z-index: 20;
+			padding: 10px;
+		}
+		#pageBrandNavLinks{
+			padding: 0px;
+			min-height: 235px;
+			@include media-breakpoint-down(xs) {
+				min-height: 200px;	
+				padding-bottom: 10px;
+			}
+			a{
+				font-size: 0.8rem;
+			}
+		}
+		#resentProfiles{
+			padding: 0px;
+			color: white;
+			position: relative;
+			background: url('/images/hipsters.jpg') no-repeat;
+			background-size: cover;
+			background-position: center center;
+			min-height: 235px;
+			height: 100%;
+			@include media-breakpoint-down(xs) {
+				min-height:245px
+			}
+			&:after{
+				content: '';
+				background: rgba(255,249,4,0.8);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+	}
+	#snappi-suomi-logo{
+		margin: 20px auto;
+		width: 150px;
+		height: 150px;
+		background: url('../images/logo.gif') no-repeat;
+		background-size: 100%;
+		background-position: center center;
+		@include media-breakpoint-down(xs) {
+			width: 80px;
+			height: 80px;	
+		}
+	}	
+	#brandHeading{
+		max-width: 720px;
+		margin: 10px 30px 0px 30px;
+		@include media-breakpoint-down(xs) {
+			text-align: center;
+		}
+		.main-heading{
+			font-family: 'Open Sans', sans-serif;
+		    font-size: 5vw;
+		    margin-bottom: 20px;
+		    font-weight: 800;
+		}
+		.linkbutton{
+			
+			top: 100px;
+			@include media-breakpoint-down(xs) {
+				position: relative;
+				top:0;
+			}
+		}
+		h2{
+			line-height: 30px;
+		}
+	}
+	nav{
+		a{
+			font-size: 0.7rem;
+		}
+	}
+}
+
+#filterMenu{
+	margin: 20px 0px;
+	.row{
+		margin-bottom: 10px;
+		.col-xs-12{
+			@include media-breakpoint-down(sm) {
+				margin: 10px 0px; 
+			}
+		}
+	}
+	h1{
+		color: white;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.wildcardSearch{
+		width: 100%;
+		border-radius: 5px;
+		height: 40px;
+		border: none;
+		padding: 5px 50px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		background: url('/images/icons/search.svg') no-repeat, white;
+		background-position: 10px center;
+		background-size: 17px 17px;	
+	}
+	a{
+		.bigbutton{
+			text-decoration: none;
+		}
+	}
+	.bigbutton{
+		cursor: pointer;
+		border-radius: 5px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		border: none;
+		background: $snap-yellow;
+		width: 100%;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+		&:hover{
+			background: $snap-black;
+			color: white;
+		}
+	}
+	.emptySearch{
+		a{
+			position: relative;
+			top: 10px;
+			color: $snap-yellow;
+		}
+	}
+}
+
+#noProfileAdded, #userProfilesTable{
+	padding: 30px;
+	color: white;
+	h1{
+		font-size: 2rem;
+	}
+	h2{
+		font-size: 1rem;
+		color: white;
+		font-weight: 400;
+		line-height: 1.2rem;
+	}
+	h3{
+		font-size: 0.8rem;
+		font-weight: 300;
+	}
+}
+
+.alertLink{
+	color: $snap-red;
+	font-weight: 300;
+	font-size: 0.8rem;
+	&:hover{
+		color: white;
+	}
+}
+
+form{
+	margin: 0 auto;
+	.field{
+		position: relative;
+		text-align: left;
+		margin: 20px 0px;
+		p{
+			small{
+				position: relative;
+				margin-top: 5px;
+			}
+		}
+		small a{
+			font-size: 0.8rem;
+			font-weight: 400;
+			color: $snap-yellow;
+		}
+		input{
+			background: none;
+			border: solid 2px white;
+			padding: 10px 20px;
+			border-radius: 30px;
+			width: 100%;
+			display: block;
+			margin: 10px auto;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 0.8rem;
+		}
+		.field_with_errors{
+			input{
+				border-color: $snap-red;
+			}
+		}
+		label{
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 600;
+			font-size: 0.9rem;
+			color: white;
+			margin-bottom: 2px;
+		}
+		textarea{
+			width: 100%;
+			height: 200px;
+			border-radius: 10px;
+			border: solid 2px white;
+			background: none;
+			margin: 10px auto;
+			padding: 10px 20px;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 0.8rem;
+		}
+		select{
+			background: none;
+			border: solid 2px white;
+			padding: 10px 20px;
+			border-radius: 30px;
+			width: 100%;
+			display: block;
+			margin: 10px auto;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 0.8rem;
+		}
+		small{
+			display: block;
+			font-size: 0.7rem;
+		}
+	}
+	#profile_image_target, #profile_image_exists{
+		img{
+			width: 100%;
+		}
+	}
+	
+}
+
+.field_with_errors{
+	label{
+		color: $snap-red!important;
+	}
+	input{
+		border-color: $snap-red;
+	}
+}
+
+#error_explanation{
+	padding: 20px;
+	background: #ff4545;
+	h2{
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	ul{
+		
+		list-style: none;
+	}
+}
+
+#profilesFilter{
+	margin: 10px 0px;	
+	background: $snap-yellow;	
+}
+#profilesGrid{
+	.profilesContainer{
+		display: flex;
+		border-radius: 5px;
+		background: white;
+		overflow: hidden;
+		height: 165px;
+		margin-bottom: 30px;
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 10px;
+		}
+		.profilesNoImageMobile{
+			background-size: 50%!important;
+			background-repeat: no-repeat!important;
+			background-position: center center!important;
+			background-color: #B3B3B3!important;
+			position: relative;
+			flex-grow: 2; 
+			width: 135px;
+			height: 165px;
+			cursor: pointer;
+			z-index: 20;
+			a{
+				display: block;
+				height: 100%;
+			}
+			&:after{
+				transition: background 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			}
+			.profilesScanText{
+				position: absolute;
+			    left: 0;
+			    top: 145px;
+			    width: 100%;
+			    height: 100%;
+			    color: white;
+			    font-family: 'Open Sans', sans-serif;
+			    font-weight: 600;
+			    font-size: 0.40rem;
+			    text-align: center;
+			    text-transform: uppercase;
+			    z-index: 20;
+			    transition: all 150ms ease-out;
+			    img{
+				    position: absolute;
+				    left: 40%;
+				    top: -30px;
+				    opacity: 0;
+				    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			    }
+			}
+			.profilesLike{
+				width: 40px;
+				height: 40px;
+				border-radius: 100px;
+				background: white;
+				position: absolute;
+				z-index: 20;
+				top: 20px;
+				right: -20px;
+				background-position: center 55% !important;
+				background-size: 14px 12px!important;
+			}
+			.liked{
+				background: url('/images/icons/liked.svg') no-repeat, $snap-yellow;
+				border: 2px solid white;
+			}
+			.unliked{
+				background: url('/images/icons/like.svg') no-repeat, white;
+				border: 2px solid $snap-yellow;
+			}			
+		}
+		.profilesImageMobile{
+			position: relative;
+			flex-grow: 2; 
+			width: 135px;
+			height: 165px;
+			background-size: cover!important;
+			background-position: center center!important;
+			cursor: pointer;
+			z-index: 20;
+			a{
+				display: block;
+				height: 100%;
+			}
+			.profilesScanText{
+				position: absolute;
+			    left: 0;
+			    top: 145px;
+			    width: 100%;
+			    height: 100%;
+			    color: white;
+			    font-family: 'Open Sans', sans-serif;
+			    font-weight: 600;
+			    font-size: 0.40rem;
+			    text-align: center;
+			    text-transform: uppercase;
+			    z-index: 20;
+			    transition: all 150ms ease-out;
+			    img{
+				    position: absolute;
+				    left: 40%;
+				    top: -30px;
+				    opacity: 0;
+				    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			    }
+			}
+			.profilesLike{
+				width: 40px;
+				height: 40px;
+				border-radius: 100px;
+				background: white;
+				position: absolute;
+				z-index: 20;
+				top: 20px;
+				right: -20px;
+				background-position: center 55% !important;
+				background-size: 14px 12px!important;
+			}
+			.liked{
+				background: url('/images/icons/liked.svg') no-repeat, $snap-yellow;
+				border: 2px solid white;
+			}
+			.unliked{
+				background: url('/images/icons/like.svg') no-repeat, white;
+				border: 2px solid $snap-yellow;
+			}
+		}
+		.profilesImage{
+			position: relative;
+			flex-grow: 2; 
+			width: 135px;
+			height: 165px;
+			background-size: cover!important;
+			background-position: center center!important;
+			cursor: pointer;
+			z-index: 20;
+			&:after{
+				transition: background 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			}
+			&:hover{
+				&:after{
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(255, 251, 0, 0.7);
+					z-index: 10;
+				}
+				.profilesScanText{
+				    top: 95px;
+				    img{
+					    opacity: 1;
+				    }
+			    }
+			}
+			.profilesScanText{
+				position: absolute;
+			    left: 0;
+			    top: 145px;
+			    width: 100%;
+			    height: 100%;
+			    color: white;
+			    font-family: 'Open Sans', sans-serif;
+			    font-weight: 600;
+			    font-size: 0.40rem;
+			    text-align: center;
+			    text-transform: uppercase;
+			    z-index: 20;
+			    transition: all 150ms ease-out;
+			    img{
+				    position: absolute;
+				    left: 40%;
+				    top: -30px;
+				    opacity: 0;
+				    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			    }
+			}
+			.profilesLike{
+				width: 40px;
+				height: 40px;
+				border-radius: 100px;
+				background: white;
+				position: absolute;
+				z-index: 20;
+				top: 20px;
+				right: -20px;
+				background-position: center 55% !important;
+				background-size: 14px 12px!important;
+			}
+			.liked{
+				background: url('/images/icons/liked.svg') no-repeat, $snap-yellow;
+				border: 2px solid white;
+			}
+			.unliked{
+				background: url('/images/icons/like.svg') no-repeat, white;
+				border: 2px solid $snap-yellow;
+			}
+			@include media-breakpoint-down(sm) {
+				
+			} 
+		}
+		.profilesNoImage{
+			background-size: 50%!important;
+			background-repeat: no-repeat!important;
+			background-position: center center!important;
+			background-color: #B3B3B3!important;
+			position: relative;
+			flex-grow: 2; 
+			width: 135px;
+			height: 165px;
+			cursor: pointer;
+			z-index: 20;
+			&:after{
+				transition: background 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			}
+			&:hover{
+				&:after{
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(255, 251, 0, 0.7);
+					z-index: 10;
+				}
+				.profilesScanText{
+				    top: 95px;
+				    img{
+					    opacity: 1;
+				    }
+			    }
+			}
+			.profilesScanText{
+				position: absolute;
+			    left: 0;
+			    top: 145px;
+			    width: 100%;
+			    height: 100%;
+			    color: white;
+			    font-family: 'Open Sans', sans-serif;
+			    font-weight: 600;
+			    font-size: 0.40rem;
+			    text-align: center;
+			    text-transform: uppercase;
+			    z-index: 20;
+			    transition: all 150ms ease-out;
+			    img{
+				    position: absolute;
+				    left: 40%;
+				    top: -30px;
+				    opacity: 0;
+				    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+			    }
+			}
+			.profilesLike{
+				width: 40px;
+				height: 40px;
+				border-radius: 100px;
+				background: white;
+				position: absolute;
+				z-index: 20;
+				top: 20px;
+				right: -20px;
+				background-position: center 55% !important;
+				background-size: 14px 12px!important;
+			}
+			.liked{
+				background: url('/images/icons/liked.svg') no-repeat, $snap-yellow;
+				border: 2px solid white;
+			}
+			.unliked{
+				background: url('/images/icons/like.svg') no-repeat, white;
+				border: 2px solid $snap-yellow;
+			}
+			@include media-breakpoint-down(sm) {
+				
+			} 	
+		}
+		.profilesDetailsContainer{
+			padding: 7px 10px 20px 25px;
+		}
+		.profilesDetails{
+			width: 300px;
+			flex-grow: 1; 
+			height: 165px;
+			
+			.profilesNickName{
+				a{
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 1.2rem;
+				}
+			}
+			.profilesRealName{
+				color: #9f9f9f;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 0.6rem;
+				text-transform: uppercase;
+			}
+			.someLinks{
+				a{
+					margin: 0px 3px;
+					text-align: center;
+				}
+			}
+			.profileLocation{
+				margin: 0px;
+				position: relative;
+				top: -4px;
+				a{
+					margin: 0px;
+					color: #575757;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					text-transform: uppercase;
+					border-bottom: solid 2px $snap-yellow;
+				}
+			}
+			
+			.profilesDescription{
+				p{
+					margin: 0;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 0.65rem;
+					line-height: 16px;
+					color: $snap-black;
+				}
+			}
+		    
+			@include media-breakpoint-down(sm) {
+				
+			}
+		}	
+	}
+}
+
+/*
+#profilesGrid{
+	margin: 10px 0px;	
+	.profilesContainer{
+		position: relative;
+		border-radius: 5px 5px 0px 0px;
+		overflow: hidden;
+		margin-bottom: 20px;
+		.profilesHeader{
+			position: relative;
+			background: $snap-yellow;
+			&:after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: url('../images/icon_pattern_1x.png');
+				background-position: center top;
+				background-size: 100%;
+				z-index: 10;
+			}
+			.profilesImage{
+				position: relative;
+				top: 40px;
+				left: 10px;
+				width: 80px;
+				height: 80px;
+				border: solid 3px white;
+				overflow: hidden;
+				border-radius: 200px;
+				z-index: 20;
+				text-align: center;
+				background: white;
+				img{
+					width: 100%;
+				}
+				.no-image{
+					position: relative;
+					margin-top: 10px;
+					width: 70%;	
+					background: $snap-black;
+				}
+			}
+			.noprofileImage{
+				background: $snap-black;
+			}
+			.scanCode{
+				position: absolute;
+			    top: 70px;
+			    right: 130px;
+			    z-index: 30;
+			    background: #16191A;
+			    border-radius: 200px;
+			    padding: 10px;
+			    border: solid 3px white;
+			    width: 40px;
+			    height: 40px;
+			    img{
+				    width: 15px;
+				    height: 15px;
+			    }
+			}
+		}
+		.profilesContent{
+			position: relative;
+			overflow: hidden;
+			background: white;
+			.profilesSnapCode{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: -304px;
+				left: 0;
+				overflow: hidden;
+				display: none;
+				background: black;
+				z-index: 10;
+				
+				img{
+					position: relative;
+					width: 100%;	
+				}
+			}
+			.profilesNickName{
+				margin-top: 45px;
+				position: relative;
+				left: 10px;
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 1.2rem;
+				a{
+					color: $snap-black;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 1.2rem;
+				}
+				.someLinks{
+					position: relative;
+					bottom: 2px;
+					a{
+						text-align: center;
+						margin-right: 10px;
+					}
+				}
+			}
+			.profilesRealName{
+				position: relative;
+				left: 10px;
+				margin-top: 5px;
+				color: #9f9f9f;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 0.6rem;
+				text-transform: uppercase;
+				margin-bottom: 0px;
+			}
+			.profileLocation{
+				position: relative;
+				left: 10px;
+				margin-top: 0px;
+				color: #575757;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				a{
+					border-bottom: solid 2px $snap-yellow;
+				}
+			}
+			.profilesTagsAll{
+				cursor: pointer;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+			}
+			.profilesSnapCodeScan{
+				cursor: pointer;
+				position: relative;
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.6rem;
+				width: 100%;
+				margin: 0 auto;
+				padding: 5px 10px;
+				background: #FFFC00;
+				color: #16191a;
+				z-index: 40;
+			}
+			
+			.profilesDescription{
+				min-height: 100px;
+				p{
+					margin: 0;
+					max-height: 130px;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 0.8rem;
+					color: $snap-black;
+					padding: 0px 10px;
+				}
+			}
+			.profilesTags{
+				padding: 10px;
+				height: 50px;
+				&.active{
+					height: 100%;
+				}
+				span{
+					font-size: 0.8rem;
+				}
+			}
+			.tags{
+				position: relative;
+				display: inline-block;
+				padding: 5px 5px;
+				border-radius: 30px;
+				background: $snap-yellow;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+				margin: 5px 0px 5px 0px;
+				a{
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					color: $snap-black;
+				}
+			}
+			.userProfiles{
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px;
+				a{
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					color: $snap-black;
+				}
+			}
+		}
+		.profilesFooter{
+			width: 100%;
+			background: $snap-black;
+			.profileSome{
+				width: 100%;
+				display: table;
+				table-layout: fixed;
+				a{
+					display: table-cell;
+					.linksToSome{
+						background: $snap-black;
+					    display: block;
+					    height:50px;
+					    border-right: solid 1px #c7c1c1;
+					    box-sizing: border-box;
+					    text-align: center;
+					    line-height: 50px;
+					}
+					&:last-child{
+						.linksToSome{
+						border: none;
+						}   
+					}
+				}
+			}	
+		}
+	}
+}
+*/
+
+#profileLinks{
+	margin-top: 20px;
+}
+
+#profilesGridSingle{
+	position: relative;	
+	margin: 10px auto;
+	.profilesContainer{
+		position: relative;
+		border-radius: 5px 5px 0px 0px;
+		overflow: hidden;
+		margin-bottom: 20px;
+		background: white;
+		.profilesHeader{
+			position: relative;
+			background: $snap-yellow;
+			&:after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: url('../images/icon_pattern_1x.png');
+				background-position: center top;
+				background-repeat: repeat;
+				z-index: 10;
+			}
+			.profilesImage{
+				position: relative;
+				top: 40px;
+				margin: 0 auto;
+				width: 120px;
+				height: 120px;
+				border: solid 3px white;
+				overflow: hidden;
+				border-radius: 200px;
+				z-index: 20;
+				text-align: center;
+				background: white;
+				img{
+					width: 100%;
+				}
+				.no-image{
+					position: relative;
+					margin-top: 10px;
+					width: 70%;	
+					background: $snap-black;
+				}
+			}
+			.noprofileImage{
+				background: $snap-black;
+			}
+			.scanCode{
+				position: absolute;
+			    top: 70px;
+			    right: 130px;
+			    z-index: 30;
+			    background: #16191A;
+			    border-radius: 200px;
+			    padding: 10px;
+			    border: solid 3px white;
+			}
+		}
+		.profilesContent{
+			position: relative;
+			max-width: 600px;
+			margin: 0 auto;
+			background: white;
+			margin-bottom: 20px;
+			padding: 0px 10px;
+			.profilesSnapCode{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: -304px;
+				left: 0;
+				overflow: hidden;
+				display: none;
+				background: black;
+				z-index: 10;
+				img{
+					position: relative;
+					width: 100%;	
+				}
+			}
+			.profilesNickName{
+				position: relative;
+				margin-top: 45px;
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 1.2rem;
+				a{
+					color: $snap-black;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 1.2rem;
+				}
+			}
+			.profilesRealName{
+				position: relative;
+				margin-top: 5px;
+				color: #9f9f9f;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 0.6rem;
+				text-transform: uppercase;
+				margin-bottom: 0px;
+			}
+			.profileLocation{
+				position: relative;
+				margin-top: 0px;
+				color: #575757;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				a{
+					border-bottom: solid 2px $snap-yellow;
+				}
+			}
+			.profilesTagsAll{
+				cursor: pointer;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+			}
+			.profilesSnapCodeScan{
+				cursor: pointer;
+				position: relative;
+				color: $snap-black;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.6rem;
+				width: 100%;
+				margin: 0 auto;
+				padding: 5px 10px;
+				background: #FFFC00;
+				color: #16191a;
+				z-index: 40;
+			}
+			
+			.profilesDescription{
+				p{
+					margin: 0;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 0.8rem;
+					color: $snap-black;
+					padding: 10px 0px;
+				}
+			}
+			.profilesTags{
+				padding: 10px 0px;
+				&.active{
+					height: 100%;
+				}
+				span{
+					font-size: 0.8rem;
+				}
+			}
+			.tags{
+				position: relative;
+				display: inline-block;
+				padding: 5px 5px;
+				border-radius: 30px;
+				background: $snap-yellow;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.7rem;
+				margin: 5px 0px 5px 0px;
+				a{
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					color: $snap-black;
+				}
+			}
+			.userProfiles{
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px;
+				a{
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 600;
+					font-size: 0.7rem;
+					color: $snap-black;
+				}
+			}
+			.someLinks{
+				position: relative;
+				bottom: 2px;
+				a{
+					text-align: center;
+					margin-right: 10px;
+				}
+			}
+			.someLinksText{
+				position: relative;
+				display: block;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 600;
+				font-size: 0.8rem;
+				color: $snap-black;
+				margin-bottom: 10px;
+			}
+		}
+		#shareProfile{
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			margin-top: 20px;
+			li{
+				display: table-cell;
+				text-align: center;
+				background: $snap-yellow;
+				height: 40px;
+				line-height: 40px;
+				a{
+					display: block;
+					color: white;
+					&.fa-facebook{
+						background: #3B5998;
+					}
+					&.fa-twitter{
+						background: #55ACEE;
+					}
+					&.fa-google-plus{
+						background: #DC4E41;
+					}
+					&.fa-linkedin{
+						background: #0077B5;
+					}
+					img{
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+		.profilesFooter{
+			width: 100%;
+			background: $snap-black;
+			.profileSome{
+				width: 100%;
+				display: table;
+				table-layout: fixed;
+				a{
+					display: table-cell;
+					.linksToSome{
+						background: $snap-black;
+					    display: block;
+					    height:50px;
+					    border-right: solid 1px #c7c1c1;
+					    box-sizing: border-box;
+					    text-align: center;
+					    line-height: 50px;
+					}
+					&:last-child{
+						.linksToSome{
+						border: none;
+						}   
+					}
+				}
+			}	
+		}
+	}
+}
+
+.pageContent{
+	margin: 50px 0px;
+	color: white;
+	a{
+		color: white;
+	}
+	h3{
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 1rem;
+		margin-bottom: 20px;
+		line-height: 1.5rem;
+	}
+	p{
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 0.8rem;
+		a{
+			color: $snap-yellow;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 0.8rem;	
+		}
+	}
+}
+
+#userProfilesTable{
+	table{
+		thead{
+			tr{
+				th{
+					border-top: 0px;
+					padding: 0px;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 1rem;
+				}
+			}
+		}
+		tbody{
+			tr{
+				background: none;
+				
+				th{
+					border: none;
+					padding: 0px;
+				}
+				td{
+					border: none;
+					padding: 5px 0px;
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 0.8rem;
+					a{
+						color: white;
+						font-family: 'Open Sans', sans-serif;
+						font-weight: 400;
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+#ownProfiles{
+	.navbar{
+		border-radius: 0;
+	}
+	margin-bottom: 40px;
+}
+
+.navbar-toggler{
+	font-family: 'Open Sans', sans-serif;	
+	font-size: 1rem;
+	color: white;
+}
+
+#aboutApp{
+	p{
+		font-family: 'Open Sans', sans-serif;	
+		font-size: 15px;
+		a{
+			font-size: 15px;
+			font-weight: normal;
+			color: $snap-yellow;	
+		}
+	}
+}
+
+#forumApp{
+	p{
+		font-family: 'Open Sans', sans-serif;	
+		font-size: 15px;
+		a{
+			font-size: 15px;
+			font-weight: normal;
+			color: $snap-yellow;	
+		}
+	}
+}
+
+.select2-container--above select2-container--open{
+	.select2-container--classic .select2-selection--single .select2-selection__rendered{
+		color: $snap-black;
+	}
+}
+
+#profile_image_cropbox_wrapper{
+	width: 100%!important;
+	height: auto!important;
+	background: $snap-black;
+}
+.jcrop-holder{
+	margin: 0 auto;
+}
+
+.pagination{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9rem;
+	color: white;
+	em{font-style: normal;}
+	a{
+		font-family: 'Open Sans', sans-serif;
+		font-size: 0.9rem;
+	}
+}
+
+#filterrific_with_location_id, #filterrific_sorted_by{
+	background: none;
+	border: none;
+	color: $snap-yellow;
+	option{
+		color: $snap-black;
+		background: white;
+	}
+}
+#filterrific_with_location_id{
+	width: 75px;
+}
+#filterrific_sorted_by{
+	width: 120px;
+}
+.filtercontent{
+		span{
+			position: relative;
+			top: 5px;
+		}
+		a{
+			color: $snap-yellow!important;
+		}
+}
+.modal-content{
+	background: none;
+	border: none;
+}
+
+#termsOfUseModal{
+	background: $snap-black;
+	padding: 10px;
+}
+
+#termsOfUseContainer{
+	position: relative;
+	display: block;
+	margin-top: 60px;
+}
+.termsOfUse{
+	h2{
+		position: relative;
+		margin-bottom: 20px;
+		font-family: 'Open Sans', sans-serif;	
+		font-size: 2rem;	
+		color: white;
+		font-weight: 800;
+		
+	}
+	h3{
+		font-size: 1.3rem;
+		margin-bottom: 10px;
+		font-weight: 600;
+		color: #ffffff;
+	}
+}
+
+.checkbox{
+	a{
+		color: $snap-yellow;
+	}
+}
+
+form .submitBtn{
+		position: relative;
+		top: 0px;
+		display: inline-block;
+		height: 30px;
+		border-radius: 5px;
+		background: #FEF012;
+		line-height: 30px;
+		padding: 0px 20px;
+		color: $snap-black;
+		border: none;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 600;
+}
+
+#nav-share {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    z-index: 999;
+    ul {
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	    background: $snap-yellow;
+	}
+	li.title {
+	    height: auto;
+	    background: $snap-yellow;
+	    padding: 12px 0;
+	    font-size: 10px;
+	    font-size: 11px;
+	    line-height: 20px;
+	    color: $snap-black;
+	    text-transform: uppercase;
+	    font-family: 'Open Sans', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+	li {
+		position: relative;
+	    width: 50px;
+	    height: 50px;
+	    margin-bottom: 1px;
+	    font-size: 21px;
+	    font-size: 2.1rem;
+	    line-height: 32px;
+	    text-align: center;
+	    border-bottom: solid 5px #F3F000;
+	    cursor: pointer;
+	    &:before{
+		   
+	    }
+	    &#facebook{
+		    background: url('../images/icons/facebook-icon.svg') no-repeat; 
+		    background-size: 60%;
+		    background-position: center center;
+		    background-color: #3B5998;
+	    	
+	    }
+	    &#twitter{
+		    background: url('../images/icons/twitter-icon.svg') no-repeat; 
+		    background-size: 60%;
+		    background-position: center center;
+		    background-color: #55ACEE;
+	    }
+	}
+	li button{
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: none;
+		outline: none;
+		z-index: 20;
+	}
+	li button img{
+		width: 27px;
+	    height: 27px;
+	    
+	}
+}
+
+#tagcloud{
+	margin: 20px 0px;
+}
+
+.tags{
+	position: relative;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 30px;
+	background: $snap-yellow;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 0.7rem;
+	margin: 5px 0px 5px 0px;
+	a{
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		font-size: 0.7rem;
+		color: $snap-black;
+	}
+}

@@ -1,0 +1,119 @@
+<%= render "layouts/topnav" %>
+
+<%= render "layouts/header" %>
+
+<% if user_signed_in? %>
+<% if params[:tag].present?  %>
+<% else %>
+<section id="ownProfiles">
+  	<div class="container-fluid bg-inverse">
+    <div class="row">
+		<div class="col-xs-12 col-sm-12">
+			<div id="noProfileAdded">
+				<h1>Omat snapchat profiilit</h1>
+				<h2>Lisää oma snapchat tunnuksesi</h2>
+				<%= link_to 'Lisää profiili', new_profile_path, :class => "linkbutton" %>
+				<h3>Voi lisää useampia profiileita.</h3>
+			</div>
+		</div>
+	</div>
+  	</div>
+</section>
+<% end %>
+<% end %>
+
+<section id="profilesGrid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<% @profiles.each_slice(4).each do |group| %>
+				<div class="row">
+					<% group.each do |profile| %>
+						<% if profile.user == current_user %>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="profilesContainer">
+									<div class="profilesHeader">
+										<div class="profilesImage">
+											<%= image_tag profile.image.url(), :class => "img-bg" %>	
+										</div>
+									</div>
+									<div class="profilesContent">
+										<div class="profilesSnapCode" style="background-image: url(<%= profile.snapcode.url() %>); background-size: auto 70%; background-position: center; background-repeat: no-repeat;"></div>
+										<div class="profilesNickName">
+											@<%= profile.nickname %> 
+											
+											<span class="someLinks">
+												<% if profile.facebook.present? %>
+												<a  target="_blank" href="https://www.facebook.com/<% if profile.facebook.present? %><%= profile.facebook %><% end %>">
+													<img src="/images/icons/facebook-icon.png" alt="facebook-icon" width="16" height="16" />
+												</a>
+												<% else %>
+												<% end %>
+												
+												<% if profile.twitter.present? %>
+												<a target="_blank" href="https://twitter.com/<% if profile.twitter.present?  %><%= profile.twitter %><% end %>">
+													<img src="/images/icons/twitter-icon.png" alt="twitter-icon" width="16" height="16" />
+												</a>
+												<% else %>
+												<% end %>
+												
+												<% if profile.instagram.present? %>	
+												<a target="_blank" href="https://instagram.com/<% if profile.instagram.present?  %><%= profile.instagram %><% end %>">
+													<img src="/images/icons/instagram-icon.png" alt="instagram-icon" width="16" height="16" />
+												</a>
+												<% else %>
+												<% end %>
+												
+												<% if profile.linkedin.present? %>
+												<a target="_blank" href="<% if profile.linkedin.present?  %><%= profile.linkedin %><% end %>">
+													<img src="/images/icons/linkedin-icon.png" alt="linkedin-icon" width="16" height="16" />
+												</a>	
+												<% else %>
+												<% end %>
+											</span>
+											
+										</div>
+										<div class="profilesRealName">
+											<%= profile.name %>
+										</div>
+										<div class="profileLocation">
+											<%= profile.location.name %>
+										</div>
+										<div class="profilesDescription">
+											<p class="profileAbout"><%= profile.description %></p>
+										</div>
+										
+										<% if profile.tags.present? %>
+										<div class="profilesTags">
+										<span class="profilesTagsAll">Näytä kaikki</span>
+										<% profile.tags.each do |tag| %>
+											<span class="tags">
+												#<%= link_to tag.name, tag_path(tag.name) %>
+											</span>  
+										<% end %>
+										</div>
+										<% else %>
+										<% end %>
+										
+										<div class="profilesSnapCodeScan text-center">
+											<img src="/images/icons/camera-icon.png" alt="camera-icon" width="32" height="32" /><br/>
+											skannaa snapkoodi
+										</div>
+										<% if profile.user == current_user %>
+											<div class="userProfiles">
+												<%= link_to 'Muokkaa', edit_profile_path(profile) %>
+												<%= link_to 'Poista', profile, method: :delete, data: { confirm: 'Oletko varma' } %>
+											</div>
+										<% end %>
+										
+									</div>
+								</div>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

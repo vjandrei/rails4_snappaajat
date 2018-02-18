@@ -13,4 +13,69 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require tether
+//= require bootstrap-sprockets
+//= require jcrop
+//= require select2
+//= require select2_locale_fi
+//= require rails.validations
+//= require filterrific/filterrific-jquery
+//= require maj-text-counter
+//= require sharer.min
+//= require jquery.prettySocial.min
+//= require fancySelect
 //= require_tree .
+
+$(function() {
+	$('#profile_description').majTextCounter({
+		carLimit: 160,
+		words: "Sanaa ",
+		letters: " merkkiä",
+		separator: "ja ",
+		maximum: " Maksimimäärä : ",
+	});
+	$(".profilesTagsAll").on("click", function () {  
+        $(this).parent().toggleClass('active');
+    });
+
+    
+    $(".profilesImage").on("click", function () {  
+        $(this).parent().find(".profilesSnapCode").slideToggle(function() {
+	       /*$(this).addClass('bounceInDown animated').css({
+		       'top': '0px'
+	       });*/
+        });
+    });
+    
+
+    
+    $( "#profile_location_id" ).select2({
+	    theme: "classic"
+	});
+
+	//$('.collapse').collapse()
+	
+	autoPlayYouTubeModal();
+
+	//FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+	function autoPlayYouTubeModal() {
+	  var trigger = $("body").find('[data-toggle="modal"]');
+	  trigger.click(function () {
+	      var theModal = $(this).data("target"),
+	          videoSRC = $(this).attr("data-theVideo"),
+	          videoSRCauto = videoSRC + "?autoplay=1";
+	      $(theModal + ' iframe').attr('src', videoSRCauto);
+	      $(theModal + ' button.close').click(function () {
+	          $(theModal + ' iframe').attr('src', videoSRC);
+	      });
+	      $('.modal').click(function () {
+	          $(theModal + ' iframe').attr('src', videoSRC);
+	      });
+	  });
+	}
+	
+	$('.prettySocial').prettySocial();
+	
+	$('#filterrific_sorted_by, #filterrific_with_location_id').fancySelect();
+	
+});

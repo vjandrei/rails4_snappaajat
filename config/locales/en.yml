@@ -21,3 +21,17 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    page_entries_info:
+      single_page:
+        zero:  "No löytynyt"
+        one:   "1"
+        other: "%{count}"
+      single_page_html:
+        zero:  "Ei löytynyt"
+        one:   "1"
+        other: "%{count}"
+
+      multi_page: "%{count}"
+      multi_page_html: "%{count}"
+

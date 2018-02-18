@@ -1,0 +1,15 @@
+<div class="collapse" id="tagcloud">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="profilesTags">
+				<% tag_cloud Profile.tag_counts, %w[s m l] do |tag, tags| %>
+				<span class="tags">
+				#<%= link_to tag.name, tag_path(tag.name) %> | <%= tag.taggings_count %> kpl
+				</span>
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

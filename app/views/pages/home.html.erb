@@ -1,0 +1,58 @@
+<%= render :partial => 'layouts/topnav', :locals => { :profiles => @profiles } %>
+
+<%= render "layouts/header" %>
+
+<%= render "layouts/filters" %>
+
+<%= render "layouts/share" %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<% flash.each do |name, msg| %>
+		    	<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<% if user_signed_in? %>
+<% if  Profile.exists? user_id: current_user.id %>
+<% else %>
+<section id="ownProfiles">
+  	<div class="container-fluid bg-inverse">
+    <div class="row">
+		<div class="col-xs-12 col-sm-12 text-center">
+			<div id="noProfileAdded">
+				<h1>Et ole vielä lisännyt profiilia</h1>
+				<h2>Lisää oma snappaaja tunnuksesi</h2>
+				<%= link_to 'Lisää profiili', new_profile_path, :class => "linkbutton" %>
+				<h3>Voi lisää useampia profiileita.</h3>
+			</div>
+		</div>
+	</div>
+  	</div>
+</section>
+<%  end %>
+<%  end %>
+
+<section id="profilesGrid">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+			    <div id="results">
+					<%= render :partial => 'layouts/profilecard', :locals => { :profiles => @profiles } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+		<!--, renderer: BootstrapPagination::Rails-->
+		<%= will_paginate @profiles ,previous_label: 'Uusimmat', next_label: 'Vanhimmat', inner_window: 1, outer_window: 0 %>	
+		</div>
+	</div>
+</div>

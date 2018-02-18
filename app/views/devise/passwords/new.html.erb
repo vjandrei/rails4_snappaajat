@@ -1,0 +1,28 @@
+<%= render "layouts/topnav" %>
+<%= render "layouts/header" %>
+<section id="signUp" class="pageContent">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-xs-12 col-sm-8 text-center">
+			<h1>Unohtuiko salasana?</h1>
+
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+			  <%= devise_error_messages! %>
+			
+			  <div class="field">
+			    <%= f.label :email, 'Sähköposti' %><br />
+			    <%= f.email_field :email, autofocus: true %>
+			  </div>
+			
+			  <div class="actions">
+				<button class="linkbutton"><%= f.submit "Lähetä minulle sanasanan nollausohjeet sähköpostiin." %></button>
+			  </div>
+			<% end %>
+
+<%= render "devise/shared/links" %>
+			</div>
+			<div class="col-xs-12 col-sm-2"></div>
+		</div>
+	</div>
+</section>

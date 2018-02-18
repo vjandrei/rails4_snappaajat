@@ -1,4 +1,7 @@
 == README
 
-- Valitse ensiksi Rails 4
-- Migratoi tietokanta
+Make sure you run rvm to select the right Rails version by typing = rvm use ruby-2.3.1 this command will select the 
+selected Rails version on the bash.
+
+See your DB version on migrate the database schema 
+by typing rake db:setup. Also check your GEMFILE that the db is selected.

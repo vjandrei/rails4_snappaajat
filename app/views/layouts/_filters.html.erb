@@ -1,0 +1,35 @@
+<section id="filterMenu">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Snappaajia: <%= page_entries_info @profiles, :model => 'profile' %> kpl</h1>
+			</div>
+		</div>
+		<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+		<div class="row">
+			<div class="col-xs-12">
+				<%= f.text_field(:search_query, :class => 'wildcardSearch') %>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-2">
+				
+				<a data-toggle="collapse" href="#tagcloud" aria-expanded="false" aria-controls="tagcloud" class="collapsed">
+					<div class="bigbutton">Avainsanat</div>
+				</a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<%= f.select :with_location_id, @filterrific.select_options[:with_location_id], { :include_blank => 'Näytä paikkakunnalta:' } %></span>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<%= f.select :sorted_by, @filterrific.select_options[:sorted_by], { }%>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-2 text-center">
+				<%= f.submit 'Hae', :class => 'bigbutton' %>
+				<span class="emptySearch"><%= link_to "Tyhjennä haku", reset_filterrific_url %></span>
+			</div>
+		</div>
+		<% end %>
+		<%= render "layouts/tagscloud" %>
+	</div>
+</section>
