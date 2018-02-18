@@ -14,7 +14,7 @@ class Profile < ActiveRecord::Base
 	acts_as_votable
 	
 	validates :name, :presence => true
-	validates :nickname, :presence => true
+	validates :nickname, :presence => true ,  uniqueness: { scope: :user_id }
 	validates :description, :presence => true
 	
 	def can_validate
