@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
 
     def index
 	    
-	    prepare_meta_tags title: "Profiili", description: "Find on this page all our lovely products"
+	    prepare_meta_tags title: "Profiili", description: ""
 	    
 			if params[:tag].present? 
 	      @profiles = Profile.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 30)
@@ -45,7 +45,7 @@ class ProfilesController < ApplicationController
    title: "Snappaaja " + @profiles.name,
    description: @profile.description,
    keywords: @profile.nickname + "Snapchat",
-   image: "http://www.snappaajat.fi" + @profile.image.url(),
+   image: @profile.image.url(),
    twitter: {site: request.url,
         site: "@snappaajat",
         card: @profiles.name + @profile.description,
