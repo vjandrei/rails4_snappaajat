@@ -23,7 +23,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0.3'
   gem 'capistrano-passenger'
   gem 'capistrano-secrets-yml', '~> 1.0.0'
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 gem 'bootstrap', '~> 4.0.0.alpha1'
